@@ -1,0 +1,9 @@
+# System files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Node modules / build artifacts (if any)
+node_modules/
+dist/

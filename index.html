@@ -1,0 +1,817 @@
+﻿<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" href="./logo.png" />
+<link rel="apple-touch-icon" href="./logo.png" />
+<title>Newfoundland Tattoo Studio | Το Καλύτερο Tattoo &amp; Piercing στη Λάρισα</title>
+<meta name="description" content="Newfoundland Tattoo Studio – Το κορυφαίο tattoo studio στη Λάρισα. 5.0/5 από 393 κριτικές. Custom τατουάζ, piercing, cover up. Πατρόκλου 8, 241 110 3838. Κλείσε ραντεβού σήμερα!" />
+<meta name="keywords" content="newfoundland, new foundland tattoo, new foundland tattoo larisa, tattoo larisa, τατουάζ στη Λάρισα, tattoo studio Λάρισα, newfoundland tattoo studio, piercing Λάρισα, cover up τατουάζ, custom τατουάζ Λάρισα, newfoundland larisa, καλύτερο tattoo studio Λάρισα" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Newfoundland Tattoo Studio" />
+<meta name="geo.region" content="GR" />
+<meta name="geo.placename" content="Larissa" />
+<link rel="canonical" href="https://newfoundlandtattoo.gr/" />
+<!-- Open Graph -->
+<meta property="og:title" content="Newfoundland Tattoo Studio | Το Καλύτερο Tattoo &amp; Piercing στη Λάρισα" />
+<meta property="og:description" content="Το κορυφαίο tattoo studio στη Λάρισα. Custom τατουάζ, piercing, cover up. 5.0/5 από 393 κριτικές. Πατρόκλου 8, 241 110 3838." />
+<meta property="og:url" content="https://newfoundlandtattoo.gr/" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://newfoundlandtattoo.gr/logo.png" />
+<meta property="og:locale" content="el_GR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Newfoundland Tattoo Studio | Tattoo &amp; Piercing στη Λάρισα" />
+<meta name="twitter:description" content="Το κορυφαίο tattoo studio στη Λάρισα. 5.0/5 από 393 κριτικές. Πατρόκλου 8, 241 110 3838." />
+<!-- JSON-LD LocalBusiness Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TattooParlor",
+  "@id": "https://newfoundlandtattoo.gr/#business",
+  "name": "Newfoundland Tattoo Studio",
+  "alternateName": "Newfoundland Tattoo",
+  "description": "Το κορυφαίο tattoo studio στη Λάρισα. Custom τατουάζ, piercing, cover up. 5.0 αστέρια από 393 κριτικές.",
+  "url": "https://newfoundlandtattoo.gr/",
+  "telephone": "+302411103838",
+  "email": "newfoundlandtattoo@gmail.com",
+  "priceRange": "€€",
+  "image": "https://newfoundlandtattoo.gr/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Πατρόκλου 8",
+    "addressLocality": "Λάρισα",
+    "postalCode": "412 22",
+    "addressCountry": "GR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 39.6389,
+    "longitude": 22.4216
+  },
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"20:00"}
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "bestRating": "5",
+    "ratingCount": "393"
+  },
+  "sameAs": [
+    "https://www.instagram.com/newfoundland_tattoo"
+  ]
+}
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@200;400;500;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#0a0a0a;
+  --white:#ffffff;
+  --muted:rgba(255,255,255,0.65);
+  --dim:rgba(255,255,255,0.35);
+  --faint:rgba(255,255,255,0.07);
+  --border:rgba(255,255,255,0.06);
+  --red:#B30000;
+  --red-glow:rgba(179,0,0,0.06);
+  --radius:0;
+  --font-sans:'Space Grotesk',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--white);
+  font-family:var(--font-sans);overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--white);color:var(--bg)}
+
+/* ── CURSOR ── */
+#cursor-dot,#cursor-ring{
+  position:fixed;pointer-events:none;z-index:99999;
+  border-radius:50%;transform:translate(-50%,-50%);
+  transition:width .3s cubic-bezier(.16,1,.3,1),height .3s,background .3s;
+}
+#cursor-dot{width:5px;height:5px;background:var(--red);box-shadow:0 0 6px rgba(179,0,0,.3)}
+#cursor-dot.grow{width:18px;height:18px;background:transparent;border:1px solid var(--red)}
+#cursor-ring{width:30px;height:30px;border:1px solid rgba(255,255,255,.06);transition:width .6s,height .6s}
+
+/* ── PRELOADER ── */
+#preloader{
+  position:fixed;inset:0;z-index:99990;
+  background:var(--bg);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  transition:clip-path 1.6s cubic-bezier(.7,0,.3,1),opacity .6s;
+}
+#preloader.hide{clip-path:circle(0% at 50% 50%);opacity:0;pointer-events:none}
+.preloader-wrap{text-align:center}
+.preloader-logo img{height:clamp(28px,5vw,48px);width:auto;display:block;margin:0 auto;opacity:0;animation:plFade 1s .2s forwards}
+.preloader-tagline{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.5em;text-transform:uppercase;color:var(--dim);margin-top:.8rem;opacity:0;animation:plFade 1s .6s forwards}
+.preloader-bar{width:clamp(60px,12vw,160px);height:1px;background:var(--faint);margin-top:2rem;position:relative;overflow:hidden;opacity:0;animation:plFade .6s .4s forwards}
+.preloader-bar::after{content:'';position:absolute;inset:0;background:var(--white);animation:plBar 2.2s .4s forwards;transform-origin:left;transform:scaleX(0)}
+@keyframes plFade{0%{opacity:0;transform:translateY(12px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes plBar{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+
+
+.content{position:relative;z-index:1}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:1.5rem 3rem;display:flex;align-items:center;justify-content:space-between;
+  background:linear-gradient(to bottom,rgba(10,10,10,.8),transparent);
+  pointer-events:none;
+}
+nav>*{pointer-events:auto}
+.nav-logo{font-family:var(--font-sans);font-size:.85rem;font-weight:500;letter-spacing:.02em;color:var(--white);text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-link{color:var(--dim);text-decoration:none;font-family:var(--font-mono);font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;font-weight:400;transition:color .3s}
+.nav-link:hover{color:var(--white)}
+.nav-cta{background:var(--red);color:var(--white)!important;padding:.4rem 1.2rem;font-weight:600!important;font-family:var(--font-sans)!important;font-size:.6rem!important;letter-spacing:.08em!important;border-radius:0;transition:all .3s}
+.nav-cta:hover{background:#8a0000;transform:translateY(-1px)}
+.lang-switch{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.12em;color:var(--dim);cursor:pointer;background:none;border:1px solid var(--border);padding:.25rem .6rem;transition:color .3s,border-color .3s}
+.lang-switch:hover{color:var(--white);border-color:rgba(255,255,255,.2)}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 3rem;position:relative}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;max-width:1400px;margin:0 auto;width:100%}
+.hero-left{opacity:0;animation:heroFade .8s 1.8s forwards}
+.hero-right{opacity:0;animation:heroFade .8s 2.2s forwards;text-align:right}
+.hero-meta{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.35em;color:var(--red);margin-bottom:1.5rem;display:block;opacity:.6}
+.hero-title{font-family:var(--font-sans);font-weight:600;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:1.5rem;color:var(--white)}
+.hero-title .accent{color:var(--muted)}
+.hero-sub{font-size:clamp(.75rem,.95vw,.95rem);color:var(--dim);line-height:1.7;max-width:420px;margin-bottom:2.5rem}
+.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero-right .hero-meta{margin-bottom:1rem}
+.hero-stat{font-family:var(--font-mono);font-size:clamp(2rem,4vw,3.5rem);font-weight:500;color:var(--white);line-height:1;margin-bottom:.3rem}
+.hero-stat-label{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.2em;color:var(--dim)}
+.hero-stat-divider{width:32px;height:1px;background:var(--border);margin:1.5rem auto 1.5rem 0}
+.hero-right .hero-stat-divider{margin:1.5rem 0 1.5rem auto}
+@keyframes heroFade{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
+.btn{position:relative;padding:.7rem 1.8rem;border:none;font-family:var(--font-sans);font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+.btn-white{background:var(--white);color:var(--bg)}
+.btn-white:hover{opacity:.85}
+.btn-ghost{background:transparent;color:var(--white);border:1px solid var(--border)}
+.btn-ghost:hover{border-color:var(--muted)}
+.scroll-ind{position:absolute;bottom:2.5rem;left:3rem;display:flex;align-items:center;gap:.8rem;opacity:0;animation:heroFade .8s 3.5s forwards}
+.scroll-ind span{font-family:var(--font-mono);font-size:.45rem;letter-spacing:.3em;color:var(--dim)}
+.scroll-line{width:2rem;height:1px;background:var(--dim);animation:scPulse 2.5s ease-in-out infinite}
+@keyframes scPulse{0%,100%{opacity:.3;transform:scaleX(1)}50%{opacity:1;transform:scaleX(1.6)}}
+
+/* ── SECTIONS ── */
+section{padding:8rem 3rem}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-label{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.4em;text-transform:uppercase;color:var(--red);margin-bottom:.6rem;opacity:.7}
+.section-title{font-family:var(--font-sans);font-size:clamp(1.5rem,3vw,2.8rem);font-weight:600;letter-spacing:-.02em;line-height:1.08;margin-bottom:.5rem}
+.section-divider{width:28px;height:2px;background:var(--red);margin:1rem 0 2rem}
+.section-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem}
+.section-hdr .section-label{margin-bottom:0}
+
+/* ── COUNTERS ── */
+.counter-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.counter-card{}
+.counter-num{font-family:var(--font-sans);font-size:2.5rem;font-weight:600;letter-spacing:-.04em;color:var(--white);line-height:1}
+.counter-label{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.2em;color:var(--dim);margin-top:.5rem;text-transform:uppercase}
+
+/* ── REVIEWS ── */
+.reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.review-card{padding:1.5rem 0;border-top:1px solid var(--border)}
+.review-stars{font-size:.7rem;color:var(--muted);margin-bottom:.4rem;letter-spacing:.1em}
+.review-card p{font-size:.78rem;color:var(--dim);line-height:1.7}
+.review-author{font-family:var(--font-mono);font-size:.5rem;color:var(--faint);margin-top:.5rem;text-transform:uppercase;letter-spacing:.12em}
+
+/* ── SERVICES ── */
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.service-card{padding:1.8rem 0;border-top:1px solid var(--border);display:flex;align-items:flex-start;gap:1.5rem;transition:opacity .3s}
+.service-card:hover{opacity:.7}
+.service-num{font-family:var(--font-mono);font-size:.5rem;color:var(--dim);width:2rem;flex-shrink:0;margin-top:.15rem}
+.service-card h3{font-family:var(--font-sans);font-size:.9rem;font-weight:500;margin-bottom:.25rem}
+.service-card p{font-size:.72rem;color:var(--dim);line-height:1.6}
+
+/* ── STUDIO ── */
+.studio-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.studio-text{font-size:.82rem;color:var(--dim);line-height:1.8}
+.studio-image{aspect-ratio:4/3;background:rgba(255,255,255,.02);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:.6rem;color:rgba(255,255,255,.06);letter-spacing:.15em}
+
+/* ── FAQ ── */
+.faq-list{max-width:700px}
+.faq-item{border-top:1px solid var(--border);padding:1.2rem 0;cursor:pointer}
+.faq-q{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;font-weight:500;color:var(--white);gap:1rem}
+.faq-q .icon{font-family:var(--font-mono);font-size:.7rem;color:var(--dim);transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-q .icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s,opacity .3s;opacity:0;font-size:.75rem;color:var(--dim);line-height:1.7}
+.faq-item.open .faq-a{max-height:200px;opacity:1;padding-top:.7rem}
+
+/* ── CONTACT ── */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.contact-info p{font-size:.8rem;color:var(--dim);line-height:1.8;margin-bottom:1.5rem}
+.contact-line{font-family:var(--font-mono);font-size:.65rem;color:var(--muted);margin-bottom:.6rem;letter-spacing:.03em}
+.contact-line a{color:inherit;text-decoration:none}
+.map-frame{width:100%;height:160px;background:rgba(255,255,255,.015);border:1px solid var(--border);overflow:hidden;margin-top:1rem}
+.map-frame iframe{width:100%;height:100%;border:0;filter:grayscale(1) invert(.9)}
+.form-card{background:rgba(255,255,255,.015);border:1px solid var(--border);padding:2rem}
+.form-g{margin-bottom:1rem}
+.form-g label{display:block;font-family:var(--font-mono);font-size:.5rem;letter-spacing:.15em;color:var(--dim);margin-bottom:.3rem;text-transform:uppercase}
+.form-g input,.form-g textarea{width:100%;background:transparent;border:none;border-bottom:1px solid var(--border);padding:.7rem 0;color:var(--white);font-family:var(--font-sans);font-size:.8rem;outline:none;transition:border-color .3s}
+.form-g input:focus,.form-g textarea:focus{border-color:var(--muted)}
+.form-g textarea{resize:vertical;min-height:80px}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);padding:4rem 3rem 2.5rem}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto}
+.footer-logo{font-family:var(--font-sans);font-size:.9rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.3rem}
+.footer-tag{font-family:var(--font-mono);font-size:.5rem;color:var(--dim);letter-spacing:.12em;text-transform:uppercase}
+.footer-nap{font-family:var(--font-mono);font-size:.6rem;color:var(--muted);line-height:1.8}
+.footer-bot{max-width:1200px;margin:2.5rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-family:var(--font-mono);font-size:.45rem;color:var(--faint);letter-spacing:.1em}
+.footer-socials{display:flex;gap:1rem}
+.footer-socials a{color:var(--dim);text-decoration:none;font-family:var(--font-mono);font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;transition:color .3s}
+.footer-socials a:hover{color:var(--white)}
+
+/* video */
+.video-section{padding:0;margin:0;overflow:hidden;position:relative;z-index:1}
+.video-wrap{position:relative;width:100%;height:80vh;overflow:hidden;background:#0a0a0a;}
+.video-wrap iframe,.video-wrap video{width:100%;height:100%;object-fit:cover;opacity:.6;position:absolute;top:0;left:0;pointer-events:none}
+.video-overlay{position:absolute;inset:0;background:linear-gradient(to top,#0a0a0a 0%,transparent 30%,transparent 70%,#0a0a0a 100%);pointer-events:none}
+@media(max-width:900px){.video-wrap{height:50vh}}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.16,1,.3,1)}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.15s}.reveal.d3{transition-delay:.25s}.reveal.d4{transition-delay:.35s}.reveal.d5{transition-delay:.45s}
+
+/* ── MAGNETIC ── */
+.magnetic{transition:transform .3s cubic-bezier(.16,1,.3,1)}
+
+
+
+/* port grid */.port-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:220px;gap:.8rem}.port-item{border:1px solid var(--border);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;cursor:pointer;transition:all .4s;background:rgba(255,255,255,.015)}.port-item:hover{border-color:rgba(255,255,255,.15);transform:scale(1.03)}.port-item.tall{grid-row:span 2}.port-item.wide{grid-column:span 2}.port-item{background-size:cover!important;background-position:center!important}.port-item::before{content:"";position:absolute;inset:0;background:rgba(10,10,10,.3);transition:background .4s}.port-item:hover::before{background:rgba(10,10,10,.1)}.port-label{position:absolute;bottom:0;left:0;right:0;padding:.8rem 1rem;background:linear-gradient(to top,rgba(10,10,10,.8),transparent);font-family:var(--font-mono);font-size:.5rem;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+
+/* award grid */.award-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}.award-card{border:1px solid var(--border);padding:2rem 1.5rem;text-align:center;transition:all .4s;background:rgba(255,255,255,.008)}.award-card:hover{border-color:rgba(255,255,255,.12);transform:translateY(-3px)}.award-icon{font-size:2rem;margin-bottom:1rem}.award-card h3{font-family:var(--font-sans);font-size:.75rem;font-weight:600;letter-spacing:.02em;margin-bottom:.4rem}.award-card p{font-family:var(--font-mono);font-size:.5rem;color:var(--dim);letter-spacing:.08em;line-height:1.6}.award-year{font-family:var(--font-mono);font-size:.5rem;color:var(--red);letter-spacing:.15em;margin-top:.6rem;opacity:.6}
+
+.award-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}.award-img-wrap{position:relative;animation:floatItem var(--float-dur,3.5s) ease-in-out infinite alternate}
+.award-img-wrap:nth-child(2n){animation-delay:-.5s}
+.award-img-wrap:nth-child(3n){animation-delay:-1s}
+.award-title{position:absolute;bottom:0;left:0;right:0;padding:.6rem .8rem;background:linear-gradient(to top,rgba(10,10,10,.85),transparent);font-family:var(--font-mono);font-size:.5rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;text-align:center}
+@keyframes floatItem{0%{transform:translateY(0)}100%{transform:translateY(-8px)}}
+.award-img-wrap{border:1px solid var(--border);overflow:hidden;transition:all .4s}
+.award-img-wrap:hover{border-color:rgba(255,255,255,.15);transform:scale(1.02)}
+.award-img-wrap img{width:100%;height:auto;display:block}`n`n@media(max-width:900px){.port-grid{grid-template-columns:1fr 1fr}.award-grid{grid-template-columns:1fr}.award-gallery{grid-template-columns:1fr 1fr}}@media(max-width:600px){.port-grid{grid-template-columns:1fr}.award-gallery{grid-template-columns:1fr}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hero-inner{grid-template-columns:1fr;gap:3rem}
+  .hero-right{text-align:left}
+  .hero-right .hero-stat-divider{margin:1.5rem auto 1.5rem 0}
+  .studio-grid,.contact-wrap{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  section{padding:5rem 1.5rem}
+  .hero{padding:0 1.5rem}
+  .scroll-ind{left:1.5rem}
+  nav{padding:1rem 1.5rem}
+  .section-hdr{flex-direction:column;align-items:flex-start;gap:1rem}
+  .counter-grid{grid-template-columns:1fr 1fr}
+  .footer-bot{flex-direction:column;gap:1rem}
+}
+@media(max-width:600px){
+  .hero-inner{grid-template-columns:1fr;gap:2rem}
+  .counter-grid{grid-template-columns:1fr}
+  .hero-title{font-size:clamp(1.5rem,8vw,2.2rem)}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<div id="preloader">
+  <div class="preloader-wrap">
+    <div class="preloader-logo"><img src="./logo.png" alt="Newfoundland" /></div>
+    <div class="preloader-tagline">Newfoundland</div>
+    <div class="preloader-bar"></div>
+  </div>
+</div>
+
+
+
+<div class="content" id="root">
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo"><img src="./logo.png" alt="Newfoundland Tattoo Studio" style="height:28px;width:auto;display:block" /></a>
+  <div class="nav-links">
+    <a href="#reviews" class="nav-link" data-el="Κριτικές" data-en="Reviews">Κριτικές</a>
+    <a href="#services" class="nav-link" data-el="Υπηρεσίες" data-en="Services">Υπηρεσίες</a>
+    <a href="#work" class="nav-link" data-el="Η Δουλειά μας" data-en="Our Work">Η Δουλειά μας</a>
+    <a href="#awards" class="nav-link" data-el="Βραβεία" data-en="Awards">Βραβεία</a>
+    <a href="#faq" class="nav-link" data-el="FAQ" data-en="FAQ">FAQ</a>
+  </div>
+  <div class="flex items-center gap-3">
+    <button class="lang-switch" onclick="toggleLang()">EL / EN</button>
+    <a href="#contact" class="nav-link nav-cta" data-el="Κλείσε" data-en="Book">Κλείσε</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <span class="hero-meta">EST. 2012 — LARISSA, GREECE</span>
+      <h1 class="hero-title">
+        Newfoundland<br />
+        <span class="accent">Tattoo Studio</span>
+      </h1>
+      <p class="hero-sub" data-el="Το κορυφαίο tattoo studio στη Λάρισα για custom σχέδια, piercing και καλύψεις. 393+ πελάτες — 5.0 αστέρια. Κάθε γραμμή έχει σημασία." data-en="The premier tattoo studio in Larissa for custom designs, piercing and cover-ups. 393+ clients — 5.0 stars. Every line counts.">Το κορυφαίο tattoo studio στη Λάρισα για custom σχέδια, piercing και καλύψεις. 393+ πελάτες — 5.0 αστέρια. Κάθε γραμμή έχει σημασία.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-white magnetic" data-el="Κλείσε Ραντεβού" data-en="Book Appointment">Κλείσε Ραντεβού</a>
+        <a href="#services" class="btn btn-ghost magnetic" data-el="Υπηρεσίες" data-en="Services">Υπηρεσίες</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-meta">GOOGLE RATED</div>
+      <div class="hero-stat">5.0</div>
+      <div class="hero-stat-label">★★★★★ — 393 REVIEWS</div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-meta">ΠΑΤΡΟΚΛΟΥ 8</div>
+      <div class="hero-stat-label">LARISSA, 412 22</div>
+    </div>
+  </div>
+  <div class="scroll-ind"><span>SCROLL</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="section-inner">
+    <div class="section-hdr">
+      <div>
+        <div class="reveal"><div class="section-label">● Portfolio</div></div>
+        <div class="reveal d1"><h2 class="section-title" data-el="Η δουλειά μας" data-en="Our work">Η δουλειά μας</h2></div>
+      </div>
+      <div class="reveal d2"><div class="section-divider"></div></div>
+    </div>
+    <div class="reveal d1" style="margin-bottom:1.2rem"><p style="font-family:var(--font-mono);font-size:.55rem;letter-spacing:.15em;color:var(--dim);max-width:none" data-el="Επιλεγμένα έργα από τους καλλιτέχνες μας — hover για λεπτομέρειες." data-en="Selected works from our artists — hover for details.">Επιλεγμένα έργα από τους καλλιτέχνες μας — hover για λεπτομέρειες.</p></div>
+    <div class="port-grid">
+      <div class="reveal d1 port-item tall" style="background:url(./Awards/Best Realistic Big.png) center/cover no-repeat"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[01]</span><div class="port-label" data-el="Realism — Πορτρέτο" data-en="Realism — Portrait">Realism — Πορτρέτο</div></div>
+      <div class="reveal d2 port-item" style="background:url(./Awards/Best Black and Gray Big.png) center/cover no-repeat"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[02]</span><div class="port-label" data-el="Blackwork — Γεωμετρικό" data-en="Blackwork — Geometric">Blackwork — Γεωμετρικό</div></div>
+      <div class="reveal d3 port-item" style="background:url(./Awards/Black and Gray Big.png) center/cover no-repeat"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[03]</span><div class="port-label" data-el="Japanese — Dragon Sleeve" data-en="Japanese — Dragon Sleeve">Japanese — Dragon Sleeve</div></div>
+      <div class="reveal d2 port-item" style="background:url(./Awards/Best Realistic Small.png) center/cover no-repeat"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[04]</span><div class="port-label" data-el="Neo-Traditional — Mandala" data-en="Neo-Traditional — Mandala">Neo-Traditional — Mandala</div></div>
+      <div class="reveal d3 port-item wide" style="background:url(./Awards/Best Realistic Black & Gray.png) center/cover no-repeat"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[05]</span><div class="port-label" data-el="Cover Up — Πριν/Μετά" data-en="Cover Up — Before/After">Cover Up — Before/After</div></div>
+      <div class="reveal d4 port-item" style="background:url(./Awards/Best Black and Gray Big (2).png).png)er/cover no-repeat"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[06]</span><div class="port-label" data-el="Custom Lettering" data-en="Custom Lettering">Custom Lettering</div></div>
+      <div class="reveal d4 port-item tall" style="background:url(./Awards/Best Small Realistic.png) center/cover no-repeat"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[07]</span><div class="port-label" data-el="Fine Line — Minimal" data-en="Fine Line — Minimal">Fine Line — Minimal</div></div>
+    </div>
+  </div>
+</section><!-- TRUST -->
+<section id="reviews">
+  <div class="section-inner">
+    <div class="section-hdr">
+      <div>
+        <div class="reveal"><div class="section-label">● Trust</div></div>
+        <div class="reveal d1"><h2 class="section-title" data-el="Γιατί μας εμπιστεύονται" data-en="Why they trust us">Γιατί μας εμπιστεύονται</h2></div>
+      </div>
+      <div class="reveal d2"><div class="section-divider"></div></div>
+    </div>
+    <div class="reveal d1 counter-grid">
+      <div class="counter-card"><div class="counter-num"><span class="counter-anim" data-target="5.0">0</span></div><div class="counter-label">GOOGLE RATING /5</div></div>
+      <div class="counter-card"><div class="counter-num"><span class="counter-anim" data-target="393">0</span></div><div class="counter-label">VERIFIED REVIEWS</div></div>
+      <div class="counter-card"><div class="counter-num"><span class="counter-anim" data-target="100">0</span>%</div><div class="counter-label">STERILIZATION</div></div>
+    </div>
+    <div class="reviews-grid" style="margin-top:3rem">
+      <div class="reveal d2 review-card"><div class="review-stars">★★★★★</div><p>"Ότι και να πεις για αυτό το κατάστημα και για αυτό το team, είναι λίγο. Εξυπηρέτηση, κλίμα, τιμές."</p><div class="review-author">Panagiotis — google review</div></div>
+      <div class="reveal d3 review-card"><div class="review-stars">★★★★★</div><p>"Αποφάσισα να κάνω το πρώτο μου tattoo. Ο Σάκης ήταν εξαιρετικός — το αποτέλεσμα ξεπέρασε κάθε προσδοκία."</p><div class="review-author">Ioulia Xenaki — google review</div></div>
+      <div class="reveal d3 review-card"><div class="review-stars">★★★★★</div><p>"Professional environment, incredible artists. The hygiene standards are unmatched. Worth every penny."</p><div class="review-author">Dimitris K. — google review</div></div>
+      <div class="reveal d4 review-card"><div class="review-stars">★★★★★</div><p>"Μετά από 3 cover-ups αλλού, ήρθα εδώ και επιτέλους είμαι ευχαριστημένος. Η Aria είναι μάγισσα."</p><div class="review-author">Christos M. — google review</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="background:rgba(255,255,255,.01)">
+  <div class="section-inner">
+    <div class="section-hdr">
+      <div>
+        <div class="reveal"><div class="section-label">● Services</div></div>
+        <div class="reveal d1"><h2 class="section-title" data-el="Τατουάζ &amp; Piercing" data-en="Tattoo &amp; Piercing">Τατουάζ & Piercing</h2></div>
+      </div>
+      <div class="reveal d2"><div class="section-divider"></div></div>
+    </div>
+    <div class="services-grid">
+      <div class="reveal d1 service-card"><div class="service-num">01</div><div><h3 data-el="Εξατομικευμένο Τατουάζ" data-en="Custom Tattoos">Εξατομικευμένο Τατουάζ</h3><p data-el="Μοναδικά custom σχέδια που αφηγούνται την ιστορία σου. Από την πρώτη ιδέα μέχρι την τελική γραμμή." data-en="Unique custom designs that tell your story. From first concept to final line.">Μοναδικά custom σχέδια. Από την πρώτη ιδέα μέχρι την τελική γραμμή.</p></div></div>
+      <div class="reveal d2 service-card"><div class="service-num">02</div><div><h3 data-el="Κάλυψη &amp; Ανανέωση" data-en="Cover-ups &amp; Refresh">Κάλυψη & Ανανέωση</h3><p data-el="Εξειδικευμένες καλύψεις παλαιών τατουάζ με σύγχρονες τεχνικές layering." data-en="Specialized cover-ups of old tattoos with modern layering techniques.">Εξειδικευμένες καλύψεις παλαιών τατουάζ με σύγχρονες τεχνικές.</p></div></div>
+      <div class="reveal d2 service-card"><div class="service-num">03</div><div><h3 data-el="Μανίκι &amp; Μεγάλης Έκτασης" data-en="Sleeves &amp; Large Scale">Μανίκι & Μεγάλης Έκτασης</h3><p data-el="Full sleeve, half sleeve και body projects. Από Japanese έως realism." data-en="Full sleeves, half sleeves and body projects. From Japanese to realism.">Full & half sleeves, body projects — από Japanese έως realism.</p></div></div>
+      <div class="reveal d3 service-card"><div class="service-num">04</div><div><h3 data-el="Piercing &amp; Κοσμήματα" data-en="Piercing &amp; Jewelry">Piercing & Κοσμήματα</h3><p data-el="Πιστοποιημένα εμφυτεύσιμα κοσμήματα. Αυτί, πρόσωπο, αφαλός και σώμα." data-en="Certified implant-grade jewelry. Ear, facial, navel and body.">Πιστοποιημένα εμφυτεύσιμα κοσμήματα — αυτί, πρόσωπο, αφαλός.</p></div></div>
+      <div class="reveal d3 service-card"><div class="service-num">05</div><div><h3 data-el="Lettering &amp; Calligraphy" data-en="Lettering &amp; Calligraphy">Lettering & Calligraphy</h3><p data-el="Εξατομικευμένα lettering, script και gothic γραμματοσειρές." data-en="Custom lettering, script and gothic typefaces.">Εξατομικευμένα lettering, script, gothic.</p></div></div>
+      <div class="reveal d4 service-card"><div class="service-num">06</div><div><h3 data-el="Realism &amp; Πορτρέτα" data-en="Realism &amp; Portraits">Realism & Πορτρέτα</h3><p data-el="Υπερρεαλιστικά πορτρέτα και photorealistic θέματα. Black & grey ή full color." data-en="Hyper-realistic portraits and photorealistic subjects. Black & grey or full color.">Υπερρεαλιστικά πορτρέτα — black & grey ή full color.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards" style="background:rgba(255,255,255,.004)">
+  <div class="section-inner">
+    <div class="section-hdr">
+      <div>
+        <div class="reveal"><div class="section-label">● Awards</div></div>
+        <div class="reveal d1"><h2 class="section-title" data-el="Βραβεία &amp; Διακρίσεις" data-en="Awards &amp; Recognition">Βραβεία &amp; Διακρίσεις</h2></div>
+      </div>
+      <div class="reveal d2"><div class="section-divider"></div></div>
+    </div>
+    <    <div class="award-gallery">      <div class="reveal award-img-wrap" style="animation-delay:-0.15s;animation-duration:3s;--float-dur:3s">
+        <img src="./Awards/Best Realistic Big.png" alt="Best Realistic Big" loading="lazy" />
+        <div class="award-title">Best Realistic Big</div>
+      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.3s;animation-duration:3.5s;--float-dur:3.5s">
+        <img src="./Awards/Best Black and Gray Big.png" alt="Best Black and Gray Big" loading="lazy" />
+        <div class="award-title">Best Black and Gray Big</div>
+      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.45s;animation-duration:4s;--float-dur:4s">
+        <img src="./Awards/Best Black and Gray Tattoo Contest Big.png" alt="Best Black and Gray Tattoo Contest Big" loading="lazy" />
+        <div class="award-title">Best Black and Gray Tattoo Contest Big</div>
+      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.15s;animation-duration:4.5s;--float-dur:4.5s">
+        <img src="./Awards/Best Realistic Black & Gray.png" alt="Best Realistic Black & Gray" loading="lazy" />
+        <div class="award-title">Best Realistic Black & Gray</div>
+      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.3s;animation-duration:5s;--float-dur:5s">
+        <img src="./Awards/Best Small Realistic.png" alt="Best Small Realistic" loading="lazy" />
+        <div class="award-title">Best Small Realistic</div>
+      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.45s;animation-duration:3s;--float-dur:3s">
+        <img src="./Awards/Best Realistic Small.png" alt="Best Realistic Small" loading="lazy" />
+        <div class="award-title">Best Realistic Small</div>
+      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.15s;animation-duration:3.5s;--float-dur:3.5s">
+        <img src="./Awards/Realistic Big.png" alt="Realistic Big" loading="lazy" />
+        <div class="award-title">Realistic Big</div>
+      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.3s;animation-duration:4s;--float-dur:4s">
+        <img src="./Awards/Black and Gray Big.png" alt="Black and Gray Big" loading="lazy" />
+        <div class="award-title">Black and Gray Big</div>
+      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.45s;animation-duration:4.5s;--float-dur:4.5s">
+        <img src="./Awards/Realistic Small.png" alt="Realistic Small" loading="lazy" />
+        <div class="award-title">Realistic Small</div>
+      </div>    </div></section><!-- STUDIO -->
+<section id="studio">
+  <div class="section-inner">
+    <div class="section-hdr">
+      <div>
+        <div class="reveal"><div class="section-label">● Studio</div></div>
+        <div class="reveal d1"><h2 class="section-title" data-el="Η εμπειρία" data-en="The experience">Η εμπειρία</h2></div>
+      </div>
+      <div class="reveal d2"><div class="section-divider"></div></div>
+    </div>
+    <div class="studio-grid">
+      <div>
+        <div class="reveal d1 studio-text" data-el="Στο Newfoundland, κάθε λεπτομέρεια είναι σχεδιασμένη για την απόλυτη εμπειρία. Ιατρική αποστείρωση, άνεση πελάτη, και καλλιτέχνες με χρόνια εμπειρίας σε realism, blackwork, Japanese και custom σχέδια. Τέχνη και ασφάλεια σε κάθε βήμα." data-en="At Newfoundland, every detail is designed for the ultimate experience. Medical-grade sterilization, client comfort, and artists with years of experience in realism, blackwork, Japanese and custom designs. Art and safety at every step.">Στο Newfoundland, κάθε λεπτομέρεια είναι σχεδιασμένη για την απόλυτη εμπειρία. Ιατρική αποστείρωση, άνεση πελάτη, και καλλιτέχνες με χρόνια εμπειρίας. Τέχνη και ασφάλεια σε κάθε βήμα.</div>
+      </div>
+      <div class="reveal d2"><div class="studio-image">[ STUDIO ]</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:rgba(255,255,255,.008)">
+  <div class="section-inner">
+    <div class="section-hdr">
+      <div>
+        <div class="reveal"><div class="section-label">● FAQ</div></div>
+        <div class="reveal d1"><h2 class="section-title" data-el="Ερωτήσεις" data-en="Questions">Ερωτήσεις</h2></div>
+      </div>
+      <div class="reveal d2"><div class="section-divider"></div></div>
+    </div>
+    <div class="faq-list">
+      <div class="reveal d1 faq-item"><div class="faq-q" data-el="Πώς κλείνω ραντεβού;" data-en="How do I book?">Πώς κλείνω ραντεβού; <span class="icon">+</span></div><div class="faq-a" data-el="Συμπλήρωσε τη φόρμα επικοινωνίας ή κάλεσέ μας στο 241 110 3838. Δωρεάν συνάντηση για το σχέδιο και την τοποθέτηση." data-en="Fill out the contact form or call us at 241 110 3838. Free consultation for design and placement.">Συμπλήρωσε τη φόρμα ή κάλεσε 241 110 3838. Δωρεάν συνάντηση.</div></div>
+      <div class="reveal d2 faq-item"><div class="faq-q" data-el="Πώς προετοιμάζομαι;" data-en="How do I prepare?">Πώς προετοιμάζομαι; <span class="icon">+</span></div><div class="faq-a" data-el="Ενυδατώσου, φάε ελαφριά, φόρεσε άνετα ρούχα και απόφυγε αλκοόλ 24 ώρες πριν." data-en="Stay hydrated, eat lightly, wear comfortable clothes, avoid alcohol for 24 hours.">Ενυδατώσου, φάε ελαφριά, απόφυγε αλκοόλ 24h πριν.</div></div>
+      <div class="reveal d3 faq-item"><div class="faq-q" data-el="Πόσο διαρκεί η επούλωση;" data-en="How long does healing take?">Πόσο διαρκεί η επούλωση; <span class="icon">+</span></div><div class="faq-a" data-el="Επιφανειακά 2-3 εβδομάδες, πλήρως έως 2 μήνες. Θα λάβεις αναλυτικές οδηγίες." data-en="Surface healing 2-3 weeks, fully up to 2 months. You'll receive detailed instructions.">Επιφανειακά 2-3 εβδομάδες, πλήρως έως 2 μήνες.</div></div>
+      <div class="reveal d4 faq-item"><div class="faq-q" data-el="Τι πρωτόκολλα υγιεινής;" data-en="What hygiene protocols?">Τι πρωτόκολλα υγιεινής; <span class="icon">+</span></div><div class="faq-a" data-el="Ιατρική αποστείρωση, βελόνες μίας χρήσης, autoclave. Νοσοκομειακό επίπεδο καθαριότητας." data-en="Medical sterilization, single-use needles, autoclave. Hospital-grade cleanliness.">Ιατρική αποστείρωση, βελόνες μίας χρήσης, autoclave.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-hdr">
+      <div>
+        <div class="reveal"><div class="section-label">● Contact</div></div>
+        <div class="reveal d1"><h2 class="section-title" data-el="Κλείσε ραντεβού" data-en="Book an appointment">Κλείσε ραντεβού</h2></div>
+      </div>
+      <div class="reveal d2"><div class="section-divider"></div></div>
+    </div>
+    <div class="contact-wrap">
+      <div>
+        <div class="reveal d1"><p data-el="Για custom τατουάζ, piercing ή cover up — συμπλήρωσε τη φόρμα και θα σε καλέσουμε." data-en="For custom tattoos, piercing or cover-ups — fill out the form and we'll call you.">Για custom τατουάζ, piercing ή cover up — συμπλήρωσε τη φόρμα και θα σε καλέσουμε.</p></div>
+        <div class="reveal d2 contact-line">Πατρόκλου 8, Λάρισα, 412 22</div>
+        <div class="reveal d3 contact-line"><a href="tel:+302411103838">241 110 3838</a></div>
+        <div class="reveal d4 contact-line">newfoundlandtattoo@gmail.com</div>
+        <div class="reveal d4 contact-line" data-el="Δευτ–Σάβ: 10:00–20:00" data-en="Mon–Sat: 10:00–20:00">Δευτ–Σάβ: 10:00–20:00</div>
+        <div class="reveal d5 map-frame"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.314223544472!2d22.421616476896703!3d39.63886167156263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a8c37b4a5a3c9f%3A0x123456789abcdef!2sPatroklou%208%2C%20Larissa%20412%2022%2C%20Greece!5e0!3m2!1sen!2s!4v1" title="Newfoundland Tattoo Studio Location" loading="lazy"></iframe></div>
+      </div>
+      <div class="reveal d2">
+<form class="form-card" action="https://formsubmit.co/newfoundlandtattoo@gmail.com" method="POST"><input type="hidden" name="_subject" value="Νέο μήνυμα από το Site" /><input type="hidden" name="_template" value="table" /><input type="hidden" name="_captcha" value="false" />
+          <div class="form-g"><label data-el="Ονοματεπώνυμο" data-en="Full Name">Ονοματεπώνυμο</label><input type="text" name="name" required placeholder="π.χ. Γιώργος Παπαδόπουλος" /></div>
+          <div class="form-g"><label>Email</label><input type="email" name="email" required placeholder="your@email.com" /></div>
+          <div class="form-g"><label data-el="Υπηρεσία" data-en="Service">Υπηρεσία</label><input type="text" name="service" placeholder="π.χ. Custom τατουάζ, piercing, cover up" /></div>
+          <div class="form-g"><label data-el="Μήνυμα" data-en="Message">Μήνυμα</label><textarea name="message" required placeholder="Περίγραψε την ιδέα σου..."></textarea></div>
+          <button class="btn" style="width:100%;justify-content:center;margin-top:.5rem;padding:.8rem;background:var(--red);color:var(--white);border:none" data-el="Αποστολή" data-en="Send">Αποστολή →</button>
+</form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SHOWCASE -->
+<section class="video-section">
+  <div class="video-wrap">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="./video.mp4" type="video/mp4" />
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div><img src="./logo.png" alt="Newfoundland" style="height:24px;width:auto;display:block;margin-bottom:.3rem" /><div class="footer-tag">Tattoo Studio</div></div>
+    <div class="footer-nap">Πατρόκλου 8<br />Λάρισα, 412 22<br /><a href="tel:+302411103838" style="color:inherit;text-decoration:none">241 110 3838</a></div>
+    <div class="footer-nap">newfoundlandtattoo@gmail.com<br />Δευτ–Σάβ 10:00–20:00<br />Est. 2012</div>
+  </div>
+  <div class="footer-bot">
+    <div class="footer-copy">© 2026 Newfoundland Tattoo Studio Larissa</div>
+<div class="footer-socials"><a href="https://www.instagram.com/newfoundland_tattoo" target="_blank">Instagram</a><a href="mailto:newfoundlandtattoo@gmail.com">Email</a><a href="https://maps.google.com/?q=Πατρόκλου+8+Λάρισα+412+22" target="_blank">Google Maps</a></div>
+  </div>
+</footer>
+
+</div><!-- /content -->
+
+<!-- CURSOR -->
+<script>
+(function(){
+const d=document.getElementById('cursor-dot'),r=document.getElementById('cursor-ring');
+if(!d||!r)return;
+let mx=0,my=0,tx=0,ty=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;d.style.left=mx+'px';d.style.top=my+'px'});
+(function loop(){tx+=(mx-tx)*.08;ty+=(my-ty)*.08;r.style.left=tx+'px';r.style.top=ty+'px';requestAnimationFrame(loop)})();
+document.querySelectorAll('a,button,.btn,.magnetic,.service-card,.faq-item,.review-card').forEach(el=>{el.addEventListener('mouseenter',()=>d.classList.add('grow'));el.addEventListener('mouseleave',()=>d.classList.remove('grow'))});
+if('ontouchstart'in window){d.style.display='none';r.style.display='none';document.body.style.cursor='auto'}
+})();
+</script>
+
+<!-- MAGNETIC -->
+<script>
+document.querySelectorAll('.magnetic').forEach(el=>{
+  el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2,d=Math.sqrt(x*x+y*y),m=Math.max(r.width,r.height)*.5,s=Math.min(d/m,1);el.style.transform=`translate(${x/m*s*6}px,${y/m*s*6}px)`});
+  el.addEventListener('mouseleave',()=>el.style.transform='translate(0,0)');
+});
+</script>
+
+<!-- SCROLL REVEAL -->
+<script>(function(){const ob=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>ob.observe(e))})();</script>
+
+<!-- FAQ -->
+<script>document.querySelectorAll('.faq-item').forEach(e=>{e.addEventListener('click',()=>e.classList.toggle('open'))});</script>
+
+<!-- PRELOADER -->
+<script>window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('preloader').classList.add('hide')},2500)});</script>
+
+<!-- COUNTER -->
+<script>
+(function(){const ob=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.counted){e.target.dataset.counted='1';const t=parseFloat(e.target.dataset.target),fl=t!==Math.floor(t),st=performance.now(),anim=now=>{const p=Math.min((now-st)/1800,1),ease=1-Math.pow(1-p,3);e.target.textContent=fl?ease*t.toFixed(1):Math.floor(ease*t);if(p<1)requestAnimationFrame(anim)};requestAnimationFrame(anim)}}),{threshold:.5});document.querySelectorAll('.counter-anim').forEach(e=>ob.observe(e))})();
+</script>
+
+<!-- LANGUAGE -->
+<script>
+let lang='el';function toggleLang(){lang=lang==='el'?'en':'el';document.querySelectorAll('[data-el],[data-en]').forEach(e=>{const t=e.getAttribute(`data-${lang}`);if(t&&e.tagName!=='INPUT'&&e.tagName!=='TEXTAREA')e.innerHTML=t;if(t&&(e.tagName==='INPUT'||e.tagName==='TEXTAREA'))e.placeholder=t});document.querySelector('.lang-switch').textContent=lang==='el'?'EL / EN':'EN / EL'}
+
+// Form to email
+
+
+
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- CURSOR -->
+<script>
+(function(){
+const d=document.getElementById('cursor-dot'),r=document.getElementById('cursor-ring');
+if(!d||!r)return;
+let mx=0,my=0,tx=0,ty=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;d.style.left=mx+'px';d.style.top=my+'px'});
+(function loop(){tx+=(mx-tx)*.08;ty+=(my-ty)*.08;r.style.left=tx+'px';r.style.top=ty+'px';requestAnimationFrame(loop)})();
+document.querySelectorAll('a,button,.btn,.magnetic,.service-card,.faq-item,.review-card').forEach(el=>{el.addEventListener('mouseenter',()=>d.classList.add('grow'));el.addEventListener('mouseleave',()=>d.classList.remove('grow'))});
+if('ontouchstart'in window){d.style.display='none';r.style.display='none';document.body.style.cursor='auto'}
+})();
+</script>
+
+<!-- MAGNETIC -->
+<script>
+document.querySelectorAll('.magnetic').forEach(el=>{
+  el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2,d=Math.sqrt(x*x+y*y),m=Math.max(r.width,r.height)*.5,s=Math.min(d/m,1);el.style.transform=`translate(${x/m*s*6}px,${y/m*s*6}px)`});
+  el.addEventListener('mouseleave',()=>el.style.transform='translate(0,0)');
+});
+</script>
+
+<!-- SCROLL REVEAL -->
+<script>(function(){const ob=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>ob.observe(e))})();</script>
+
+<!-- FAQ -->
+<script>document.querySelectorAll('.faq-item').forEach(e=>{e.addEventListener('click',()=>e.classList.toggle('open'))});</script>
+
+<!-- PRELOADER -->
+<script>window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('preloader').classList.add('hide')},2500)});</script>
+
+<!-- COUNTER -->
+<script>
+(function(){const ob=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.counted){e.target.dataset.counted='1';const t=parseFloat(e.target.dataset.target),fl=t!==Math.floor(t),st=performance.now(),anim=now=>{const p=Math.min((now-st)/1800,1),ease=1-Math.pow(1-p,3);e.target.textContent=fl?ease*t.toFixed(1):Math.floor(ease*t);if(p<1)requestAnimationFrame(anim)};requestAnimationFrame(anim)}}),{threshold:.5});document.querySelectorAll('.counter-anim').forEach(e=>ob.observe(e))})();
+</script>
+
+<!-- LANGUAGE -->
+<script>
+let lang='el';function toggleLang(){lang=lang==='el'?'en':'el';document.querySelectorAll('[data-el],[data-en]').forEach(e=>{const t=e.getAttribute(`data-${lang}`);if(t&&e.tagName!=='INPUT'&&e.tagName!=='TEXTAREA')e.innerHTML=t;if(t&&(e.tagName==='INPUT'||e.tagName==='TEXTAREA'))e.placeholder=t});document.querySelector('.lang-switch').textContent=lang==='el'?'EL / EN':'EN / EL'}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- PARTICLES (UNIVERSE) -->
+<style>
+#universe-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;width:100%;height:100%;display:block}
+</style>
+<script>
+(function(){
+var cv=document.createElement("canvas");
+cv.id="universe-canvas";
+var W=innerWidth,H=innerHeight;cv.width=W;cv.height=H;
+var cx=cv.getContext("2d");
+document.body.prepend(cv);
+
+// Stars (tiny)
+var stars=[];
+for(var i=0;i<600;i++){
+  stars.push({
+    x:Math.random()*W,y:Math.random()*H,
+    r:0.3+Math.random()*1.2,
+    o:0.2+Math.random()*0.8,
+    sp:0.2+Math.random()*0.8,
+    ph:Math.random()*6,
+    col:Math.random()<0.3?"255,200,200":"255,255,255"
+  });
+}
+
+// Planets (medium, colored)
+var planets=[];
+var pcols=["200,60,60","180,50,50","220,100,100","255,150,150","255,200,150","200,200,255","150,150,180","250,180,180"];
+for(var i=0;i<80;i++){
+  planets.push({
+    x:Math.random()*W,y:Math.random()*H,
+    r:2+Math.random()*5,
+    o:0.4+Math.random()*0.5,
+    vx:(Math.random()-.5)*0.2,vy:(Math.random()-.5)*0.2,
+    col:pcols[i%pcols.length],
+    ph:Math.random()*6,sp:0.3+Math.random()*0.5,
+    ox:0,oy:0
+  });
+  planets[i].ox=planets[i].x;
+  planets[i].oy=planets[i].y;
+}
+
+// Nebula clouds (big soft blobs)
+var nebula=[];
+var ncols=["200,60,60,0.04","180,40,40,0.03","150,80,80,0.03","200,150,100,0.02"];
+for(var i=0;i<12;i++){
+  nebula.push({
+    x:Math.random()*W,y:Math.random()*H,
+    r:80+Math.random()*150,
+    col:ncols[i%4],
+    ph:Math.random()*6
+  });
+}
+
+// Mouse
+var mx=W/2,my=H/2,mvx=0,mvy=0;
+addEventListener("mousemove",function(e){mx=e.clientX;my=e.clientY});addEventListener("touchmove",function(e){var t=e.touches[0];if(t){mx=t.clientX;my=t.clientY}},{passive:true});addEventListener("touchstart",function(e){var t=e.touches[0];if(t){mx=t.clientX;my=t.clientY}},{passive:true})
+
+function frame(){
+  requestAnimationFrame(frame);
+  cx.clearRect(0,0,W,H);
+  var t=Date.now()*0.0003;
+  mvx+=(mx/W-0.5-mvx)*0.02;
+  mvy+=(my/H-0.5-mvy)*0.02;
+
+  // Nebula (deep background glow)
+  for(var i=0;i<nebula.length;i++){
+    var n=nebula[i];
+    var grad=cx.createRadialGradient(n.x+Math.sin(t*0.3+n.ph)*20,n.y+Math.cos(t*0.2+n.ph)*15,0,n.x,n.y,n.r);
+    grad.addColorStop(0,"rgba("+n.col+")");
+    grad.addColorStop(1,"rgba("+n.col.split(",")[0]+","+n.col.split(",")[1]+","+n.col.split(",")[2]+",0)");
+    cx.fillStyle=grad;
+    cx.fillRect(0,0,W,H);
+  }
+
+  // Stars (twinkling, micro-drift)
+  var mfx=(mvx)*40;
+  var mfy=(mvy)*30;
+  for(var i=0;i<stars.length;i++){
+    var s=stars[i];
+    var twinkle=0.5+0.5*Math.sin(t*s.sp*3+s.ph);
+    var dx=s.x+Math.sin(t*0.5+s.ph)*5+mfx;
+    var dy=s.y+Math.cos(t*0.4+s.ph)*5+mfy;
+    cx.beginPath();
+    cx.arc(dx,dy,s.r,0,6.28);
+    cx.fillStyle="rgba("+s.col+","+(s.o*twinkle)+")";
+    cx.fill();
+  }
+
+  // Planets (orbiting, mouse-reactive)
+  for(var i=0;i<planets.length;i++){
+    var p=planets[i];
+    var orbitX=Math.sin(t*p.sp*2+p.ph)*4;
+    var orbitY=Math.cos(t*p.sp*1.7+p.ph)*4;
+    p.x+=p.vx+orbitX*0.05;
+    p.y+=p.vy+orbitY*0.05;
+    p.x+=mvx*2;p.y+=mvy*2;
+    var dx=p.x+mfx*0.3;
+    var dy=p.y+mfy*0.3;
+    cx.beginPath();
+    cx.arc(dx,dy,p.r,0,6.28);
+    cx.fillStyle="rgba("+p.col+","+p.o+")";
+    cx.fill();
+    // Soft glow around bigger ones
+    if(p.r>4){
+      var gg=cx.createRadialGradient(dx,dy,0,dx,dy,p.r*3);
+      gg.addColorStop(0,"rgba("+p.col+",0.08)");
+      gg.addColorStop(1,"rgba("+p.col+",0)");
+      cx.fillStyle=gg;
+      cx.fillRect(dx-p.r*3,dy-p.r*3,p.r*6,p.r*6);
+    }
+    if(p.x<0||p.x>W)p.vx*=-1;
+    if(p.y<0||p.y>H)p.vy*=-1;
+  }
+}
+frame();
+addEventListener("resize",function(){W=innerWidth;H=innerHeight;cv.width=W;cv.height=H});
+})();
+</script>
+<!-- CURSOR -->
+<script>
+(function(){
+const d=document.getElementById('cursor-dot'),r=document.getElementById('cursor-ring');
+if(!d||!r)return;
+let mx=0,my=0,tx=0,ty=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;d.style.left=mx+'px';d.style.top=my+'px'});
+(function loop(){tx+=(mx-tx)*.08;ty+=(my-ty)*.08;r.style.left=tx+'px';r.style.top=ty+'px';requestAnimationFrame(loop)})();
+document.querySelectorAll('a,button,.btn,.magnetic,.service-card,.faq-item,.review-card').forEach(el=>{el.addEventListener('mouseenter',()=>d.classList.add('grow'));el.addEventListener('mouseleave',()=>d.classList.remove('grow'))});
+if('ontouchstart'in window){d.style.display='none';r.style.display='none';document.body.style.cursor='auto'}
+})();
+</script>
+
+<!-- MAGNETIC -->
+<script>
+document.querySelectorAll('.magnetic').forEach(el=>{
+  el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2,d=Math.sqrt(x*x+y*y),m=Math.max(r.width,r.height)*.5,s=Math.min(d/m,1);el.style.transform=`translate(${x/m*s*6}px,${y/m*s*6}px)`});
+  el.addEventListener('mouseleave',()=>el.style.transform='translate(0,0)');
+});
+</script>
+
+<!-- SCROLL REVEAL -->
+<script>(function(){const ob=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>ob.observe(e))})();</script>
+
+<!-- FAQ -->
+<script>document.querySelectorAll('.faq-item').forEach(e=>{e.addEventListener('click',()=>e.classList.toggle('open'))});</script>
+
+<!-- PRELOADER -->
+<script>window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('preloader').classList.add('hide')},2500)});</script>
+
+<!-- COUNTER -->
+<script>
+(function(){const ob=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.counted){e.target.dataset.counted='1';const t=parseFloat(e.target.dataset.target),fl=t!==Math.floor(t),st=performance.now(),anim=now=>{const p=Math.min((now-st)/1800,1),ease=1-Math.pow(1-p,3);e.target.textContent=fl?ease*t.toFixed(1):Math.floor(ease*t);if(p<1)requestAnimationFrame(anim)};requestAnimationFrame(anim)}}),{threshold:.5});document.querySelectorAll('.counter-anim').forEach(e=>ob.observe(e))})();
+</script>
+
+<!-- LANGUAGE -->
+<script>
+let lang='el';function toggleLang(){lang=lang==='el'?'en':'el';document.querySelectorAll('[data-el],[data-en]').forEach(e=>{const t=e.getAttribute(`data-${lang}`);if(t&&e.tagName!=='INPUT'&&e.tagName!=='TEXTAREA')e.innerHTML=t;if(t&&(e.tagName==='INPUT'||e.tagName==='TEXTAREA'))e.placeholder=t});document.querySelector('.lang-switch').textContent=lang==='el'?'EL / EN':'EN / EL'}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
