@@ -258,8 +258,8 @@ footer{border-top:1px solid var(--border);padding:4rem 3rem 2.5rem}
 .award-img-wrap:nth-child(2n){animation-delay:-.5s}
 .award-img-wrap:nth-child(3n){animation-delay:-1s}
 .award-title{position:absolute;bottom:0;left:0;right:0;padding:.6rem .8rem;background:linear-gradient(to top,rgba(10,10,10,.85),transparent);font-family:var(--font-mono);font-size:.5rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;text-align:center}
-@keyframes floatItem{0%{transform:translateY(0)}100%{transform:translateY(-8px)}}
-.award-img-wrap{border:1px solid var(--border);overflow:hidden;transition:all .4s}
+@keyframes floatItem{0%{transform:translateY(0) scale(1)}50%{transform:translateY(-10px) scale(1.02)}100%{transform:translateY(-15px) scale(1.03)}}
+.award-img-wrap{border:1px solid var(--border);overflow:hidden;transition:all .6s cubic-bezier(.16,1,.3,1)}
 .award-img-wrap:hover{border-color:rgba(255,255,255,.15);transform:scale(1.02)}
 .award-img-wrap img{width:100%;height:auto;display:block}`n`n@media(max-width:900px){.port-grid{grid-template-columns:1fr 1fr}.award-grid{grid-template-columns:1fr}.award-gallery{grid-template-columns:1fr 1fr}}@media(max-width:600px){.port-grid{grid-template-columns:1fr}.award-gallery{grid-template-columns:1fr}}
 
@@ -361,6 +361,45 @@ footer{border-top:1px solid var(--border);padding:4rem 3rem 2.5rem}
   </div>
 </section>
 
+
+<!-- AWARDS -->
+<section id="awards" style="background:rgba(255,255,255,.004)">
+  <div class="section-inner">
+    <div class="section-hdr">
+      <div>
+        <div class="reveal"><div class="section-label">● Awards</div></div>
+        <div class="reveal d1"><h2 class="section-title" data-el="Βραβεία &amp; Διακρίσεις" data-en="Awards &amp; Recognition">Βραβεία &amp; Διακρίσεις</h2></div>
+      </div>
+      <div class="reveal d2"><div class="section-divider"></div></div>
+    </div>
+    <    <div class="award-gallery">      <div class="reveal award-img-wrap" style="animation-delay:-0.15s;animation-duration:3s;--float-dur:3s">
+        <img src="./Awards/Best Realistic Big.png" alt="Best Realistic Big" loading="lazy" />
+        <div class="award-title">Best Realistic Big</div>
+      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.3s;animation-duration:3.5s;--float-dur:3.5s">
+        <img src="./Awards/Best Black and Gray Big.png" alt="Best Black and Gray Big" loading="lazy" />
+        <div class="award-title">Best Black and Gray Big</div>
+      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.45s;animation-duration:4s;--float-dur:4s">
+        <img src="./Awards/Best Black and Gray Tattoo Contest Big.png" alt="Best Black and Gray Tattoo Contest Big" loading="lazy" />
+        <div class="award-title">Best Black and Gray Tattoo Contest Big</div>
+      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.15s;animation-duration:4.5s;--float-dur:4.5s">
+        <img src="./Awards/Best Realistic Black & Gray.png" alt="Best Realistic Black & Gray" loading="lazy" />
+        <div class="award-title">Best Realistic Black & Gray</div>
+      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.3s;animation-duration:5s;--float-dur:5s">
+        <img src="./Awards/Best Small Realistic.png" alt="Best Small Realistic" loading="lazy" />
+        <div class="award-title">Best Small Realistic</div>
+      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.45s;animation-duration:3s;--float-dur:3s">
+        <img src="./Awards/Best Realistic Small.png" alt="Best Realistic Small" loading="lazy" />
+        <div class="award-title">Best Realistic Small</div>
+      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.15s;animation-duration:3.5s;--float-dur:3.5s">
+        <img src="./Awards/Realistic Big.png" alt="Realistic Big" loading="lazy" />
+        <div class="award-title">Realistic Big</div>
+      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.3s;animation-duration:4s;--float-dur:4s">
+        <img src="./Awards/Black and Gray Big.png" alt="Black and Gray Big" loading="lazy" />
+        <div class="award-title">Black and Gray Big</div>
+      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.45s;animation-duration:4.5s;--float-dur:4.5s">
+        <img src="./Awards/Realistic Small.png" alt="Realistic Small" loading="lazy" />
+        <div class="award-title">Realistic Small</div>
+      </div>    </div></section><!-- STUDIO -
 <!-- WORK -->
 <section id="work">
   <div class="section-inner">
@@ -427,44 +466,7 @@ footer{border-top:1px solid var(--border);padding:4rem 3rem 2.5rem}
   </div>
 </section>
 
-<!-- AWARDS -->
-<section id="awards" style="background:rgba(255,255,255,.004)">
-  <div class="section-inner">
-    <div class="section-hdr">
-      <div>
-        <div class="reveal"><div class="section-label">● Awards</div></div>
-        <div class="reveal d1"><h2 class="section-title" data-el="Βραβεία &amp; Διακρίσεις" data-en="Awards &amp; Recognition">Βραβεία &amp; Διακρίσεις</h2></div>
-      </div>
-      <div class="reveal d2"><div class="section-divider"></div></div>
-    </div>
-    <    <div class="award-gallery">      <div class="reveal award-img-wrap" style="animation-delay:-0.15s;animation-duration:3s;--float-dur:3s">
-        <img src="./Awards/Best Realistic Big.png" alt="Best Realistic Big" loading="lazy" />
-        <div class="award-title">Best Realistic Big</div>
-      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.3s;animation-duration:3.5s;--float-dur:3.5s">
-        <img src="./Awards/Best Black and Gray Big.png" alt="Best Black and Gray Big" loading="lazy" />
-        <div class="award-title">Best Black and Gray Big</div>
-      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.45s;animation-duration:4s;--float-dur:4s">
-        <img src="./Awards/Best Black and Gray Tattoo Contest Big.png" alt="Best Black and Gray Tattoo Contest Big" loading="lazy" />
-        <div class="award-title">Best Black and Gray Tattoo Contest Big</div>
-      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.15s;animation-duration:4.5s;--float-dur:4.5s">
-        <img src="./Awards/Best Realistic Black & Gray.png" alt="Best Realistic Black & Gray" loading="lazy" />
-        <div class="award-title">Best Realistic Black & Gray</div>
-      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.3s;animation-duration:5s;--float-dur:5s">
-        <img src="./Awards/Best Small Realistic.png" alt="Best Small Realistic" loading="lazy" />
-        <div class="award-title">Best Small Realistic</div>
-      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.45s;animation-duration:3s;--float-dur:3s">
-        <img src="./Awards/Best Realistic Small.png" alt="Best Realistic Small" loading="lazy" />
-        <div class="award-title">Best Realistic Small</div>
-      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.15s;animation-duration:3.5s;--float-dur:3.5s">
-        <img src="./Awards/Realistic Big.png" alt="Realistic Big" loading="lazy" />
-        <div class="award-title">Realistic Big</div>
-      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.3s;animation-duration:4s;--float-dur:4s">
-        <img src="./Awards/Black and Gray Big.png" alt="Black and Gray Big" loading="lazy" />
-        <div class="award-title">Black and Gray Big</div>
-      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.45s;animation-duration:4.5s;--float-dur:4.5s">
-        <img src="./Awards/Realistic Small.png" alt="Realistic Small" loading="lazy" />
-        <div class="award-title">Realistic Small</div>
-      </div>    </div></section><!-- STUDIO -->
+->
 <section id="studio">
   <div class="section-inner">
     <div class="section-hdr">
