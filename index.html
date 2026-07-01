@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="el">
 <head>
 <meta charset="UTF-8" />
@@ -348,6 +348,16 @@ footer{border-top:1px solid var(--border);padding:4rem 3rem 2.5rem}
   <div class="scroll-ind"><span>SCROLL</span><div class="scroll-line"></div></div>
 </section>
 
+<!-- VIDEO SHOWCASE -->
+<section class="video-section">
+  <div class="video-wrap">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="./video.mp4" type="video/mp4" />
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+</section>
+
 <!-- WORK -->
 <section id="work">
   <div class="section-inner">
@@ -521,15 +531,6 @@ footer{border-top:1px solid var(--border);padding:4rem 3rem 2.5rem}
   </div>
 </section>
 
-<!-- VIDEO SHOWCASE -->
-<section class="video-section">
-  <div class="video-wrap">
-    <video autoplay muted loop playsinline preload="auto">
-      <source src="./video.mp4" type="video/mp4" />
-    </video>
-    <div class="video-overlay"></div>
-  </div>
-</section>
 <!-- FOOTER -->
 <footer>
   <div class="footer-grid">
@@ -592,63 +593,8 @@ let lang='el';function toggleLang(){lang=lang==='el'?'en':'el';document.querySel
 
 </script>
 
-</body>
-</html>
 
-
-
-
-
-
-<!-- CURSOR -->
-<script>
-(function(){
-const d=document.getElementById('cursor-dot'),r=document.getElementById('cursor-ring');
-if(!d||!r)return;
-let mx=0,my=0,tx=0,ty=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;d.style.left=mx+'px';d.style.top=my+'px'});
-(function loop(){tx+=(mx-tx)*.08;ty+=(my-ty)*.08;r.style.left=tx+'px';r.style.top=ty+'px';requestAnimationFrame(loop)})();
-document.querySelectorAll('a,button,.btn,.magnetic,.service-card,.faq-item,.review-card').forEach(el=>{el.addEventListener('mouseenter',()=>d.classList.add('grow'));el.addEventListener('mouseleave',()=>d.classList.remove('grow'))});
-if('ontouchstart'in window){d.style.display='none';r.style.display='none';document.body.style.cursor='auto'}
-})();
-</script>
-
-<!-- MAGNETIC -->
-<script>
-document.querySelectorAll('.magnetic').forEach(el=>{
-  el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2,d=Math.sqrt(x*x+y*y),m=Math.max(r.width,r.height)*.5,s=Math.min(d/m,1);el.style.transform=`translate(${x/m*s*6}px,${y/m*s*6}px)`});
-  el.addEventListener('mouseleave',()=>el.style.transform='translate(0,0)');
-});
-</script>
-
-<!-- SCROLL REVEAL -->
-<script>(function(){const ob=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>ob.observe(e))})();</script>
-
-<!-- FAQ -->
-<script>document.querySelectorAll('.faq-item').forEach(e=>{e.addEventListener('click',()=>e.classList.toggle('open'))});</script>
-
-<!-- PRELOADER -->
-<script>window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('preloader').classList.add('hide')},2500)});</script>
-
-<!-- COUNTER -->
-<script>
-(function(){const ob=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.counted){e.target.dataset.counted='1';const t=parseFloat(e.target.dataset.target),fl=t!==Math.floor(t),st=performance.now(),anim=now=>{const p=Math.min((now-st)/1800,1),ease=1-Math.pow(1-p,3);e.target.textContent=fl?ease*t.toFixed(1):Math.floor(ease*t);if(p<1)requestAnimationFrame(anim)};requestAnimationFrame(anim)}}),{threshold:.5});document.querySelectorAll('.counter-anim').forEach(e=>ob.observe(e))})();
-</script>
-
-<!-- LANGUAGE -->
-<script>
-let lang='el';function toggleLang(){lang=lang==='el'?'en':'el';document.querySelectorAll('[data-el],[data-en]').forEach(e=>{const t=e.getAttribute(`data-${lang}`);if(t&&e.tagName!=='INPUT'&&e.tagName!=='TEXTAREA')e.innerHTML=t;if(t&&(e.tagName==='INPUT'||e.tagName==='TEXTAREA'))e.placeholder=t});document.querySelector('.lang-switch').textContent=lang==='el'?'EL / EN':'EN / EL'}
-</script>
-
-</body>
-</html>
-
-
-
-
-
-
-<!-- PARTICLES (UNIVERSE) -->
+<!-- PARTICLES (UNIVERSE) -- static background, no interaction -->
 <style>
 #universe-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;width:100%;height:100%;display:block}
 </style>
@@ -673,23 +619,6 @@ for(var i=0;i<600;i++){
   });
 }
 
-// Planets (medium, colored)
-var planets=[];
-var pcols=["200,60,60","180,50,50","220,100,100","255,150,150","255,200,150","200,200,255","150,150,180","250,180,180"];
-for(var i=0;i<80;i++){
-  planets.push({
-    x:Math.random()*W,y:Math.random()*H,
-    r:2+Math.random()*5,
-    o:0.4+Math.random()*0.5,
-    vx:(Math.random()-.5)*0.2,vy:(Math.random()-.5)*0.2,
-    col:pcols[i%pcols.length],
-    ph:Math.random()*6,sp:0.3+Math.random()*0.5,
-    ox:0,oy:0
-  });
-  planets[i].ox=planets[i].x;
-  planets[i].oy=planets[i].y;
-}
-
 // Nebula clouds (big soft blobs)
 var nebula=[];
 var ncols=["200,60,60,0.04","180,40,40,0.03","150,80,80,0.03","200,150,100,0.02"];
@@ -702,16 +631,10 @@ for(var i=0;i<12;i++){
   });
 }
 
-// Mouse
-var mx=W/2,my=H/2,mvx=0,mvy=0;
-addEventListener("mousemove",function(e){mx=e.clientX;my=e.clientY});addEventListener("touchmove",function(e){var t=e.touches[0];if(t){mx=t.clientX;my=t.clientY}},{passive:true});addEventListener("touchstart",function(e){var t=e.touches[0];if(t){mx=t.clientX;my=t.clientY}},{passive:true})
-
 function frame(){
   requestAnimationFrame(frame);
   cx.clearRect(0,0,W,H);
   var t=Date.now()*0.0003;
-  mvx+=(mx/W-0.5-mvx)*0.02;
-  mvy+=(my/H-0.5-mvy)*0.02;
 
   // Nebula (deep background glow)
   for(var i=0;i<nebula.length;i++){
@@ -723,95 +646,21 @@ function frame(){
     cx.fillRect(0,0,W,H);
   }
 
-  // Stars (twinkling, micro-drift)
-  var mfx=(mvx)*40;
-  var mfy=(mvy)*30;
+  // Stars (twinkling only -- no mouse drift)
   for(var i=0;i<stars.length;i++){
     var s=stars[i];
     var twinkle=0.5+0.5*Math.sin(t*s.sp*3+s.ph);
-    var dx=s.x+Math.sin(t*0.5+s.ph)*5+mfx;
-    var dy=s.y+Math.cos(t*0.4+s.ph)*5+mfy;
+    var dx=s.x+Math.sin(t*0.5+s.ph)*5;
+    var dy=s.y+Math.cos(t*0.4+s.ph)*5;
     cx.beginPath();
     cx.arc(dx,dy,s.r,0,6.28);
     cx.fillStyle="rgba("+s.col+","+(s.o*twinkle)+")";
     cx.fill();
-  }
-
-  // Planets (orbiting, mouse-reactive)
-  for(var i=0;i<planets.length;i++){
-    var p=planets[i];
-    var orbitX=Math.sin(t*p.sp*2+p.ph)*4;
-    var orbitY=Math.cos(t*p.sp*1.7+p.ph)*4;
-    p.x+=p.vx+orbitX*0.05;
-    p.y+=p.vy+orbitY*0.05;
-    p.x+=mvx*2;p.y+=mvy*2;
-    var dx=p.x+mfx*0.3;
-    var dy=p.y+mfy*0.3;
-    cx.beginPath();
-    cx.arc(dx,dy,p.r,0,6.28);
-    cx.fillStyle="rgba("+p.col+","+p.o+")";
-    cx.fill();
-    // Soft glow around bigger ones
-    if(p.r>4){
-      var gg=cx.createRadialGradient(dx,dy,0,dx,dy,p.r*3);
-      gg.addColorStop(0,"rgba("+p.col+",0.08)");
-      gg.addColorStop(1,"rgba("+p.col+",0)");
-      cx.fillStyle=gg;
-      cx.fillRect(dx-p.r*3,dy-p.r*3,p.r*6,p.r*6);
-    }
-    if(p.x<0||p.x>W)p.vx*=-1;
-    if(p.y<0||p.y>H)p.vy*=-1;
   }
 }
 frame();
 addEventListener("resize",function(){W=innerWidth;H=innerHeight;cv.width=W;cv.height=H});
 })();
 </script>
-<!-- CURSOR -->
-<script>
-(function(){
-const d=document.getElementById('cursor-dot'),r=document.getElementById('cursor-ring');
-if(!d||!r)return;
-let mx=0,my=0,tx=0,ty=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;d.style.left=mx+'px';d.style.top=my+'px'});
-(function loop(){tx+=(mx-tx)*.08;ty+=(my-ty)*.08;r.style.left=tx+'px';r.style.top=ty+'px';requestAnimationFrame(loop)})();
-document.querySelectorAll('a,button,.btn,.magnetic,.service-card,.faq-item,.review-card').forEach(el=>{el.addEventListener('mouseenter',()=>d.classList.add('grow'));el.addEventListener('mouseleave',()=>d.classList.remove('grow'))});
-if('ontouchstart'in window){d.style.display='none';r.style.display='none';document.body.style.cursor='auto'}
-})();
-</script>
-
-<!-- MAGNETIC -->
-<script>
-document.querySelectorAll('.magnetic').forEach(el=>{
-  el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2,d=Math.sqrt(x*x+y*y),m=Math.max(r.width,r.height)*.5,s=Math.min(d/m,1);el.style.transform=`translate(${x/m*s*6}px,${y/m*s*6}px)`});
-  el.addEventListener('mouseleave',()=>el.style.transform='translate(0,0)');
-});
-</script>
-
-<!-- SCROLL REVEAL -->
-<script>(function(){const ob=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>ob.observe(e))})();</script>
-
-<!-- FAQ -->
-<script>document.querySelectorAll('.faq-item').forEach(e=>{e.addEventListener('click',()=>e.classList.toggle('open'))});</script>
-
-<!-- PRELOADER -->
-<script>window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('preloader').classList.add('hide')},2500)});</script>
-
-<!-- COUNTER -->
-<script>
-(function(){const ob=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.counted){e.target.dataset.counted='1';const t=parseFloat(e.target.dataset.target),fl=t!==Math.floor(t),st=performance.now(),anim=now=>{const p=Math.min((now-st)/1800,1),ease=1-Math.pow(1-p,3);e.target.textContent=fl?ease*t.toFixed(1):Math.floor(ease*t);if(p<1)requestAnimationFrame(anim)};requestAnimationFrame(anim)}}),{threshold:.5});document.querySelectorAll('.counter-anim').forEach(e=>ob.observe(e))})();
-</script>
-
-<!-- LANGUAGE -->
-<script>
-let lang='el';function toggleLang(){lang=lang==='el'?'en':'el';document.querySelectorAll('[data-el],[data-en]').forEach(e=>{const t=e.getAttribute(`data-${lang}`);if(t&&e.tagName!=='INPUT'&&e.tagName!=='TEXTAREA')e.innerHTML=t;if(t&&(e.tagName==='INPUT'||e.tagName==='TEXTAREA'))e.placeholder=t});document.querySelector('.lang-switch').textContent=lang==='el'?'EL / EN':'EN / EL'}
-</script>
-
 </body>
 </html>
-
-
-
-
-
-
