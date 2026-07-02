@@ -655,8 +655,8 @@ for(var i=0;i<12;i++){
   });
 }
 
-// Mouse & gyroscope tracking
-var mouseX=0,mouseY=0,gX=0,gY=0,useGyro=false;
+// Mouse, touch & gyroscope tracking — all blended together
+var mouseX=0,mouseY=0,gyroX=0,gyroY=0,gyroActive=false;
 
 document.addEventListener('mousemove',function(e){
   mouseX=(e.clientX/W)*2-1;
@@ -668,18 +668,34 @@ document.addEventListener('touchmove',function(e){
   mouseY=(t.clientY/H)*2-1;
 },{passive:true});
 
-if(window.DeviceOrientationEvent){
+// Gyroscope — works alongside touch, doesn't override it
+function setupGyro(){
   window.addEventListener('deviceorientation',function(e){
     if(e.gamma!==null&&e.beta!==null){
-      gX=(e.gamma||0)/45;
-      gY=((e.beta||0)-45)/45;
-      useGyro=true;
+      var g=(e.gamma||0)/45;
+      var b=((e.beta||0)-45)/45;
+      // Only use gyro if there's actual movement (not 0)
+      if(Math.abs(g)>0.05||Math.abs(b)>0.05){
+        gyroX=g;
+        gyroY=b;
+        gyroActive=true;
+      }
     }
   },{passive:true});
+}
+
+if(window.DeviceOrientationEvent){
   if(typeof DeviceOrientationEvent.requestPermission==='function'){
+    // iOS 13+ — need user gesture
     document.addEventListener('click',function req(){
-      DeviceOrientationEvent.requestPermission().then(function(){document.removeEventListener('click',req)}).catch(function(){});
-    });
+      DeviceOrientationEvent.requestPermission().then(function(state){
+        if(state==='granted') setupGyro();
+        document.removeEventListener('click',req);
+      }).catch(function(){});
+    },{once:true});
+  } else {
+    // Android / desktop — works directly
+    setupGyro();
   }
 }
 
@@ -687,8 +703,12 @@ function frame(){
   requestAnimationFrame(frame);
   cx.clearRect(0,0,W,H);
   var t=Date.now()*0.0003;
-  var px=useGyro?gX:mouseX;
-  var py=useGyro?gY:mouseY;
+  // Blend mouse/touch with gyro (gyro adds extra drift)
+  var px=mouseX+(gyroActive?gyroX*0.6:0);
+  var py=mouseY+(gyroActive?gyroY*0.6:0);
+  // Clamp
+  px=Math.max(-1,Math.min(1,px));
+  py=Math.max(-1,Math.min(1,py));
   var driftX=px*30;
   var driftY=py*25;
 
