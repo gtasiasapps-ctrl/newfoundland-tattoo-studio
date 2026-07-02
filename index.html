@@ -614,12 +614,12 @@ let lang='el';function toggleLang(){lang=lang==='el'?'en':'el';document.querySel
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: logoDrift 12s ease-in-out infinite alternate;
+  animation: logoDrift 10s ease-in-out infinite alternate;
 }
 @keyframes logoDrift {
-  0% { transform: translate(-50%, -50%) rotate(-3deg) scale(1); opacity: .1; }
-  50% { opacity: .15; }
-  100% { transform: translate(-50%, -50%) rotate(3deg) scale(1.02); opacity: .1; }
+  0% { transform: translate(-50%, -50%) rotate(-10deg) scale(1); opacity: .1; }
+  50% { opacity: .18; transform: translate(-50%, -50%) rotate(2deg) scale(1.08); }
+  100% { transform: translate(-50%, -50%) rotate(10deg) scale(1); opacity: .1; }
 }
 @media (max-width: 900px) {
   .floating-logo { width: 300px; }
