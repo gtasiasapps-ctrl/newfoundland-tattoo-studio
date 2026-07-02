@@ -241,6 +241,41 @@ footer{border-top:1px solid var(--border);padding:4rem 3rem 2.5rem}
   radial-gradient(ellipse 70% 50% at 50% 50%, transparent 25%, rgba(10,10,10,.95) 100%),
   linear-gradient(to top,rgba(10,10,10,.95) 0%,transparent 20%,transparent 80%,rgba(10,10,10,.95) 100%);
 pointer-events:none}
+
+/* ── MUTE BUTTON ── */
+.mute-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.1);
+  background: rgba(10,10,10,.6);
+  backdrop-filter: blur(12px);
+  color: rgba(255,255,255,.5);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .4s cubic-bezier(.16,1,.3,1);
+  opacity: 0;
+  animation: muteFade 1s 3.5s forwards;
+}
+.mute-btn:hover {
+  background: rgba(10,10,10,.8);
+  color: #fff;
+  border-color: rgba(255,255,255,.2);
+}
+.mute-btn.playing {
+  color: #fff;
+  border-color: rgba(255,255,255,.2);
+}
+@keyframes muteFade {
+  to { opacity: 1; }
+}
 @media(max-width:900px){.video-wrap{height:50vh}}
 
 /* ── REVEAL ── */
@@ -357,7 +392,7 @@ pointer-events:none}
 <!-- VIDEO SHOWCASE -->
 <section class="video-section">
   <div class="video-wrap">
-    <video autoplay muted loop playsinline preload="auto">
+    <video autoplay muted loop playsinline preload="auto" id="bgVideo">
       <source src="./video.mp4" type="video/mp4" />
     </video>
     <div class="video-overlay"></div>
@@ -746,6 +781,40 @@ function frame(){
 }
 frame();
 addEventListener("resize",function(){W=innerWidth;H=innerHeight;cv.width=W;cv.height=H});
+})();
+</script>
+
+<!-- MUTE BUTTON -->
+<button class="mute-btn" id="muteBtn" aria-label="Unmute video">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+    <line id="muteX1" x1="23" y1="9" x2="17" y2="15" style="display:block"/>
+    <line id="muteX2" x1="17" y1="9" x2="23" y2="15" style="display:block"/>
+  </svg>
+</button>
+
+<script>
+(function(){
+  var video = document.getElementById('bgVideo');
+  var btn = document.getElementById('muteBtn');
+  if(!video||!btn)return;
+  var isPlaying = false;
+  btn.addEventListener('click',function(){
+    if(!isPlaying){
+      video.muted = false;
+      video.volume = 0.6;
+      video.play().catch(function(){});
+      isPlaying = true;
+      btn.classList.add('playing');
+      btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>';
+    } else {
+      video.muted = !video.muted;
+      btn.classList.toggle('playing');
+      btn.innerHTML = video.muted
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>';
+    }
+  });
 })();
 </script>
 
