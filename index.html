@@ -106,14 +106,14 @@ body{
   background:var(--bg);
   display:flex;flex-direction:column;
   align-items:center;justify-content:center;
-  transition:clip-path 1.6s cubic-bezier(.7,0,.3,1),opacity .6s;
+  transition:clip-path .8s cubic-bezier(.7,0,.3,1),opacity .4s;
 }
 #preloader.hide{clip-path:circle(0% at 50% 50%);opacity:0;pointer-events:none}
 .preloader-wrap{text-align:center}
 .preloader-logo img{height:clamp(28px,5vw,48px);width:auto;display:block;margin:0 auto;opacity:0;animation:plFade 1s .2s forwards}
 .preloader-tagline{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.5em;text-transform:uppercase;color:var(--dim);margin-top:.8rem;opacity:0;animation:plFade 1s .6s forwards}
-.preloader-bar{width:clamp(60px,12vw,160px);height:1px;background:var(--faint);margin-top:2rem;position:relative;overflow:hidden;opacity:0;animation:plFade .6s .4s forwards}
-.preloader-bar::after{content:'';position:absolute;inset:0;background:var(--white);animation:plBar 2.2s .4s forwards;transform-origin:left;transform:scaleX(0)}
+.preloader-bar{width:clamp(60px,12vw,160px);height:1px;background:var(--faint);margin:2rem auto 0;position:relative;overflow:hidden;opacity:0;animation:plFade .6s .4s forwards}
+.preloader-bar::after{content:'';position:absolute;inset:0;background:var(--white);animation:plBar 1.2s .4s forwards;transform-origin:left;transform:scaleX(0)}
 @keyframes plFade{0%{opacity:0;transform:translateY(12px)}100%{opacity:1;transform:translateY(0)}}
 @keyframes plBar{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
 
@@ -579,7 +579,7 @@ document.querySelectorAll('.magnetic').forEach(el=>{
 <script>document.querySelectorAll('.faq-item').forEach(e=>{e.addEventListener('click',()=>e.classList.toggle('open'))});</script>
 
 <!-- PRELOADER -->
-<script>window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('preloader').classList.add('hide')},2500)});</script>
+<script>window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('preloader').classList.add('hide')},1500)});</script>
 
 <!-- COUNTER -->
 <script>
