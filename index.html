@@ -609,7 +609,7 @@ let lang='el';function toggleLang(){lang=lang==='el'?'en':'el';document.querySel
   z-index: 0;
   pointer-events: none;
   opacity: .04;
-  width: 600px;
+  width: min(600px, 80vw);
   height: auto;
   top: 50%;
   left: 50%;
@@ -617,12 +617,12 @@ let lang='el';function toggleLang(){lang=lang==='el'?'en':'el';document.querySel
   animation: logoDrift 10s ease-in-out infinite alternate;
 }
 @keyframes logoDrift {
-  0% { transform: translate(-50%, -50%) rotate(-10deg) scale(1); opacity: .1; }
-  50% { opacity: .18; transform: translate(-50%, -50%) rotate(2deg) scale(1.08); }
-  100% { transform: translate(-50%, -50%) rotate(10deg) scale(1); opacity: .1; }
+  0% { transform: translate(-50%, -50%) rotate(-6deg) scale(1); opacity: .1; }
+  50% { opacity: .15; transform: translate(-50%, -50%) rotate(2deg) scale(1.04); }
+  100% { transform: translate(-50%, -50%) rotate(6deg) scale(1); opacity: .1; }
 }
 @media (max-width: 900px) {
-  .floating-logo { width: 300px; }
+  .floating-logo { width: 60vw; }
 }
 </style><script>
 (function(){
