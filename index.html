@@ -126,13 +126,16 @@ body{
 /* ── NAV ── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
-  padding:1.5rem 3rem;display:flex;align-items:center;justify-content:space-between;
+  padding:1.5rem 3rem;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
   background:linear-gradient(to bottom,rgba(10,10,10,.8),transparent);
   pointer-events:none;
 }
 nav>*{pointer-events:auto}
 .nav-logo{font-family:var(--font-sans);font-size:.85rem;font-weight:500;letter-spacing:.02em;color:var(--white);text-decoration:none}
-.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links{display:flex;align-items:center;gap:2rem;justify-content:center}
 .nav-link{color:var(--dim);text-decoration:none;font-family:var(--font-mono);font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;font-weight:400;transition:color .3s}
 .nav-link:hover{color:var(--white)}
 .nav-cta{background:var(--red);color:var(--white)!important;padding:.4rem 1.2rem;font-weight:600!important;font-family:var(--font-sans)!important;font-size:.6rem!important;letter-spacing:.08em!important;border-radius:0;transition:all .3s}
@@ -359,7 +362,7 @@ pointer-events:none}
     <a href="#awards" class="nav-link" data-el="Βραβεία" data-en="Awards">Βραβεία</a>
     <a href="#faq" class="nav-link" data-el="FAQ" data-en="FAQ">FAQ</a>
   </div>
-  <div class="flex items-center gap-3">
+  <div class="flex items-center gap-3" style="justify-content:flex-end">
     <button class="lang-switch" onclick="toggleLang()">EL / EN</button>
     <a href="#contact" class="nav-link nav-cta" data-el="Κλείσε" data-en="Book">Κλείσε</a>
   </div>
