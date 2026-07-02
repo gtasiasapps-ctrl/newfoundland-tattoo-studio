@@ -173,7 +173,7 @@ section{padding:8rem 3rem}
 .section-hdr .section-label{margin-bottom:0}
 
 /* ── COUNTERS ── */
-.counter-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.counter-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:2rem;max-width:500px;margin:0 auto}
 .counter-card{}
 .counter-num{font-family:var(--font-sans);font-size:2.5rem;font-weight:600;letter-spacing:-.04em;color:var(--white);line-height:1}
 .counter-label{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.2em;color:var(--dim);margin-top:.5rem;text-transform:uppercase}
@@ -281,7 +281,7 @@ footer{border-top:1px solid var(--border);padding:4rem 3rem 2.5rem}
   .scroll-ind{left:1.5rem}
   nav{padding:1rem 1.5rem}
   .section-hdr{flex-direction:column;align-items:flex-start;gap:1rem}
-  .counter-grid{grid-template-columns:1fr 1fr}
+  .counter-grid{grid-template-columns:1fr 1fr;max-width:none}
   .footer-bot{flex-direction:column;gap:1rem}
 }
 @media(max-width:600px){
@@ -333,7 +333,7 @@ footer{border-top:1px solid var(--border);padding:4rem 3rem 2.5rem}
         Newfoundland<br />
         <span class="accent">Tattoo Studio</span>
       </h1>
-      <p class="hero-sub" data-el="Το κορυφαίο tattoo studio στη Λάρισα για custom σχέδια, piercing και καλύψεις. 393+ πελάτες — 5.0 αστέρια. Κάθε γραμμή έχει σημασία." data-en="The premier tattoo studio in Larissa for custom designs, piercing and cover-ups. 393+ clients — 5.0 stars. Every line counts.">Το κορυφαίο tattoo studio στη Λάρισα για custom σχέδια, piercing και καλύψεις. 393+ πελάτες — 5.0 αστέρια. Κάθε γραμμή έχει σημασία.</p>
+      <p class="hero-sub" data-el="Το κορυφαίο tattoo studio στη Λάρισα για custom σχέδια, piercing και καλύψεις. ★★★★★ — Κάθε γραμμή έχει σημασία." data-en="The premier tattoo studio in Larissa for custom designs, piercing and cover-ups. ★★★★★ — Every line counts.">Το κορυφαίο tattoo studio στη Λάρισα για custom σχέδια, piercing και καλύψεις. ★★★★★ — Κάθε γραμμή έχει σημασία.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-white magnetic" data-el="Κλείσε Ραντεβού" data-en="Book Appointment">Κλείσε Ραντεβού</a>
         <a href="#services" class="btn btn-ghost magnetic" data-el="Υπηρεσίες" data-en="Services">Υπηρεσίες</a>
@@ -342,7 +342,7 @@ footer{border-top:1px solid var(--border);padding:4rem 3rem 2.5rem}
     <div class="hero-right">
       <div class="hero-meta">GOOGLE RATED</div>
       <div class="hero-stat">5.0</div>
-      <div class="hero-stat-label">★★★★★ — 393 REVIEWS</div>
+      <div class="hero-stat-label">★★★★★</div>
       <div class="hero-stat-divider"></div>
       <div class="hero-meta">ΠΑΤΡΟΚΛΟΥ 8</div>
       <div class="hero-stat-label">LARISSA, 412 22</div>
@@ -433,7 +433,6 @@ footer{border-top:1px solid var(--border);padding:4rem 3rem 2.5rem}
     </div>
     <div class="reveal d1 counter-grid">
       <div class="counter-card"><div class="counter-num"><span class="counter-anim" data-target="5.0">0</span></div><div class="counter-label">GOOGLE RATING /5</div></div>
-      <div class="counter-card"><div class="counter-num"><span class="counter-anim" data-target="393">0</span></div><div class="counter-label">VERIFIED REVIEWS</div></div>
       <div class="counter-card"><div class="counter-num"><span class="counter-anim" data-target="100">0</span>%</div><div class="counter-label">STERILIZATION</div></div>
     </div>
     <div class="reviews-grid" style="margin-top:3rem">
