@@ -353,7 +353,7 @@ pointer-events:none}
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo"><img src="./logo.png" alt="Newfoundland Tattoo Studio" style="height:28px;width:auto;display:block" /></a>
+  <div style="flex:1"><a href="#" class="nav-logo"><img src="./logo.png" alt="Newfoundland Tattoo Studio" style="height:28px;width:auto;display:block" /></a></div>
   <div class="nav-links">
     <a href="#reviews" class="nav-link" data-el="Κριτικές" data-en="Reviews">Κριτικές</a>
     <a href="#services" class="nav-link" data-el="Υπηρεσίες" data-en="Services">Υπηρεσίες</a>
@@ -361,9 +361,9 @@ pointer-events:none}
     <a href="#awards" class="nav-link" data-el="Βραβεία" data-en="Awards">Βραβεία</a>
     <a href="#faq" class="nav-link" data-el="FAQ" data-en="FAQ">FAQ</a>
   </div>
-  <div class="flex items-center gap-3" style="display:flex;align-items:center;gap:12px;justify-content:flex-end">
-    <button class="lang-switch" onclick="toggleLang()">EL / EN</button>
+  <div style="flex:1;display:flex;flex-direction:column;align-items:flex-end;gap:2px">
     <a href="#contact" class="nav-link nav-cta" data-el="Κλείσε" data-en="Book">Κλείσε</a>
+    <button class="lang-switch" onclick="toggleLang()">EL / EN</button>
   </div>
 </nav>
 
