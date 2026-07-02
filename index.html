@@ -417,7 +417,7 @@ footer{border-top:1px solid var(--border);padding:4rem 3rem 2.5rem}
       <div class="reveal d3 port-item" style="background:url(./Awards/Black and Gray Big.png) center/cover no-repeat"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[03]</span><div class="port-label" data-el="Japanese — Dragon Sleeve" data-en="Japanese — Dragon Sleeve">Japanese — Dragon Sleeve</div></div>
       <div class="reveal d2 port-item" style="background:url(./Awards/Best Realistic Small.png) center/cover no-repeat"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[04]</span><div class="port-label" data-el="Neo-Traditional — Mandala" data-en="Neo-Traditional — Mandala">Neo-Traditional — Mandala</div></div>
       <div class="reveal d3 port-item wide" style="background:url(./Awards/Best Realistic Black & Gray.png) center/cover no-repeat"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[05]</span><div class="port-label" data-el="Cover Up — Πριν/Μετά" data-en="Cover Up — Before/After">Cover Up — Before/After</div></div>
-      <div class="reveal d4 port-item" style="background:url(./Awards/Best Black and Gray Big (2).png).png)er/cover no-repeat"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[06]</span><div class="port-label" data-el="Custom Lettering" data-en="Custom Lettering">Custom Lettering</div></div>
+      <div class="reveal d4 port-item" style="background:url(./Awards/Best Black and Gray Big (2).png) center/cover no-repeat"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[06]</span><div class="port-label" data-el="Custom Lettering" data-en="Custom Lettering">Custom Lettering</div></div>
       <div class="reveal d4 port-item tall" style="background:url(./Awards/Best Small Realistic.png) center/cover no-repeat"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[07]</span><div class="port-label" data-el="Fine Line — Minimal" data-en="Fine Line — Minimal">Fine Line — Minimal</div></div>
     </div>
   </div>
@@ -599,11 +599,30 @@ let lang='el';function toggleLang(){lang=lang==='el'?'en':'el';document.querySel
 </script>
 
 
-<!-- PARTICLES (UNIVERSE) -- static background, no interaction -->
+<!-- PARTICLES (UNIVERSE) -- interactive parallax with mouse & gyroscope -->
 <style>
 #universe-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;width:100%;height:100%;display:block}
-</style>
-<script>
+.floating-logo {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .04;
+  width: 600px;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: logoDrift 12s ease-in-out infinite alternate;
+}
+@keyframes logoDrift {
+  0% { transform: translate(-50%, -50%) rotate(-3deg) scale(1); opacity: .03; }
+  50% { opacity: .06; }
+  100% { transform: translate(-50%, -50%) rotate(3deg) scale(1.02); opacity: .04; }
+}
+@media (max-width: 900px) {
+  .floating-logo { width: 300px; }
+}
+</style><script>
 (function(){
 var cv=document.createElement("canvas");
 cv.id="universe-canvas";
@@ -611,7 +630,7 @@ var W=innerWidth,H=innerHeight;cv.width=W;cv.height=H;
 var cx=cv.getContext("2d");
 document.body.prepend(cv);
 
-// Stars (tiny)
+// Stars
 var stars=[];
 for(var i=0;i<600;i++){
   stars.push({
@@ -624,7 +643,7 @@ for(var i=0;i<600;i++){
   });
 }
 
-// Nebula clouds (big soft blobs)
+// Nebula
 var nebula=[];
 var ncols=["200,60,60,0.04","180,40,40,0.03","150,80,80,0.03","200,150,100,0.02"];
 for(var i=0;i<12;i++){
@@ -636,27 +655,64 @@ for(var i=0;i<12;i++){
   });
 }
 
+// Mouse & gyroscope tracking
+var mouseX=0,mouseY=0,gX=0,gY=0,useGyro=false;
+
+document.addEventListener('mousemove',function(e){
+  mouseX=(e.clientX/W)*2-1;
+  mouseY=(e.clientY/H)*2-1;
+});
+document.addEventListener('touchmove',function(e){
+  var t=e.touches[0];
+  mouseX=(t.clientX/W)*2-1;
+  mouseY=(t.clientY/H)*2-1;
+},{passive:true});
+
+if(window.DeviceOrientationEvent){
+  window.addEventListener('deviceorientation',function(e){
+    if(e.gamma!==null&&e.beta!==null){
+      gX=(e.gamma||0)/45;
+      gY=((e.beta||0)-45)/45;
+      useGyro=true;
+    }
+  },{passive:true});
+  if(typeof DeviceOrientationEvent.requestPermission==='function'){
+    document.addEventListener('click',function req(){
+      DeviceOrientationEvent.requestPermission().then(function(){document.removeEventListener('click',req)}).catch(function(){});
+    });
+  }
+}
+
 function frame(){
   requestAnimationFrame(frame);
   cx.clearRect(0,0,W,H);
   var t=Date.now()*0.0003;
+  var px=useGyro?gX:mouseX;
+  var py=useGyro?gY:mouseY;
+  var driftX=px*30;
+  var driftY=py*25;
 
-  // Nebula (deep background glow)
+  // Nebula with parallax
   for(var i=0;i<nebula.length;i++){
     var n=nebula[i];
-    var grad=cx.createRadialGradient(n.x+Math.sin(t*0.3+n.ph)*20,n.y+Math.cos(t*0.2+n.ph)*15,0,n.x,n.y,n.r);
+    var grad=cx.createRadialGradient(
+      n.x+Math.sin(t*0.3+n.ph)*20+driftX*0.3,
+      n.y+Math.cos(t*0.2+n.ph)*15+driftY*0.3,
+      0,n.x,n.y,n.r
+    );
     grad.addColorStop(0,"rgba("+n.col+")");
-    grad.addColorStop(1,"rgba("+n.col.split(",")[0]+","+n.col.split(",")[1]+","+n.col.split(",")[2]+",0)");
+    var cc=n.col.split(",");
+    grad.addColorStop(1,"rgba("+cc[0]+","+cc[1]+","+cc[2]+",0)");
     cx.fillStyle=grad;
     cx.fillRect(0,0,W,H);
   }
 
-  // Stars (twinkling only -- no mouse drift)
+  // Stars with parallax
   for(var i=0;i<stars.length;i++){
     var s=stars[i];
     var twinkle=0.5+0.5*Math.sin(t*s.sp*3+s.ph);
-    var dx=s.x+Math.sin(t*0.5+s.ph)*5;
-    var dy=s.y+Math.cos(t*0.4+s.ph)*5;
+    var dx=s.x+Math.sin(t*0.5+s.ph)*5+driftX*s.sp;
+    var dy=s.y+Math.cos(t*0.4+s.ph)*5+driftY*s.sp;
     cx.beginPath();
     cx.arc(dx,dy,s.r,0,6.28);
     cx.fillStyle="rgba("+s.col+","+(s.o*twinkle)+")";
@@ -667,5 +723,8 @@ frame();
 addEventListener("resize",function(){W=innerWidth;H=innerHeight;cv.width=W;cv.height=H});
 })();
 </script>
+
+<!-- FLOATING LOGO -->
+<img src="./logo.png" alt="" class="floating-logo" />
 </body>
 </html>
