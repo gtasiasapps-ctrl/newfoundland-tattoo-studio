@@ -7,3 +7,6 @@ Thumbs.db
 # Node modules / build artifacts (if any)
 node_modules/
 dist/
+
+# Media
+video.mp4
