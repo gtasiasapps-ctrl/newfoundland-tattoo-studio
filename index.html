@@ -162,6 +162,9 @@ nav>*{pointer-events:auto}
 .nav-link:hover{color:var(--white)}
 .nav-cta{background:var(--red);color:var(--white)!important;padding:.4rem 1.2rem;font-weight:600!important;font-family:var(--font-sans)!important;font-size:.6rem!important;letter-spacing:.08em!important;border-radius:0;transition:all .3s}
 .nav-cta:hover{background:#8a0000;transform:translateY(-1px)}
+.nav-center{display:none;flex:1;justify-content:center;align-items:center}
+.nav-center .lang-switch{background:none;border:none;color:var(--dim);font-family:var(--font-mono);font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:color .3s;padding:0}
+.nav-center .lang-switch:hover{color:var(--white)}
 .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:4px;background:none;border:none;cursor:pointer;padding:4px;pointer-events:auto;z-index:1001}
 .nav-hamburger span{display:block;width:22px;height:2px;background:var(--white);transition:all .3s;border-radius:1px}
 .nav-hamburger.active span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
@@ -340,6 +343,8 @@ pointer-events:none}
 @media(max-width:900px){
   .nav-links{display:none}
   .nav-hamburger{display:flex}
+  .nav-right{display:none!important}
+  .nav-center{display:flex}
   .hero-inner{grid-template-columns:1fr;gap:3rem}
   .hero-left{text-align:center}
   .hero-sub{max-width:none;text-align:center}
@@ -434,7 +439,10 @@ pointer-events:none}
     <a href="#awards" class="nav-link" data-el="Βραβεία" data-en="Awards">Βραβεία</a>
     <a href="#faq" class="nav-link" data-el="FAQ" data-en="FAQ">FAQ</a>
   </div>
-  <div style="flex:1;display:flex;flex-direction:column;align-items:flex-end;gap:2px">
+  <div class="nav-center">
+    <button class="lang-switch" onclick="toggleLang()">EL / EN</button>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;align-items:flex-end;gap:2px" class="nav-right">
     <a href="#contact" class="nav-link nav-cta" data-el="Κλείσε" data-en="Book">Κλείσε</a>
     <button class="lang-switch" onclick="toggleLang()">EL / EN</button>
   </div>
