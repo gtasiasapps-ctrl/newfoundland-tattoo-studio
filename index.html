@@ -758,8 +758,9 @@ function toggleMobileMenu(){document.getElementById('mobileMenu').classList.togg
 (function(){
 var cv=document.createElement("canvas");
 cv.id="universe-canvas";
-var W=innerWidth,H=innerHeight;cv.width=W;cv.height=H;
-var cx=cv.getContext("2d");
+var dpr=window.devicePixelRatio||1;
+var W=innerWidth,H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;cv.style.width=W+'px';cv.style.height=H+'px';
+var cx=cv.getContext("2d");cx.scale(dpr,dpr);
 document.body.prepend(cv);
 
 // Stars
@@ -872,7 +873,7 @@ function frame(){
   }
 }
 frame();
-addEventListener("resize",function(){W=innerWidth;H=innerHeight;cv.width=W;cv.height=H});
+addEventListener("resize",function(){W=innerWidth;H=innerHeight;dpr=window.devicePixelRatio||1;cv.width=W*dpr;cv.height=H*dpr;cv.style.width=W+'px';cv.style.height=H+'px';cx.setTransform(dpr,0,0,dpr,0,0)});
 })();
 </script>
 
