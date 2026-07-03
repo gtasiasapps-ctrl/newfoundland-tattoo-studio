@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://newfoundlandtattoo.gr/sitemap.xml
+Sitemap: https://newfoundlandtattoo.com/sitemap.xml
