@@ -710,6 +710,7 @@ document.querySelectorAll('.magnetic').forEach(el=>{
 <!-- LANGUAGE -->
 <script>
 let lang='el';function toggleLang(){lang=lang==='el'?'en':'el';document.querySelectorAll('[data-el],[data-en]').forEach(e=>{const t=e.getAttribute(`data-${lang}`);if(t&&e.tagName!=='INPUT'&&e.tagName!=='TEXTAREA')e.innerHTML=t;if(t&&(e.tagName==='INPUT'||e.tagName==='TEXTAREA'))e.placeholder=t});document.querySelector('.lang-switch').textContent=lang==='el'?'EL / EN':'EN / EL'}
+window.addEventListener('pageshow',function(){window.scrollTo(0,0)});
 function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('open');document.querySelector('.nav-hamburger').classList.toggle('active')}
 
 // Form to email
