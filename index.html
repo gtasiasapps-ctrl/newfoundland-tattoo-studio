@@ -2,6 +2,8 @@
 <html lang="el">
 <head><script>
 if("scrollRestoration"in history)history.scrollRestoration="manual";
+// Remove hash on refresh so page always starts at hero
+if(location.hash)history.replaceState(null,'',location.pathname+location.search);
 (function(){
 var BASE = window.location.origin;
 window.scrollTo(0,0);document.addEventListener('DOMContentLoaded', function(){
@@ -37,7 +39,7 @@ window.scrollTo(0,0);document.addEventListener('DOMContentLoaded', function(){
 <meta name="geo.placename" content="Larissa" />
 <link rel="canonical" href="https://newfoundlandtattoo.com/" />
 <!-- Open Graph -->
-<meta property="og:title" content="Newfoundland Tattoo Studio Λάρισα | Tattoo &amp; Piercing — Best Rated" />
+<meta property="og:title" content="Newfoundland Tattoo Studio Λάρισα | Tattoo &amp; Piercing" />
 <meta property="og:description" content="Το κορυφαίο tattoo studio στη Λάρισα. ★★★★★ Custom τατουάζ, piercing, cover up, realism. Πατρόκλου 8. 241 110 3838." />
 <meta property="og:url" content="https://newfoundlandtattoo.com/" />
 <meta property="og:type" content="website" />
@@ -509,7 +511,7 @@ pointer-events:none}
       </div>
       <div class="reveal d2"><div class="section-divider"></div></div>
     </div>
-    <    <div class="award-gallery">      <div class="reveal award-img-wrap" style="animation-delay:-0.15s;animation-duration:3s;--float-dur:3s">
+    <div class="award-gallery">      <div class="reveal award-img-wrap" style="animation-delay:-0.15s;animation-duration:3s;--float-dur:3s">
         <img src="./Awards/Best Realistic Big.png" alt="Best Realistic Big award - Newfoundland Tattoo Studio portfolio" loading="lazy" />
         <div class="award-title">Best Realistic Big</div>
       </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.3s;animation-duration:3.5s;--float-dur:3.5s">
