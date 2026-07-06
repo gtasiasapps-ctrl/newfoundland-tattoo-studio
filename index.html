@@ -702,86 +702,62 @@ pointer-events:none}
         <button class="artist-tab" data-el="Μαρία" data-en="Maria" onclick="switchArtist(this,'maria')">Μαρία</button>
         <button class="artist-tab" data-el="Studio" data-en="Studio" onclick="switchArtist(this,'studio')">Studio</button>
       </div>
+      <!-- HIDDEN DATA: all gallery items (JS reads from these) -->
+      <div style="display:none">
+        <!-- SAKIS -->
+        <div class="gal-item" id="gi-sakis-0" style="background-image:url(./Awards/Best Realistic Big.png);background-position:center 30%" data-cat="Realism — Πορτρέτο" data-num="01"></div>
+        <div class="gal-item" id="gi-sakis-1" style="background-image:url(./Awards/Best Black and Gray Big.png);background-position:center 30%" data-cat="Blackwork — Γεωμετρικό" data-num="02"></div>
+        <div class="gal-item" id="gi-sakis-2" style="background-image:url(./Awards/Best Realistic Black & Gray.png);background-position:center 30%" data-cat="Cover Up — Πριν/Μετά" data-num="03"></div>
+        <div class="gal-item" id="gi-sakis-3" style="background-image:url(./Awards/Realistic Big.png);background-position:center 30%" data-cat="Realism — Μεγάλο" data-num="04"></div>
+        <div class="gal-item" id="gi-sakis-4" style="background-image:url(./Awards/Best Small Realistic.png);background-position:center 30%" data-cat="Fine Line — Μικρό" data-num="05"></div>
+        <!-- MARIA -->
+        <div class="gal-item" id="gi-maria-0" style="background-image:url(./Awards/Best Black and Gray Tattoo Contest Big.png);background-position:center 30%" data-cat="Black &amp; Gray — Διαγωνισμός" data-num="01"></div>
+        <div class="gal-item" id="gi-maria-1" style="background-image:url(./Awards/Black and Gray Big.png);background-position:center 30%" data-cat="Japanese — Dragon Sleeve" data-num="02"></div>
+        <div class="gal-item" id="gi-maria-2" style="background-image:url(./Awards/Best Realistic Small.png);background-position:center 30%" data-cat="Neo-Traditional — Mandala" data-num="03"></div>
+        <!-- STUDIO -->
+        <div class="gal-item" id="gi-studio-0" style="background-image:url(./Awards/Best Realistic Small.png);background-position:center 30%" data-cat="Realism — Μικρό" data-num="01"></div>
+        <div class="gal-item" id="gi-studio-1" style="background-image:url(./Awards/Best Black and Gray Big (2).png);background-position:center 30%" data-cat="Custom Lettering" data-num="02"></div>
+        <div class="gal-item" id="gi-studio-2" style="background-image:url(./Awards/Realistic Small.png);background-position:center 30%" data-cat="Realism — Πορτρέτο" data-num="03"></div>
+        <div class="gal-item" id="gi-studio-3" style="background-image:url(./Awards/Realistic Big.png);background-position:center 30%" data-cat="Realism — Big" data-num="04"></div>
+      </div>
       <!-- SAKIS GALLERY -->
       <div class="artist-gallery active" id="gallery-sakis">
-        <div class="card-stack" id="stack-sakis">
-          <div class="card-item active" onclick="cycleStack('sakis')">
-            <div class="card-img" style="background-image:url(./Awards/Best Realistic Big.png);background-position:center 30%"></div>
-            <div class="card-overlay"></div>
-            <div class="card-info"><span class="card-num">01</span><span class="card-cat" data-el="Realism — Πορτρέτο" data-en="Realism — Portrait">Realism — Πορτρέτο</span><span class="card-date">2026</span></div>
+        <div class="gallery-duo">
+          <div class="gallery-main" id="main-sakis" onclick="slideGallery('sakis',1)" style="background-image:url(./Awards/Best Realistic Big.png);background-position:center 30%">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-info"><span class="gal-num">01</span><span class="gal-cat">Realism — Πορτρέτο</span></div>
           </div>
-          <div class="card-item" onclick="cycleStack('sakis')">
-            <div class="card-img" style="background-image:url(./Awards/Best Black and Gray Big.png);background-position:center 30%"></div>
-            <div class="card-overlay"></div>
-            <div class="card-info"><span class="card-num">02</span><span class="card-cat" data-el="Blackwork — Γεωμετρικό" data-en="Blackwork — Geometric">Blackwork — Γεωμετρικό</span><span class="card-date">2026</span></div>
-          </div>
-          <div class="card-item" onclick="cycleStack('sakis')">
-            <div class="card-img" style="background-image:url(./Awards/Best Realistic Black & Gray.png);background-position:center 30%"></div>
-            <div class="card-overlay"></div>
-            <div class="card-info"><span class="card-num">03</span><span class="card-cat" data-el="Cover Up — Πριν/Μετά" data-en="Cover Up — Before/After">Cover Up — Before/After</span><span class="card-date">2026</span></div>
-          </div>
-          <div class="card-item" onclick="cycleStack('sakis')">
-            <div class="card-img" style="background-image:url(./Awards/Realistic Big.png);background-position:center 30%"></div>
-            <div class="card-overlay"></div>
-            <div class="card-info"><span class="card-num">04</span><span class="card-cat" data-el="Realism — Μεγάλο" data-en="Realism — Large">Realism — Μεγάλο</span><span class="card-date">2025</span></div>
-          </div>
-          <div class="card-item" onclick="cycleStack('sakis')">
-            <div class="card-img" style="background-image:url(./Awards/Best Small Realistic.png);background-position:center 30%"></div>
-            <div class="card-overlay"></div>
-            <div class="card-info"><span class="card-num">05</span><span class="card-cat" data-el="Fine Line — Μικρό" data-en="Fine Line — Small">Fine Line — Μικρό</span><span class="card-date">2025</span></div>
+          <div class="gallery-next" id="next-sakis" onclick="slideGallery('sakis',1)" style="background-image:url(./Awards/Best Black and Gray Big.png);background-position:center 30%">
+            <div class="gallery-blur"></div>
           </div>
         </div>
-        <div class="card-dots" id="dots-sakis"></div>
-        <div class="card-nav-hint" data-el="Πάτησε για επόμενο" data-en="Tap for next">Πάτησε για επόμενο</div>
+        <div class="gal-dots" id="dots-sakis"></div>
       </div>
       <!-- MARIA GALLERY -->
       <div class="artist-gallery" id="gallery-maria">
-        <div class="card-stack" id="stack-maria">
-          <div class="card-item active" onclick="cycleStack('maria')">
-            <div class="card-img" style="background-image:url(./Awards/Best Black and Gray Tattoo Contest Big.png);background-position:center 30%"></div>
-            <div class="card-overlay"></div>
-            <div class="card-info"><span class="card-num">01</span><span class="card-cat" data-el="Black &amp; Gray — Διαγωνισμός" data-en="Black &amp; Gray — Contest">Black & Gray — Διαγωνισμός</span><span class="card-date">2026</span></div>
+        <div class="gallery-duo">
+          <div class="gallery-main" id="main-maria" onclick="slideGallery('maria',1)" style="background-image:url(./Awards/Best Black and Gray Tattoo Contest Big.png);background-position:center 30%">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-info"><span class="gal-num">01</span><span class="gal-cat">Black &amp; Gray — Διαγωνισμός</span></div>
           </div>
-          <div class="card-item" onclick="cycleStack('maria')">
-            <div class="card-img" style="background-image:url(./Awards/Black and Gray Big.png);background-position:center 30%"></div>
-            <div class="card-overlay"></div>
-            <div class="card-info"><span class="card-num">02</span><span class="card-cat" data-el="Japanese — Dragon Sleeve" data-en="Japanese — Dragon Sleeve">Japanese — Dragon Sleeve</span><span class="card-date">2025</span></div>
-          </div>
-          <div class="card-item" onclick="cycleStack('maria')">
-            <div class="card-img" style="background-image:url(./Awards/Best Realistic Small.png);background-position:center 30%"></div>
-            <div class="card-overlay"></div>
-            <div class="card-info"><span class="card-num">03</span><span class="card-cat" data-el="Νeo-Traditional — Mandala" data-en="Neo-Traditional — Mandala">Neo-Traditional — Mandala</span><span class="card-date">2025</span></div>
+          <div class="gallery-next" id="next-maria" onclick="slideGallery('maria',1)" style="background-image:url(./Awards/Black and Gray Big.png);background-position:center 30%">
+            <div class="gallery-blur"></div>
           </div>
         </div>
-        <div class="card-dots" id="dots-maria"></div>
-        <div class="card-nav-hint" data-el="Πάτησε για επόμενο" data-en="Tap for next">Πάτησε για επόμενο</div>
+        <div class="gal-dots" id="dots-maria"></div>
       </div>
       <!-- STUDIO GALLERY -->
       <div class="artist-gallery" id="gallery-studio">
-        <div class="card-stack" id="stack-studio">
-          <div class="card-item active" onclick="cycleStack('studio')">
-            <div class="card-img" style="background-image:url(./Awards/Best Realistic Small.png);background-position:center 30%"></div>
-            <div class="card-overlay"></div>
-            <div class="card-info"><span class="card-num">01</span><span class="card-cat" data-el="Realism — Μικρό" data-en="Realism — Small">Realism — Μικρό</span><span class="card-date">2026</span></div>
+        <div class="gallery-duo">
+          <div class="gallery-main" id="main-studio" onclick="slideGallery('studio',1)" style="background-image:url(./Awards/Best Realistic Small.png);background-position:center 30%">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-info"><span class="gal-num">01</span><span class="gal-cat">Realism — Μικρό</span></div>
           </div>
-          <div class="card-item" onclick="cycleStack('studio')">
-            <div class="card-img" style="background-image:url(./Awards/Best Black and Gray Big (2).png);background-position:center 30%"></div>
-            <div class="card-overlay"></div>
-            <div class="card-info"><span class="card-num">02</span><span class="card-cat" data-el="Custom Lettering" data-en="Custom Lettering">Custom Lettering</span><span class="card-date">2025</span></div>
-          </div>
-          <div class="card-item" onclick="cycleStack('studio')">
-            <div class="card-img" style="background-image:url(./Awards/Realistic Small.png);background-position:center 30%"></div>
-            <div class="card-overlay"></div>
-            <div class="card-info"><span class="card-num">03</span><span class="card-cat" data-el="Realism — Πορτρέτο" data-en="Realism — Portrait">Realism — Πορτρέτο</span><span class="card-date">2025</span></div>
-          </div>
-          <div class="card-item" onclick="cycleStack('studio')">
-            <div class="card-img" style="background-image:url(./Awards/Realistic Big.png);background-position:center 30%"></div>
-            <div class="card-overlay"></div>
-            <div class="card-info"><span class="card-num">04</span><span class="card-cat" data-el="Realism — Big" data-en="Realism — Big">Realism — Big</span><span class="card-date">2025</span></div>
+          <div class="gallery-next" id="next-studio" onclick="slideGallery('studio',1)" style="background-image:url(./Awards/Best Black and Gray Big (2).png);background-position:center 30%">
+            <div class="gallery-blur"></div>
           </div>
         </div>
-        <div class="card-dots" id="dots-studio"></div>
-        <div class="card-nav-hint" data-el="Πάτησε για επόμενο" data-en="Tap for next">Πάτησε για επόμενο</div>
+        <div class="gal-dots" id="dots-studio"></div>
       </div>
     </div>
   </div>
@@ -796,75 +772,108 @@ pointer-events:none}
 .artist-gallery{display:none}
 .artist-gallery.active{display:block}
 
-/* ── CARD STACK ── */
-.card-stack{position:relative;width:100%;max-width:600px;margin:0 auto;height:420px}
-.card-item{position:absolute;top:0;left:0;right:0;height:360px;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .5s cubic-bezier(.22,1,.36,1);border:1px solid var(--border);background:var(--bg)}
-.card-item .card-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s}
-.card-item:hover .card-img{transform:scale(1.04)}
-.card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.8) 0%,transparent 40%,transparent 70%,rgba(10,10,10,.4) 100%);pointer-events:none}
-.card-info{position:absolute;bottom:0;left:0;right:0;padding:1rem 1.2rem;display:flex;align-items:baseline;gap:.6rem;z-index:2}
-.card-num{font-family:var(--font-mono);font-size:.5rem;color:var(--red);letter-spacing:.1em;opacity:.7}
-.card-cat{font-family:var(--font-sans);font-size:.75rem;font-weight:500;color:var(--white);letter-spacing:.02em}
-.card-date{font-family:var(--font-mono);font-size:.45rem;color:var(--dim);margin-left:auto;letter-spacing:.1em}
+/* ── GALLERY DUO (main clear + next blurred) ── */
+.gallery-duo{display:flex;gap:1.5rem;align-items:stretch;max-width:850px;margin:0 auto}
+.gallery-main{flex:1;position:relative;border-radius:10px;overflow:hidden;cursor:pointer;border:1px solid var(--border);background:var(--bg);aspect-ratio:4/3;transition:opacity .3s}
+.gallery-main:active{opacity:.9}
+.gallery-main{flex:1;position:relative;border-radius:10px;overflow:hidden;cursor:pointer;border:1px solid var(--border);background:var(--bg);background-size:cover;background-position:center;aspect-ratio:4/3;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .3s}
+.gallery-main:active{transform:scale(.98)}
+.gallery-main .gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.7) 0%,transparent 40%);pointer-events:none}
+.gallery-main .gallery-info{position:absolute;bottom:0;left:0;right:0;padding:.8rem 1rem;z-index:2;display:flex;flex-direction:column;gap:.2rem}
+.gal-num{font-family:var(--font-mono);font-size:.45rem;color:var(--red);letter-spacing:.1em;opacity:.7}
+.gal-cat{font-family:var(--font-sans);font-size:.75rem;font-weight:500;color:var(--white);letter-spacing:.02em}
 
-/* Stack positions: active in front, others blurred behind */
-.card-item.active{z-index:10;transform:translateY(0) scale(1);filter:none;opacity:1;box-shadow:0 8px 32px rgba(0,0,0,.5)}
-.card-item:nth-child(2):not(.active){z-index:9;transform:translateY(12px) scale(.97);filter:blur(3px) brightness(.45);opacity:.6;pointer-events:none}
-.card-item:nth-child(3):not(.active){z-index:8;transform:translateY(24px) scale(.94);filter:blur(5px) brightness(.35);opacity:.4;pointer-events:none}
-.card-item:nth-child(4):not(.active){z-index:7;transform:translateY(36px) scale(.91);filter:blur(7px) brightness(.25);opacity:.3;pointer-events:none}
-.card-item:nth-child(5):not(.active){z-index:6;transform:translateY(48px) scale(.88);filter:blur(9px) brightness(.15);opacity:.2;pointer-events:none}
-.card-item:nth-child(n+6):not(.active){z-index:5;transform:translateY(60px) scale(.85);filter:blur(12px) brightness(.1);opacity:.1;pointer-events:none}
+.gallery-next{width:140px;flex-shrink:0;position:relative;border-radius:10px;overflow:hidden;cursor:pointer;border:1px solid var(--border);background:var(--bg);background-size:cover;background-position:center;aspect-ratio:4/3;transition:all .4s cubic-bezier(.22,1,.36,1)}
+.gallery-next:hover{opacity:.85;transform:scale(1.03)}
+.gallery-next .gallery-blur{position:absolute;inset:0;background:rgba(10,10,10,.25);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);pointer-events:none}
+.gallery-next::after{content:"→";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1.2rem;color:rgba(255,255,255,.4);z-index:3;pointer-events:none;transition:color .3s,transform .3s}
+.gallery-next:hover::after{color:var(--white);transform:translate(-50%,-50%) scale(1.2)}
 
 /* ── DOTS ── */
-.card-dots{display:flex;justify-content:center;gap:.4rem;margin-top:.6rem}
-.card-dot{width:6px;height:6px;border-radius:50%;background:var(--border);border:none;cursor:pointer;transition:all .3s;padding:0}
-.card-dot.active{background:var(--white);width:18px;border-radius:3px}
-
-/* ── HINT ── */
-.card-nav-hint{text-align:center;margin-top:.4rem;font-family:var(--font-mono);font-size:.4rem;letter-spacing:.2em;color:var(--faint);text-transform:uppercase}
+.gal-dots{display:flex;justify-content:center;gap:.4rem;margin-top:1rem}
+.gal-dot{width:6px;height:6px;border-radius:50%;background:var(--border);border:none;cursor:pointer;transition:all .3s;padding:0}
+.gal-dot.active{background:var(--white);width:18px;border-radius:3px}
 
 /* ── RESPONSIVE (mobile) ── */
 @media(max-width:900px){
-  .card-stack{height:340px}
-  .card-item{height:300px;border-radius:10px}
-  .card-cat{font-size:.7rem}
-  .card-info{padding:.8rem 1rem}
+  .gallery-duo{gap:.8rem;max-width:none}
+  .gallery-next{width:100px}
+  .gallery-main .gal-cat{font-size:.7rem}
+  .gallery-main .gallery-info{padding:.6rem .8rem}
+  .gal-num{font-size:.4rem}
   .artist-tab{font-size:.45rem;padding:.4rem 1rem;letter-spacing:.15em}
   .artist-tabs{gap:.4rem;margin-bottom:1.5rem}
-  .card-item:nth-child(2):not(.active){transform:translateY(8px) scale(.97);filter:blur(3px) brightness(.45)}
-  .card-item:nth-child(3):not(.active){transform:translateY(16px) scale(.94);filter:blur(4px) brightness(.35)}
-  .card-item:nth-child(4):not(.active){transform:translateY(24px) scale(.91);filter:blur(6px) brightness(.25)}
-  .card-item:nth-child(5):not(.active){transform:translateY(32px) scale(.88);filter:blur(7px) brightness(.15)}
-  .card-item:nth-child(n+6):not(.active){transform:translateY(40px) scale(.85);filter:blur(9px) brightness(.1)}
 }
 @media(max-width:600px){
-  .card-stack{height:300px}
-  .card-item{height:260px}
-  .card-cat{font-size:.65rem}
-  .card-num{font-size:.45rem}
-  .card-date{font-size:.4rem}
+  .gallery-duo{gap:.5rem}
+  .gallery-next{width:70px}
+  .gallery-main .gal-cat{font-size:.6rem}
+  .gallery-main .gallery-info{padding:.4rem .6rem}
+  .gallery-next::after{font-size:1rem}
 }
 </style>
 
 <script>
-/* ── CARD STACK NAV ── */
-function cycleStack(id){
-  var stack=document.getElementById('stack-'+id);
-  if(!stack)return;
-  var items=stack.querySelectorAll('.card-item');
-  if(items.length<2)return;
-  var active=stack.querySelector('.card-item.active');
-  var next=active.nextElementSibling||items[0];
-  active.classList.remove('active');
-  next.classList.add('active');
-  // Update dots
+/* ── GALLERY DUO NAV (simplified) ── */
+var galState={};
+function initGallery(id){
+  if(galState[id]&&galState[id].ready)return;
+  var gal=document.getElementById('gallery-'+id);
+  if(!gal)return;
+  var items=gal.querySelectorAll('.gal-item');
+  if(!items.length)return;
+  var state={idx:0,items:items,ready:true};
+  galState[id]=state;
+  // Build dots
   var dots=document.getElementById('dots-'+id);
-  if(dots){
-    var idx=Array.from(items).indexOf(next);
-    dots.querySelectorAll('.card-dot').forEach(function(d,i){d.classList.toggle('active',i===idx)});
+  if(dots){dots.innerHTML='';
+    for(var i=0;i<items.length;i++){
+      var dot=document.createElement('button');
+      dot.className='gal-dot'+(i===0?' active':'');
+      dot.onclick=(function(idx){return function(){goToIdx(id,idx)}})(i);
+      dots.appendChild(dot);
+    }
   }
 }
-/* ── ARTIST SWITCH ── */
+function slideGallery(id,dir){
+  var state=galState[id];
+  if(!state||!state.ready||state.items.length<2)return;
+  var newIdx=(state.idx+dir+state.items.length)%state.items.length;
+  var nextIdx=(newIdx+1+state.items.length)%state.items.length;
+  state.idx=newIdx;
+  updateDuo(id,newIdx,nextIdx);
+}
+function updateDuo(id,mainIdx,nextIdx){
+  var state=galState[id];
+  var main=document.getElementById('main-'+id);
+  var next=document.getElementById('next-'+id);
+  if(!main||!next)return;
+  var mi=state.items[mainIdx];
+  var ni=state.items[nextIdx];
+  // Get background from the gal-item's inline style
+  var mBg=mi.style.backgroundImage||'';
+  var mCat=mi.getAttribute('data-cat')||'';
+  var mNum=mi.getAttribute('data-num')||'01';
+  var nBg=ni.style.backgroundImage||'';
+  // Swap main
+  main.style.backgroundImage=mBg;
+  var catEl=main.querySelector('.gal-cat');
+  if(catEl)catEl.textContent=mCat;
+  var numEl=main.querySelector('.gal-num');
+  if(numEl)numEl.textContent=mNum;
+  // Swap next preview
+  next.style.backgroundImage=nBg;
+  // Dots
+  var dots=document.getElementById('dots-'+id);
+  if(dots) dots.querySelectorAll('.gal-dot').forEach(function(d,i){d.classList.toggle('active',i===mainIdx)});
+}
+function goToIdx(id,idx){
+  var state=galState[id];
+  if(!state||idx===state.idx)return;
+  var nextIdx=(idx+1+state.items.length)%state.items.length;
+  state.idx=idx;
+  updateDuo(id,idx,nextIdx);
+}
 function switchArtist(btn,id){
   var parent=btn.closest('.work-artists');
   if(!parent)return;
@@ -873,38 +882,10 @@ function switchArtist(btn,id){
   parent.querySelectorAll('.artist-gallery').forEach(function(g){g.classList.remove('active')});
   var gal=document.getElementById('gallery-'+id);
   if(gal)gal.classList.add('active');
-  // Init dots if not yet
-  initDots(id);
+  initGallery(id);
 }
-/* ── INIT DOTS ── */
-function initDots(id){
-  var dots=document.getElementById('dots-'+id);
-  var stack=document.getElementById('stack-'+id);
-  if(!dots||!stack)return;
-  if(dots.children.length>0)return;
-  var items=stack.querySelectorAll('.card-item');
-  items.forEach(function(item,i){
-    var dot=document.createElement('button');
-    dot.className='card-dot'+(i===0?' active':'');
-    dot.onclick=function(){goToCard(id,i)};
-    dots.appendChild(dot);
-  });
-}
-function goToCard(id,idx){
-  var stack=document.getElementById('stack-'+id);
-  if(!stack)return;
-  var items=stack.querySelectorAll('.card-item');
-  items.forEach(function(item,i){
-    item.classList.toggle('active',i===idx);
-  });
-  var dots=document.getElementById('dots-'+id);
-  if(dots) dots.querySelectorAll('.card-dot').forEach(function(d,i){d.classList.toggle('active',i===idx)});
-}
-/* ── INIT ON LOAD ── */
 document.addEventListener('DOMContentLoaded',function(){
-  setTimeout(function(){
-    initDots('sakis');initDots('maria');initDots('studio');
-  },500);
+  setTimeout(function(){initGallery('sakis');initGallery('maria');initGallery('studio')},500);
 });
 </script>
 
