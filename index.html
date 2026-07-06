@@ -241,7 +241,10 @@ section{padding:8rem 3rem}
 /* ── STUDIO ── */
 .studio-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 .studio-text{font-size:.82rem;color:var(--dim);line-height:1.8}
-.studio-image{aspect-ratio:4/3;background:rgba(255,255,255,.02);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:.6rem;color:rgba(255,255,255,.06);letter-spacing:.15em}
+.studio-desc{font-size:.85rem;color:var(--dim);line-height:1.8;max-width:650px;margin-bottom:2.5rem}
+.studio-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;max-width:900px}
+.studio-photo{position:relative;height:240px;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--bg);background-size:cover;background-position:center;transition:all .5s cubic-bezier(.22,1,.36,1)}
+.studio-photo:hover{transform:translateY(-6px) scale(1.02);border-color:rgba(255,255,255,.12)}
 
 /* ── FAQ ── */
 .faq-list{max-width:700px}
@@ -424,7 +427,9 @@ pointer-events:none}
   /* ── STUDIO (mobile) ── */
   .studio-grid{grid-template-columns:1fr;gap:1.5rem}
   .studio-text{font-size:.75rem;line-height:1.7}
-  .studio-image{min-height:180px;border-radius:10px}
+  .studio-desc{font-size:.78rem;margin-bottom:1.8rem}
+  .studio-photos{grid-template-columns:1fr 1fr;gap:.5rem}
+  .studio-photo{height:160px;border-radius:10px}
   /* ── PORTFOLIO GRID (mobile) ── */
   .port-grid{grid-template-columns:1fr 1fr;grid-auto-rows:130px;gap:.5rem}
   .port-item.tall{grid-row:span 1}
@@ -945,15 +950,16 @@ document.addEventListener('DOMContentLoaded',function(){
     <div class="section-hdr">
       <div>
         <div class="reveal"><div class="section-label">● Studio</div></div>
-        <div class="reveal d1"><h2 class="section-title" data-el="Η εμπειρία" data-en="The experience">Η εμπειρία</h2></div>
+        <div class="reveal d1"><h2 class="section-title" data-el="To Studio" data-en="The Studio">To Studio</h2></div>
       </div>
       <div class="reveal d2"><div class="section-divider"></div></div>
     </div>
-    <div class="studio-grid">
-      <div>
-        <div class="reveal d1 studio-text" data-el="Στο Newfoundland, κάθε λεπτομέρεια είναι σχεδιασμένη για την απόλυτη εμπειρία. Ιατρική αποστείρωση, άνεση πελάτη, και καλλιτέχνες με χρόνια εμπειρίας σε realism, blackwork, Japanese και custom σχέδια. Τέχνη και ασφάλεια σε κάθε βήμα." data-en="At Newfoundland, every detail is designed for the ultimate experience. Medical-grade sterilization, client comfort, and artists with years of experience in realism, blackwork, Japanese and custom designs. Art and safety at every step.">Στο Newfoundland, κάθε λεπτομέρεια είναι σχεδιασμένη για την απόλυτη εμπειρία. Ιατρική αποστείρωση, άνεση πελάτη, και καλλιτέχνες με χρόνια εμπειρίας. Τέχνη και ασφάλεια σε κάθε βήμα.</div>
-      </div>
-      <div class="reveal d2"><div class="studio-image">[ STUDIO ]</div></div>
+    <div class="reveal d1">
+      <p class="studio-desc" data-el="Στο Newfoundland Tattoo Studio στη Λάρισα, η τέχνη συναντά την απόλυτη καθαριότητα. Ένας σύγχρονος χώρος σχεδιασμένος για την άνεση και ασφάλεια κάθε πελάτη, με ιατρική αποστείρωση αυτόκλειστου (autoclave), βελόνες μίας χρήσης και νοσοκομειακό επίπεδο υγιεινής. Οι καλλιτέχνες μας διαθέτουν πολυετή εμπειρία σε realism, blackwork, Japanese, cover up και custom τατουάζ. Στο στούντιό μας, κάθε γραμμή έχει σημασία — από την πρώτη συμβουλή μέχρι την τελική πινελιά. Επισκεφθείτε μας στην Πατρόκλου 8, Λάρισα, για μια μοναδική εμπειρία τατουάζ." data-en="At Newfoundland Tattoo Studio in Larissa, art meets absolute cleanliness. A modern space designed for client comfort and safety, with medical-grade autoclave sterilization, single-use needles and hospital-level hygiene. Our artists have years of experience in realism, blackwork, Japanese, cover up and custom tattoos. In our studio, every line matters — from the first consultation to the final touch. Visit us at Patroklou 8, Larissa, for a unique tattoo experience.">Στο Newfoundland Tattoo Studio στη Λάρισα, η τέχνη συναντά την απόλυτη καθαριότητα. Ιατρική αποστείρωση, βελόνες μίας χρήσης και καλλιτέχνες με πολυετή εμπειρία. Κάθε γραμμή έχει σημασία.</p>
+    </div>
+    <!-- Studio photos grid (placeholders — θα προστεθούν φωτογραφίες) -->
+    <div class="studio-photos">
+      <!-- Photos will go here when sent -->
     </div>
   </div>
 </section>
