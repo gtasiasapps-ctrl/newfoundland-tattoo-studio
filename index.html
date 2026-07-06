@@ -666,34 +666,29 @@ pointer-events:none}
       </div>
       <div class="reveal d2"><div class="section-divider"></div></div>
     </div>
-    <div class="award-gallery">      <div class="reveal award-img-wrap" style="animation-delay:-0.15s;animation-duration:3s;--float-dur:3s">
-        <img src="./Awards/Best Realistic Big.png" alt="Best Realistic Big award - Newfoundland Tattoo Studio portfolio" loading="lazy" />
-        <div class="award-title">Best Realistic Big</div>
-      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.3s;animation-duration:3.5s;--float-dur:3.5s">
-        <img src="./Awards/Best Black and Gray Big.png" alt="Best Black and Gray Big award - Newfoundland Tattoo Studio blackwork" loading="lazy" />
-        <div class="award-title">Best Black and Gray Big</div>
-      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.45s;animation-duration:4s;--float-dur:4s">
-        <img src="./Awards/Best Black and Gray Tattoo Contest Big.png" alt="Best Black and Gray Tattoo Contest Big award - Newfoundland Tattoo Studio" loading="lazy" />
-        <div class="award-title">Best Black and Gray Tattoo Contest Big</div>
-      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.15s;animation-duration:4.5s;--float-dur:4.5s">
-        <img src="./Awards/Best Realistic Black & Gray.png" alt="Best Realistic Black & Gray award - Newfoundland Tattoo Studio realistic tattoo" loading="lazy" />
-        <div class="award-title">Best Realistic Black & Gray</div>
-      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.3s;animation-duration:5s;--float-dur:5s">
-        <img src="./Awards/Best Small Realistic.png" alt="Best Small Realistic award - Newfoundland Tattoo Studio fine line" loading="lazy" />
-        <div class="award-title">Best Small Realistic</div>
-      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.45s;animation-duration:3s;--float-dur:3s">
-        <img src="./Awards/Best Realistic Small.png" alt="Best Realistic Small award - Newfoundland Tattoo Studio miniature" loading="lazy" />
-        <div class="award-title">Best Realistic Small</div>
-      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.15s;animation-duration:3.5s;--float-dur:3.5s">
-        <img src="./Awards/Realistic Big.png" alt="Realistic Big award - Newfoundland Tattoo Studio large scale" loading="lazy" />
-        <div class="award-title">Realistic Big</div>
-      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.3s;animation-duration:4s;--float-dur:4s">
-        <img src="./Awards/Black and Gray Big.png" alt="Black and Gray Big award - Newfoundland Tattoo Studio" loading="lazy" />
-        <div class="award-title">Black and Gray Big</div>
-      </div>      <div class="reveal award-img-wrap" style="animation-delay:-0.45s;animation-duration:4.5s;--float-dur:4.5s">
-        <img src="./Awards/Realistic Small.png" alt="Realistic Small award - Newfoundland Tattoo Studio portrait" loading="lazy" />
-        <div class="award-title">Realistic Small</div>
-      </div>    </div></section><!-- STUDIO -
+    <!-- HIDDEN DATA: awards -->
+    <div style="display:none">
+      <div class="gal-item" id="gi-awards-0" style="background-image:url(./Awards/Best Realistic Big.png);background-position:center 30%" data-cat="Best Realistic Big" data-num="01"></div>
+      <div class="gal-item" id="gi-awards-1" style="background-image:url(./Awards/Best Black and Gray Big.png);background-position:center 30%" data-cat="Best Black and Gray Big" data-num="02"></div>
+      <div class="gal-item" id="gi-awards-2" style="background-image:url(./Awards/Best Black and Gray Tattoo Contest Big.png);background-position:center 30%" data-cat="Best Black &amp; Gray Contest" data-num="03"></div>
+      <div class="gal-item" id="gi-awards-3" style="background-image:url(./Awards/Best Realistic Black & Gray.png);background-position:center 30%" data-cat="Best Realistic Black &amp; Gray" data-num="04"></div>
+      <div class="gal-item" id="gi-awards-4" style="background-image:url(./Awards/Best Small Realistic.png);background-position:center 30%" data-cat="Best Small Realistic" data-num="05"></div>
+      <div class="gal-item" id="gi-awards-5" style="background-image:url(./Awards/Best Realistic Small.png);background-position:center 30%" data-cat="Best Realistic Small" data-num="06"></div>
+      <div class="gal-item" id="gi-awards-6" style="background-image:url(./Awards/Realistic Big.png);background-position:center 30%" data-cat="Realistic Big" data-num="07"></div>
+      <div class="gal-item" id="gi-awards-7" style="background-image:url(./Awards/Black and Gray Big.png);background-position:center 30%" data-cat="Black and Gray Big" data-num="08"></div>
+      <div class="gal-item" id="gi-awards-8" style="background-image:url(./Awards/Realistic Small.png);background-position:center 30%" data-cat="Realistic Small" data-num="09"></div>
+    </div>
+    <div class="gallery-duo">
+      <div class="gallery-main" id="main-awards" onclick="slideGallery('awards',1)" style="background-image:url(./Awards/Best Realistic Big.png);background-position:center 30%">
+        <div class="gallery-overlay"></div>
+        <div class="gallery-info"><span class="gal-num">01</span><span class="gal-cat">Best Realistic Big</span></div>
+      </div>
+      <div class="gallery-next" id="next-awards" onclick="slideGallery('awards',1)" style="background-image:url(./Awards/Best Black and Gray Big.png);background-position:center 30%">
+        <div class="gallery-blur"></div>
+      </div>
+    </div>
+    <div class="gal-dots" id="dots-awards"></div>
+  </div></section><!-- STUDIO -
 <!-- WORK -->
 <section id="work">
   <div class="section-inner">
@@ -898,7 +893,7 @@ function goToIdx(id,idx){
   updateDuo(id,idx,nextIdx);
 }
 document.addEventListener('DOMContentLoaded',function(){
-  setTimeout(function(){initGallery('sakis');initGallery('george');initGallery('leonidas');initGallery('ortentsa')},500);
+  setTimeout(function(){initGallery('sakis');initGallery('george');initGallery('leonidas');initGallery('ortentsa');initGallery('awards');initGallery('studio')},500);
 });
 </script>
 
@@ -961,12 +956,22 @@ document.addEventListener('DOMContentLoaded',function(){
     <div class="reveal d1">
       <p class="studio-desc" data-el="Στο Newfoundland Tattoo Studio στη Λάρισα, η τέχνη συναντά την απόλυτη καθαριότητα. Ένας σύγχρονος χώρος σχεδιασμένος για την άνεση και ασφάλεια κάθε πελάτη, με ιατρική αποστείρωση αυτόκλειστου (autoclave), βελόνες μίας χρήσης και νοσοκομειακό επίπεδο υγιεινής. Οι καλλιτέχνες μας διαθέτουν πολυετή εμπειρία σε realism, blackwork, Japanese, cover up και custom τατουάζ. Στο στούντιό μας, κάθε γραμμή έχει σημασία — από την πρώτη συμβουλή μέχρι την τελική πινελιά. Επισκεφθείτε μας στην Πατρόκλου 8, Λάρισα, για μια μοναδική εμπειρία τατουάζ." data-en="At Newfoundland Tattoo Studio in Larissa, art meets absolute cleanliness. A modern space designed for client comfort and safety, with medical-grade autoclave sterilization, single-use needles and hospital-level hygiene. Our artists have years of experience in realism, blackwork, Japanese, cover up and custom tattoos. In our studio, every line matters — from the first consultation to the final touch. Visit us at Patroklou 8, Larissa, for a unique tattoo experience.">Στο Newfoundland Tattoo Studio στη Λάρισα, η τέχνη συναντά την απόλυτη καθαριότητα. Ιατρική αποστείρωση, βελόνες μίας χρήσης και καλλιτέχνες με πολυετή εμπειρία. Κάθε γραμμή έχει σημασία.</p>
     </div>
-    <!-- Studio photos grid -->
-    <div class="studio-photos">
-      <img src="./artists/studio/studio-2.jpg" alt="Newfoundland Tattoo Studio Λάρισα — χώρος υποδοχής" class="studio-photo" loading="lazy" />
-      <img src="./artists/studio/studio-3.jpg" alt="Newfoundland Tattoo Studio Larissa — station εργασίας" class="studio-photo" loading="lazy" />
-      <img src="./artists/studio/studio-4.jpg" alt="Newfoundland Tattoo Studio Λάρισα — studio interior" class="studio-photo" loading="lazy" />
+    <!-- Studio photos gallery duo -->
+    <div style="display:none">
+      <div class="gal-item" id="gi-studio-0" style="background-image:url(./artists/studio/studio-2.jpg);background-position:center" data-cat="Newfoundland — χώρος υποδοχής" data-num="01"></div>
+      <div class="gal-item" id="gi-studio-1" style="background-image:url(./artists/studio/studio-3.jpg);background-position:center" data-cat="Newfoundland — station εργασίας" data-num="02"></div>
+      <div class="gal-item" id="gi-studio-2" style="background-image:url(./artists/studio/studio-4.jpg);background-position:center" data-cat="Newfoundland — studio interior" data-num="03"></div>
     </div>
+    <div class="gallery-duo">
+      <div class="gallery-main" id="main-studio" onclick="slideGallery('studio',1)" style="background-image:url(./artists/studio/studio-2.jpg);background-position:center">
+        <div class="gallery-overlay"></div>
+        <div class="gallery-info"><span class="gal-num">01</span><span class="gal-cat">Newfoundland — χώρος υποδοχής</span></div>
+      </div>
+      <div class="gallery-next" id="next-studio" onclick="slideGallery('studio',1)" style="background-image:url(./artists/studio/studio-3.jpg);background-position:center">
+        <div class="gallery-blur"></div>
+      </div>
+    </div>
+    <div class="gal-dots" id="dots-studio"></div>
   </div>
 </section>
 
