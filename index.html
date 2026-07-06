@@ -668,25 +668,26 @@ pointer-events:none}
     </div>
     <!-- HIDDEN DATA: awards -->
     <div style="display:none">
-      <div class="gal-item" id="gi-awards-0" data-src="./Awards/Best-Realistic-Big.png" data-cat="Best Realistic Big" data-num="01"></div>
-      <div class="gal-item" id="gi-awards-1" data-src="./Awards/Best-Black-and-Gray-Big.png" data-cat="Best Black and Gray Big" data-num="02"></div>
-      <div class="gal-item" id="gi-awards-2" data-src="./Awards/Best-Black-and-Gray-Tattoo-Contest-Big.png" data-cat="Best Black &amp; Gray Contest" data-num="03"></div>
-      <div class="gal-item" id="gi-awards-3" data-src="./Awards/Best-Realistic-Black-&-Gray.png" data-cat="Best Realistic Black &amp; Gray" data-num="04"></div>
-      <div class="gal-item" id="gi-awards-4" data-src="./Awards/Best-Small-Realistic.png" data-cat="Best Small Realistic" data-num="05"></div>
-      <div class="gal-item" id="gi-awards-5" data-src="./Awards/Best-Realistic-Small.png" data-cat="Best Realistic Small" data-num="06"></div>
-      <div class="gal-item" id="gi-awards-6" data-src="./Awards/Realistic-Big.png" data-cat="Realistic Big" data-num="07"></div>
-      <div class="gal-item" id="gi-awards-7" data-src="./Awards/Black-and-Gray-Big.png" data-cat="Black and Gray Big" data-num="08"></div>
-      <div class="gal-item" id="gi-awards-8" data-src="./Awards/Realistic-Small.png" data-cat="Realistic Small" data-num="09"></div>
+      <div class="gal-item" id="gi-awards-0" style="background-image:url(./Awards/Best-Realistic-Big.png);background-position:center" data-cat="Best Realistic Big" data-num="01"></div>
+      <div class="gal-item" id="gi-awards-1" style="background-image:url(./Awards/Best-Black-and-Gray-Big.png);background-position:center" data-cat="Best Black and Gray Big" data-num="02"></div>
+      <div class="gal-item" id="gi-awards-2" style="background-image:url(./Awards/Best-Black-and-Gray-Tattoo-Contest-Big.png);background-position:center" data-cat="Best Black &amp; Gray Contest" data-num="03"></div>
+      <div class="gal-item" id="gi-awards-3" style="background-image:url(./Awards/Best-Realistic-Black-&-Gray.png);background-position:center" data-cat="Best Realistic Black &amp; Gray" data-num="04"></div>
+      <div class="gal-item" id="gi-awards-4" style="background-image:url(./Awards/Best-Small-Realistic.png);background-position:center" data-cat="Best Small Realistic" data-num="05"></div>
+      <div class="gal-item" id="gi-awards-5" style="background-image:url(./Awards/Best-Realistic-Small.png);background-position:center" data-cat="Best Realistic Small" data-num="06"></div>
+      <div class="gal-item" id="gi-awards-6" style="background-image:url(./Awards/Realistic-Big.png);background-position:center" data-cat="Realistic Big" data-num="07"></div>
+      <div class="gal-item" id="gi-awards-7" style="background-image:url(./Awards/Black-and-Gray-Big.png);background-position:center" data-cat="Black and Gray Big" data-num="08"></div>
+      <div class="gal-item" id="gi-awards-8" style="background-image:url(./Awards/Realistic-Small.png);background-position:center" data-cat="Realistic Small" data-num="09"></div>
+      <div class="gal-item" id="gi-awards-9" style="background-image:url(./Awards/Best-Black-and-Gray-Big-(2).png);background-position:center" data-cat="Best Black and Gray Big (2)" data-num="10"></div>
     </div>
     <div class="gallery-duo">
-      <div class="gallery-main" id="main-awards" onclick="slideGallery('awards',1)">
+      <div class="gallery-main" id="main-awards" onclick="openLightbox('awards')">
         <img src="./Awards/Best-Realistic-Big.png" alt="Best Realistic Big" class="gal-img" loading="lazy" />
         <div class="gallery-overlay"></div>
         <div class="gallery-info"><span class="gal-num">01</span><span class="gal-cat">Best Realistic Big</span></div>
       </div>
       <div class="gallery-next" id="next-awards" onclick="slideGallery('awards',1)">
         <div class="gallery-blur"></div>
-        <img src="./Awards/Best Black-and-Gray-Big.png" alt="Best Black and Gray" class="gal-img" loading="lazy" />
+        <img src="./Awards/Best-Black-and-Gray-Big.png" alt="Best Black and Gray" class="gal-img" loading="lazy" />
       </div>
     </div>
     <div class="gal-dots" id="dots-awards"></div>
@@ -758,7 +759,7 @@ pointer-events:none}
             <div class="gallery-info"><span class="gal-num">01</span></div>
           </div>
           <div class="gallery-next" id="next-sakis" onclick="slideGallery('sakis',1)">
-            <img src="./artists/sakis/IMG_0010.PNG" alt="Sakis 1" class="gal-img" loading="lazy" />
+            <img src="./artists/sakis/sakis-01.jpg" alt="Sakis 2" class="gal-img" loading="lazy" />
             <div class="gallery-blur"></div>
           </div>
         </div>
@@ -774,7 +775,7 @@ pointer-events:none}
             <div class="gallery-info"><span class="gal-num">01</span></div>
           </div>
           <div class="gallery-next" id="next-leonidas" onclick="slideGallery('leonidas',1)">
-            <img src="./artists/leonidas/IMG_0012.PNG" alt="Leonidas 1" class="gal-img" loading="lazy" />
+            <img src="./artists/leonidas/leonidas-fsr.jpg" alt="Leonidas 2" class="gal-img" loading="lazy" />
             <div class="gallery-blur"></div>
           </div>
         </div>
@@ -829,6 +830,25 @@ pointer-events:none}
 
 .gallery-next::after{content:"→";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1.2rem;color:rgba(255,255,255,.4);z-index:3;pointer-events:none;transition:color .3s,transform .3s}
 .gallery-next:hover::after{color:var(--white);transform:translate(-50%,-50%) scale(1.2)}
+
+/* ── LIGHTBOX ── */
+.lightbox{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .3s cubic-bezier(.16,1,.3,1);cursor:zoom-out}
+.lightbox.open{opacity:1;pointer-events:auto}
+.lightbox-img{max-width:min(90vw,1200px);max-height:90vh;width:auto;height:auto;object-fit:scale-down;border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,.6);cursor:default;transition:transform .4s cubic-bezier(.22,1,.36,1);display:block}
+.lightbox-close{position:fixed;top:1.5rem;right:1.5rem;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.7);font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:100000;transition:all .3s;font-family:var(--font-sans);line-height:1}
+.lightbox-close:hover{background:rgba(255,255,255,.15);color:#fff;transform:scale(1.08)}
+.lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);z-index:100000;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .3s;font-family:var(--font-sans);-webkit-tap-highlight-color:transparent}
+.lightbox-nav:hover{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.2)}
+.lightbox-nav.prev{left:1.5rem}
+.lightbox-nav.next{right:1.5rem}
+.lightbox-nav:active{transform:translateY(-50%) scale(.92)}
+@media(max-width:900px){
+  .lightbox-close{top:.8rem;right:.8rem;width:36px;height:36px;font-size:1rem}
+  .lightbox-nav{width:36px;height:36px;font-size:.9rem}
+  .lightbox-nav.prev{left:.5rem}
+  .lightbox-nav.next{right:.5rem}
+  .lightbox-img{max-width:95vw;max-height:85vh}
+}
 
 /* ── DOTS ── */
 .gal-dots{display:flex;justify-content:center;gap:.4rem;margin-top:1rem}
@@ -901,10 +921,10 @@ function updateDuo(id,mainIdx,nextIdx){
   if(!main||!next)return;
   var mi=state.items[mainIdx];
   var ni=state.items[nextIdx];
-  var mBg=mi.style.backgroundImage||'';
+  var mBg=mi.style.backgroundImage||'';if(!mBg&&mi.getAttribute('data-src')){mBg='url('+mi.getAttribute('data-src')+')';}
   var mCat=mi.getAttribute('data-cat')||'';
   var mNum=mi.getAttribute('data-num')||'01';
-  var nBg=ni.style.backgroundImage||'';
+  var nBg=ni.style.backgroundImage||'';if(!nBg&&ni.getAttribute('data-src')){nBg='url('+ni.getAttribute('data-src')+')';}
   // Support both background-image and img elements
   var mainImg=main.querySelector('img');
   if(mainImg){mainImg.src=mBg.replace(/url\(['"]?([^)]+?)['"]?\)/,'$1');}
@@ -1091,6 +1111,47 @@ if('ontouchstart'in window){d.style.display='none';r.style.display='none';docume
 document.querySelectorAll('.magnetic').forEach(el=>{
   el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2,d=Math.sqrt(x*x+y*y),m=Math.max(r.width,r.height)*.5,s=Math.min(d/m,1);el.style.transform=`translate(${x/m*s*6}px,${y/m*s*6}px)`});
   el.addEventListener('mouseleave',()=>el.style.transform='translate(0,0)');
+});
+
+/* ── LIGHTBOX ── */
+var lbId=null,lbIdx=0;
+function openLightbox(id){
+  if(!galState[id]||!galState[id].ready)return;
+  var state=galState[id];
+  lbId=id;lbIdx=state.idx;
+  updateLightbox();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(e){
+  if(e&&e.target!==document.getElementById('lightboxImg')&&e.target.closest('.lightbox-nav, .lightbox-close'))return;
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+  lbId=null;
+}
+function lbSlide(dir){
+  var state=galState[lbId];
+  if(!state||!state.items.length)return;
+  lbIdx=(lbIdx+dir+state.items.length)%state.items.length;
+  state.idx=lbIdx;
+  updateLightbox();
+  // Also sync the duo gallery
+  var nextIdx=(lbIdx+1+state.items.length)%state.items.length;
+  updateDuo(lbId,lbIdx,nextIdx);
+}
+function updateLightbox(){
+  var state=galState[lbId];
+  if(!state)return;
+  var item=state.items[lbIdx];
+  var img=document.getElementById('lightboxImg');
+  // Extract src from background-image or data-src
+  var src=item.style.backgroundImage.replace(/url\(['"]?([^)]+?)['"]?\)/,'$1')||item.getAttribute('data-src');
+  if(src)img.src=src;
+}document.addEventListener('keydown',function(e){
+  if(!lbId)return;
+  if(e.key==='Escape')closeLightbox();
+  if(e.key==='ArrowLeft')lbSlide(-1);
+  if(e.key==='ArrowRight')lbSlide(1);
 });
 </script>
 
@@ -1297,6 +1358,14 @@ addEventListener("resize",function(){W=innerWidth;H=innerHeight;dpr=window.devic
   });
 })();
 </script>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
+  <button class="lightbox-nav prev" id="lbPrev" onclick="lbSlide(-1)" aria-label="Previous">‹</button>
+  <button class="lightbox-nav next" id="lbNext" onclick="lbSlide(1)" aria-label="Next">›</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+</div>
 
 <!-- FLOATING LOGO -->
 <img src="./logo.png" alt="" class="floating-logo" />
