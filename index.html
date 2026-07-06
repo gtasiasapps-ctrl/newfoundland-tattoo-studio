@@ -695,13 +695,8 @@ pointer-events:none}
       </div>
       <div class="reveal d2"><div class="section-divider"></div></div>
     </div>
-    <!-- ARTIST TABS -->
+    <!-- ARTIST GALLERIES: each artist has their own section, no tabs -->
     <div class="reveal d1 work-artists">
-      <div class="artist-tabs">
-        <button class="artist-tab active" data-el="Σάκης" data-en="Sakis" onclick="switchArtist(this,'sakis')">Σάκης</button>
-        <button class="artist-tab" data-el="Μαρία" data-en="Maria" onclick="switchArtist(this,'maria')">Μαρία</button>
-        <button class="artist-tab" data-el="Studio" data-en="Studio" onclick="switchArtist(this,'studio')">Studio</button>
-      </div>
       <!-- HIDDEN DATA: all gallery items (JS reads from these) -->
       <div style="display:none">
         <!-- SAKIS -->
@@ -720,8 +715,9 @@ pointer-events:none}
         <div class="gal-item" id="gi-studio-2" style="background-image:url(./Awards/Realistic Small.png);background-position:center 30%" data-cat="Realism — Πορτρέτο" data-num="03"></div>
         <div class="gal-item" id="gi-studio-3" style="background-image:url(./Awards/Realistic Big.png);background-position:center 30%" data-cat="Realism — Big" data-num="04"></div>
       </div>
-      <!-- SAKIS GALLERY -->
-      <div class="artist-gallery active" id="gallery-sakis">
+      <!-- SAKIS -->
+      <div class="artist-block">
+        <div class="artist-name"><span class="artist-label" data-el="Σάκης" data-en="Sakis">Σάκης</span><span class="artist-role" data-el="Tattoo Artist" data-en="Tattoo Artist">Tattoo Artist</span></div>
         <div class="gallery-duo">
           <div class="gallery-main" id="main-sakis" onclick="slideGallery('sakis',1)" style="background-image:url(./Awards/Best Realistic Big.png);background-position:center 30%">
             <div class="gallery-overlay"></div>
@@ -733,8 +729,9 @@ pointer-events:none}
         </div>
         <div class="gal-dots" id="dots-sakis"></div>
       </div>
-      <!-- MARIA GALLERY -->
-      <div class="artist-gallery" id="gallery-maria">
+      <!-- MARIA -->
+      <div class="artist-block">
+        <div class="artist-name"><span class="artist-label" data-el="Μαρία" data-en="Maria">Μαρία</span><span class="artist-role" data-el="Tattoo Artist" data-en="Tattoo Artist">Tattoo Artist</span></div>
         <div class="gallery-duo">
           <div class="gallery-main" id="main-maria" onclick="slideGallery('maria',1)" style="background-image:url(./Awards/Best Black and Gray Tattoo Contest Big.png);background-position:center 30%">
             <div class="gallery-overlay"></div>
@@ -746,8 +743,9 @@ pointer-events:none}
         </div>
         <div class="gal-dots" id="dots-maria"></div>
       </div>
-      <!-- STUDIO GALLERY -->
-      <div class="artist-gallery" id="gallery-studio">
+      <!-- STUDIO -->
+      <div class="artist-block">
+        <div class="artist-name"><span class="artist-label" data-el="Studio" data-en="Studio">Studio</span><span class="artist-role" data-el="Tattoo Studio" data-en="Tattoo Studio">Tattoo Studio</span></div>
         <div class="gallery-duo">
           <div class="gallery-main" id="main-studio" onclick="slideGallery('studio',1)" style="background-image:url(./Awards/Best Realistic Small.png);background-position:center 30%">
             <div class="gallery-overlay"></div>
@@ -764,13 +762,13 @@ pointer-events:none}
 </section>
 
 <style>
-/* ── ARTIST TABS ── */
-.artist-tabs{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}
-.artist-tab{background:transparent;border:1px solid var(--border);color:var(--dim);font-family:var(--font-mono);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;padding:.5rem 1.2rem;cursor:pointer;transition:all .3s;border-radius:0}
-.artist-tab:hover{color:var(--white);border-color:rgba(255,255,255,.15)}
-.artist-tab.active{background:var(--white);color:var(--bg);border-color:var(--white)}
-.artist-gallery{display:none}
-.artist-gallery.active{display:block}
+/* ── ARTIST BLOCKS (no tabs, all visible) ── */
+.artist-block{margin-bottom:2.5rem}
+.artist-block:last-child{margin-bottom:0}
+.artist-name{display:flex;align-items:baseline;gap:.6rem;margin-bottom:1rem}
+.artist-label{font-family:var(--font-sans);font-size:1.1rem;font-weight:500;color:var(--white);letter-spacing:-.02em}
+.artist-role{font-family:var(--font-mono);font-size:.45rem;color:var(--dim);letter-spacing:.2em;text-transform:uppercase}
+.artist-block .gallery-duo{margin-top:0}
 
 /* ── GALLERY DUO (main clear + next blurred) ── */
 .gallery-duo{display:flex;gap:1.5rem;align-items:stretch;max-width:850px;margin:0 auto}
@@ -801,8 +799,10 @@ pointer-events:none}
   .gallery-main .gal-cat{font-size:.7rem}
   .gallery-main .gallery-info{padding:.6rem .8rem}
   .gal-num{font-size:.4rem}
-  .artist-tab{font-size:.45rem;padding:.4rem 1rem;letter-spacing:.15em}
-  .artist-tabs{gap:.4rem;margin-bottom:1.5rem}
+  .artist-block{margin-bottom:2rem}
+  .artist-label{font-size:.95rem}
+  .artist-role{font-size:.4rem}
+  .artist-name{margin-bottom:.8rem}
 }
 @media(max-width:600px){
   .gallery-duo{gap:.5rem}
@@ -810,17 +810,25 @@ pointer-events:none}
   .gallery-main .gal-cat{font-size:.6rem}
   .gallery-main .gallery-info{padding:.4rem .6rem}
   .gallery-next::after{font-size:1rem}
+  .artist-block{margin-bottom:1.5rem}
+  .artist-label{font-size:.85rem}
+  .artist-role{font-size:.38rem}
+  .artist-name{margin-bottom:.6rem;gap:.4rem}
 }
 </style>
 
 <script>
-/* ── GALLERY DUO NAV (simplified) ── */
+/* ── GALLERY DUO NAV (no tabs, all galleries visible) ── */
 var galState={};
 function initGallery(id){
   if(galState[id]&&galState[id].ready)return;
-  var gal=document.getElementById('gallery-'+id);
-  if(!gal)return;
-  var items=gal.querySelectorAll('.gal-item');
+  // Collect gal-item elements by ID prefix
+  var items=[];
+  for(var i=0;;i++){
+    var el=document.getElementById('gi-'+id+'-'+i);
+    if(!el)break;
+    items.push(el);
+  }
   if(!items.length)return;
   var state={idx:0,items:items,ready:true};
   galState[id]=state;
@@ -850,20 +858,16 @@ function updateDuo(id,mainIdx,nextIdx){
   if(!main||!next)return;
   var mi=state.items[mainIdx];
   var ni=state.items[nextIdx];
-  // Get background from the gal-item's inline style
   var mBg=mi.style.backgroundImage||'';
   var mCat=mi.getAttribute('data-cat')||'';
   var mNum=mi.getAttribute('data-num')||'01';
   var nBg=ni.style.backgroundImage||'';
-  // Swap main
   main.style.backgroundImage=mBg;
   var catEl=main.querySelector('.gal-cat');
   if(catEl)catEl.textContent=mCat;
   var numEl=main.querySelector('.gal-num');
   if(numEl)numEl.textContent=mNum;
-  // Swap next preview
   next.style.backgroundImage=nBg;
-  // Dots
   var dots=document.getElementById('dots-'+id);
   if(dots) dots.querySelectorAll('.gal-dot').forEach(function(d,i){d.classList.toggle('active',i===mainIdx)});
 }
@@ -873,16 +877,6 @@ function goToIdx(id,idx){
   var nextIdx=(idx+1+state.items.length)%state.items.length;
   state.idx=idx;
   updateDuo(id,idx,nextIdx);
-}
-function switchArtist(btn,id){
-  var parent=btn.closest('.work-artists');
-  if(!parent)return;
-  parent.querySelectorAll('.artist-tab').forEach(function(t){t.classList.remove('active')});
-  btn.classList.add('active');
-  parent.querySelectorAll('.artist-gallery').forEach(function(g){g.classList.remove('active')});
-  var gal=document.getElementById('gallery-'+id);
-  if(gal)gal.classList.add('active');
-  initGallery(id);
 }
 document.addEventListener('DOMContentLoaded',function(){
   setTimeout(function(){initGallery('sakis');initGallery('maria');initGallery('studio')},500);
