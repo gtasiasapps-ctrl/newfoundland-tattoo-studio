@@ -709,11 +709,6 @@ pointer-events:none}
         <div class="gal-item" id="gi-maria-0" style="background-image:url(./Awards/Best Black and Gray Tattoo Contest Big.png);background-position:center 30%" data-cat="Black &amp; Gray — Διαγωνισμός" data-num="01"></div>
         <div class="gal-item" id="gi-maria-1" style="background-image:url(./Awards/Black and Gray Big.png);background-position:center 30%" data-cat="Japanese — Dragon Sleeve" data-num="02"></div>
         <div class="gal-item" id="gi-maria-2" style="background-image:url(./Awards/Best Realistic Small.png);background-position:center 30%" data-cat="Neo-Traditional — Mandala" data-num="03"></div>
-        <!-- STUDIO -->
-        <div class="gal-item" id="gi-studio-0" style="background-image:url(./Awards/Best Realistic Small.png);background-position:center 30%" data-cat="Realism — Μικρό" data-num="01"></div>
-        <div class="gal-item" id="gi-studio-1" style="background-image:url(./Awards/Best Black and Gray Big (2).png);background-position:center 30%" data-cat="Custom Lettering" data-num="02"></div>
-        <div class="gal-item" id="gi-studio-2" style="background-image:url(./Awards/Realistic Small.png);background-position:center 30%" data-cat="Realism — Πορτρέτο" data-num="03"></div>
-        <div class="gal-item" id="gi-studio-3" style="background-image:url(./Awards/Realistic Big.png);background-position:center 30%" data-cat="Realism — Big" data-num="04"></div>
       </div>
       <!-- SAKIS -->
       <div class="artist-block">
@@ -742,20 +737,6 @@ pointer-events:none}
           </div>
         </div>
         <div class="gal-dots" id="dots-maria"></div>
-      </div>
-      <!-- STUDIO -->
-      <div class="artist-block">
-        <div class="artist-name"><span class="artist-label" data-el="Studio" data-en="Studio">Studio</span><span class="artist-role" data-el="Tattoo Studio" data-en="Tattoo Studio">Tattoo Studio</span></div>
-        <div class="gallery-duo">
-          <div class="gallery-main" id="main-studio" onclick="slideGallery('studio',1)" style="background-image:url(./Awards/Best Realistic Small.png);background-position:center 30%">
-            <div class="gallery-overlay"></div>
-            <div class="gallery-info"><span class="gal-num">01</span><span class="gal-cat">Realism — Μικρό</span></div>
-          </div>
-          <div class="gallery-next" id="next-studio" onclick="slideGallery('studio',1)" style="background-image:url(./Awards/Best Black and Gray Big (2).png);background-position:center 30%">
-            <div class="gallery-blur"></div>
-          </div>
-        </div>
-        <div class="gal-dots" id="dots-studio"></div>
       </div>
     </div>
   </div>
@@ -879,7 +860,7 @@ function goToIdx(id,idx){
   updateDuo(id,idx,nextIdx);
 }
 document.addEventListener('DOMContentLoaded',function(){
-  setTimeout(function(){initGallery('sakis');initGallery('maria');initGallery('studio')},500);
+  setTimeout(function(){initGallery('sakis');initGallery('maria')},500);
 });
 </script>
 
