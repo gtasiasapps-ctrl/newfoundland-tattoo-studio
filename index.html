@@ -700,15 +700,16 @@ pointer-events:none}
       <!-- HIDDEN DATA: all gallery items (JS reads from these) -->
       <div style="display:none">
         <!-- SAKIS -->
-        <div class="gal-item" id="gi-sakis-0" style="background-image:url(./Awards/Best Realistic Big.png);background-position:center 30%" data-cat="Realism — Πορτρέτο" data-num="01"></div>
-        <div class="gal-item" id="gi-sakis-1" style="background-image:url(./Awards/Best Black and Gray Big.png);background-position:center 30%" data-cat="Blackwork — Γεωμετρικό" data-num="02"></div>
-        <div class="gal-item" id="gi-sakis-2" style="background-image:url(./Awards/Best Realistic Black & Gray.png);background-position:center 30%" data-cat="Cover Up — Πριν/Μετά" data-num="03"></div>
-        <div class="gal-item" id="gi-sakis-3" style="background-image:url(./Awards/Realistic Big.png);background-position:center 30%" data-cat="Realism — Μεγάλο" data-num="04"></div>
-        <div class="gal-item" id="gi-sakis-4" style="background-image:url(./Awards/Best Small Realistic.png);background-position:center 30%" data-cat="Fine Line — Μικρό" data-num="05"></div>
-        <!-- MARIA -->
-        <div class="gal-item" id="gi-maria-0" style="background-image:url(./Awards/Best Black and Gray Tattoo Contest Big.png);background-position:center 30%" data-cat="Black &amp; Gray — Διαγωνισμός" data-num="01"></div>
-        <div class="gal-item" id="gi-maria-1" style="background-image:url(./Awards/Black and Gray Big.png);background-position:center 30%" data-cat="Japanese — Dragon Sleeve" data-num="02"></div>
-        <div class="gal-item" id="gi-maria-2" style="background-image:url(./Awards/Best Realistic Small.png);background-position:center 30%" data-cat="Neo-Traditional — Mandala" data-num="03"></div>
+        <div class="gal-item" id="gi-sakis-0" style="background-image:url(./artists/sakis/IMG_0010.PNG);background-position:center 30%" data-cat="Sakis — Custom Work" data-num="01"></div>
+        <!-- GEORGE -->
+        <div class="gal-item" id="gi-george-0" style="background-image:url(./artists/george/IMG_0009.PNG);background-position:center 30%" data-cat="George — Realism" data-num="01"></div>
+        <div class="gal-item" id="gi-george-1" style="background-image:url(./artists/george/IMG_0011.PNG);background-position:center 30%" data-cat="George — Blackwork" data-num="02"></div>
+        <!-- LEONIDAS -->
+        <div class="gal-item" id="gi-leonidas-0" style="background-image:url(./artists/leonidas/IMG_0012.PNG);background-position:center 30%" data-cat="Leonidas — Design" data-num="01"></div>
+        <!-- ORTENTSA -->
+        <div class="gal-item" id="gi-ortentsa-0" style="background-image:url(./artists/ortentsa/IMG_6599.png);background-position:center 30%" data-cat="Ortentsa — Design" data-num="01"></div>
+        <div class="gal-item" id="gi-ortentsa-1" style="background-image:url(./artists/ortentsa/IMG_6601.png);background-position:center 30%" data-cat="Ortentsa — Realism" data-num="02"></div>
+        <div class="gal-item" id="gi-ortentsa-2" style="background-image:url(./artists/ortentsa/IMG_6603.png);background-position:center 30%" data-cat="Ortentsa — Blackwork" data-num="03"></div>
       </div>
       <!-- SAKIS -->
       <div class="artist-block">
@@ -716,7 +717,7 @@ pointer-events:none}
         <div class="gallery-duo">
           <div class="gallery-main" id="main-sakis" onclick="slideGallery('sakis',1)" style="background-image:url(./artists/sakis/IMG_0010.PNG);background-position:center 30%">
             <div class="gallery-overlay"></div>
-            <div class="gallery-info"><span class="gal-num">01</span><span class="gal-cat">Sakis — Work</span></div>
+            <div class="gallery-info"><span class="gal-num">01</span><span class="gal-cat">Sakis — Custom Work</span></div>
           </div>
           <div class="gallery-next" id="next-sakis" onclick="slideGallery('sakis',1)" style="background-image:url(./artists/sakis/IMG_0010.PNG);background-position:center 30%">
             <div class="gallery-blur"></div>
@@ -724,19 +725,47 @@ pointer-events:none}
         </div>
         <div class="gal-dots" id="dots-sakis"></div>
       </div>
-      <!-- MARIA -->
+      <!-- GEORGE -->
       <div class="artist-block">
-        <div class="artist-name"><span class="artist-label" data-el="Μαρία" data-en="Maria">Μαρία</span><span class="artist-role" data-el="Tattoo Artist" data-en="Tattoo Artist">Tattoo Artist</span></div>
+        <div class="artist-name"><span class="artist-label" data-el="Γιώργος Αγνάντης" data-en="George Agnantis">Γιώργος Αγνάντης</span><span class="artist-role" data-el="Tattoo Artist" data-en="Tattoo Artist">Tattoo Artist</span></div>
         <div class="gallery-duo">
-          <div class="gallery-main" id="main-maria" onclick="slideGallery('maria',1)" style="background-image:url(./artists/maria/IMG_6599.png);background-position:center 30%">
+          <div class="gallery-main" id="main-george" onclick="slideGallery('george',1)" style="background-image:url(./artists/george/IMG_0009.PNG);background-position:center 30%">
             <div class="gallery-overlay"></div>
-            <div class="gallery-info"><span class="gal-num">01</span><span class="gal-cat">Maria — Design</span></div>
+            <div class="gallery-info"><span class="gal-num">01</span><span class="gal-cat">George — Realism</span></div>
           </div>
-          <div class="gallery-next" id="next-maria" onclick="slideGallery('maria',1)" style="background-image:url(./artists/maria/IMG_6601.png);background-position:center 30%">
+          <div class="gallery-next" id="next-george" onclick="slideGallery('george',1)" style="background-image:url(./artists/george/IMG_0011.PNG);background-position:center 30%">
             <div class="gallery-blur"></div>
           </div>
         </div>
-        <div class="gal-dots" id="dots-maria"></div>
+        <div class="gal-dots" id="dots-george"></div>
+      </div>
+      <!-- LEONIDAS -->
+      <div class="artist-block">
+        <div class="artist-name"><span class="artist-label" data-el="Λεωνίδας Κοτούμπας" data-en="Leonidas Kotoumpas">Λεωνίδας Κοτούμπας</span><span class="artist-role" data-el="Tattoo Artist" data-en="Tattoo Artist">Tattoo Artist</span></div>
+        <div class="gallery-duo">
+          <div class="gallery-main" id="main-leonidas" onclick="slideGallery('leonidas',1)" style="background-image:url(./artists/leonidas/IMG_0012.PNG);background-position:center 30%">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-info"><span class="gal-num">01</span><span class="gal-cat">Leonidas — Design</span></div>
+          </div>
+          <div class="gallery-next" id="next-leonidas" onclick="slideGallery('leonidas',1)" style="background-image:url(./artists/leonidas/IMG_0012.PNG);background-position:center 30%">
+            <div class="gallery-blur"></div>
+          </div>
+        </div>
+        <div class="gal-dots" id="dots-leonidas"></div>
+      </div>
+      <!-- ORTENTSA -->
+      <div class="artist-block">
+        <div class="artist-name"><span class="artist-label" data-el="Ορτέντσα" data-en="Ortentsa">Ορτέντσα</span><span class="artist-role" data-el="Tattoo Artist" data-en="Tattoo Artist">Tattoo Artist</span></div>
+        <div class="gallery-duo">
+          <div class="gallery-main" id="main-ortentsa" onclick="slideGallery('ortentsa',1)" style="background-image:url(./artists/ortentsa/IMG_6599.png);background-position:center 30%">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-info"><span class="gal-num">01</span><span class="gal-cat">Ortentsa — Design</span></div>
+          </div>
+          <div class="gallery-next" id="next-ortentsa" onclick="slideGallery('ortentsa',1)" style="background-image:url(./artists/ortentsa/IMG_6601.png);background-position:center 30%">
+            <div class="gallery-blur"></div>
+          </div>
+        </div>
+        <div class="gal-dots" id="dots-ortentsa"></div>
       </div>
     </div>
   </div>
@@ -860,7 +889,7 @@ function goToIdx(id,idx){
   updateDuo(id,idx,nextIdx);
 }
 document.addEventListener('DOMContentLoaded',function(){
-  setTimeout(function(){initGallery('sakis');initGallery('maria')},500);
+  setTimeout(function(){initGallery('sakis');initGallery('george');initGallery('leonidas');initGallery('ortentsa')},500);
 });
 </script>
 
