@@ -604,8 +604,8 @@ pointer-events:none}
     <span class="bn-label">FAQ</span>
   </a>
   <a href="#" onclick="toggleLangMobile()" style="cursor:pointer">
-    <span class="bn-icon">🌐</span>
-    <span class="bn-label" id="langLabelMobile">EN</span>
+    <span class="bn-icon" style="font-size:13px;font-family:var(--font-sans);letter-spacing:.04em;font-weight:500">EL/EN</span>
+    <span class="bn-label" id="langLabelMobile" style="display:none"></span>
   </a>
 </div>
 
@@ -866,7 +866,7 @@ document.querySelectorAll('.magnetic').forEach(el=>{
 
 <!-- LANGUAGE -->
 <script>
-let lang='el';function toggleLang(){lang=lang==='el'?'en':'el';document.querySelectorAll('[data-el],[data-en]').forEach(e=>{const t=e.getAttribute(`data-${lang}`);if(t&&e.tagName!=='INPUT'&&e.tagName!=='TEXTAREA')e.innerHTML=t;if(t&&(e.tagName==='INPUT'||e.tagName==='TEXTAREA'))e.placeholder=t});document.querySelectorAll('.lang-switch').forEach(function(l){l.textContent=lang==='el'?'EL / EN':'EN / EL'});var ml=document.getElementById('langLabelMobile');if(ml)ml.textContent=lang==='el'?'EN':'EL'}
+let lang='el';function toggleLang(){lang=lang==='el'?'en':'el';document.querySelectorAll('[data-el],[data-en]').forEach(e=>{const t=e.getAttribute(`data-${lang}`);if(t&&e.tagName!=='INPUT'&&e.tagName!=='TEXTAREA')e.innerHTML=t;if(t&&(e.tagName==='INPUT'||e.tagName==='TEXTAREA'))e.placeholder=t});document.querySelectorAll('.lang-switch').forEach(function(l){l.textContent=lang==='el'?'EL / EN':'EN / EL'});var ml=document.getElementById('langLabelMobile');var bi=document.querySelector('.mobile-bottom-nav a:last-child .bn-icon');if(ml)ml.textContent=lang==='el'?'EN':'EL';if(bi)bi.textContent=lang==='el'?'EL/EN':'EN/EL'}
 function toggleLangMobile(){toggleLang()}
 
 function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('open');document.querySelector('.nav-hamburger').classList.toggle('active')}
