@@ -695,18 +695,220 @@ pointer-events:none}
       </div>
       <div class="reveal d2"><div class="section-divider"></div></div>
     </div>
-    <div class="reveal d1" style="margin-bottom:1.2rem"><p style="font-family:var(--font-mono);font-size:.55rem;letter-spacing:.15em;color:var(--dim);max-width:none" data-el="Επιλεγμένα έργα από τους καλλιτέχνες μας — hover για λεπτομέρειες." data-en="Selected works from our artists — hover for details.">Επιλεγμένα έργα από τους καλλιτέχνες μας — hover για λεπτομέρειες.</p></div>
-    <div class="port-grid">
-      <div class="reveal d1 port-item tall" style="background:url(./Awards/Best Realistic Big.png) center/cover no-repeat" role="img" aria-label="Best Realistic Big award portrait tattoo"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[01]</span><div class="port-label" data-el="Realism — Πορτρέτο" data-en="Realism — Portrait">Realism — Πορτρέτο</div></div>
-      <div class="reveal d2 port-item" style="background:url(./Awards/Best Black and Gray Big.png) center/cover no-repeat" role="img" aria-label="Best Black and Gray Big award geometric tattoo"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[02]</span><div class="port-label" data-el="Blackwork — Γεωμετρικό" data-en="Blackwork — Geometric">Blackwork — Γεωμετρικό</div></div>
-      <div class="reveal d3 port-item" style="background:url(./Awards/Black and Gray Big.png) center/cover no-repeat" role="img" aria-label="Japanese dragon sleeve black and gray tattoo"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[03]</span><div class="port-label" data-el="Japanese — Dragon Sleeve" data-en="Japanese — Dragon Sleeve">Japanese — Dragon Sleeve</div></div>
-      <div class="reveal d2 port-item" style="background:url(./Awards/Best Realistic Small.png) center/cover no-repeat" role="img" aria-label="Neo Traditional mandala tattoo small realistic"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[04]</span><div class="port-label" data-el="Neo-Traditional — Mandala" data-en="Neo-Traditional — Mandala">Neo-Traditional — Mandala</div></div>
-      <div class="reveal d3 port-item wide" style="background:url(./Awards/Best Realistic Black & Gray.png) center/cover no-repeat" role="img" aria-label="Cover up tattoo before and after realistic black and gray"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[05]</span><div class="port-label" data-el="Cover Up — Πριν/Μετά" data-en="Cover Up — Before/After">Cover Up — Before/After</div></div>
-      <div class="reveal d4 port-item" style="background:url(./Awards/Best Black and Gray Big (2).png) center/cover no-repeat" role="img" aria-label="Custom lettering tattoo black and gray"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[06]</span><div class="port-label" data-el="Custom Lettering" data-en="Custom Lettering">Custom Lettering</div></div>
-      <div class="reveal d4 port-item tall" style="background:url(./Awards/Best Small Realistic.png) center/cover no-repeat" role="img" aria-label="Fine line minimal tattoo small realistic"><span style="font-family:var(--font-mono);font-size:.5rem;color:var(--faint)">[07]</span><div class="port-label" data-el="Fine Line — Minimal" data-en="Fine Line — Minimal">Fine Line — Minimal</div></div>
+    <!-- ARTIST TABS -->
+    <div class="reveal d1 work-artists">
+      <div class="artist-tabs">
+        <button class="artist-tab active" data-el="Σάκης" data-en="Sakis" onclick="switchArtist(this,'sakis')">Σάκης</button>
+        <button class="artist-tab" data-el="Μαρία" data-en="Maria" onclick="switchArtist(this,'maria')">Μαρία</button>
+        <button class="artist-tab" data-el="Studio" data-en="Studio" onclick="switchArtist(this,'studio')">Studio</button>
+      </div>
+      <!-- SAKIS GALLERY -->
+      <div class="artist-gallery active" id="gallery-sakis">
+        <div class="card-stack" id="stack-sakis">
+          <div class="card-item active" onclick="cycleStack('sakis')">
+            <div class="card-img" style="background-image:url(./Awards/Best Realistic Big.png);background-position:center 30%"></div>
+            <div class="card-overlay"></div>
+            <div class="card-info"><span class="card-num">01</span><span class="card-cat" data-el="Realism — Πορτρέτο" data-en="Realism — Portrait">Realism — Πορτρέτο</span><span class="card-date">2026</span></div>
+          </div>
+          <div class="card-item" onclick="cycleStack('sakis')">
+            <div class="card-img" style="background-image:url(./Awards/Best Black and Gray Big.png);background-position:center 30%"></div>
+            <div class="card-overlay"></div>
+            <div class="card-info"><span class="card-num">02</span><span class="card-cat" data-el="Blackwork — Γεωμετρικό" data-en="Blackwork — Geometric">Blackwork — Γεωμετρικό</span><span class="card-date">2026</span></div>
+          </div>
+          <div class="card-item" onclick="cycleStack('sakis')">
+            <div class="card-img" style="background-image:url(./Awards/Best Realistic Black & Gray.png);background-position:center 30%"></div>
+            <div class="card-overlay"></div>
+            <div class="card-info"><span class="card-num">03</span><span class="card-cat" data-el="Cover Up — Πριν/Μετά" data-en="Cover Up — Before/After">Cover Up — Before/After</span><span class="card-date">2026</span></div>
+          </div>
+          <div class="card-item" onclick="cycleStack('sakis')">
+            <div class="card-img" style="background-image:url(./Awards/Realistic Big.png);background-position:center 30%"></div>
+            <div class="card-overlay"></div>
+            <div class="card-info"><span class="card-num">04</span><span class="card-cat" data-el="Realism — Μεγάλο" data-en="Realism — Large">Realism — Μεγάλο</span><span class="card-date">2025</span></div>
+          </div>
+          <div class="card-item" onclick="cycleStack('sakis')">
+            <div class="card-img" style="background-image:url(./Awards/Best Small Realistic.png);background-position:center 30%"></div>
+            <div class="card-overlay"></div>
+            <div class="card-info"><span class="card-num">05</span><span class="card-cat" data-el="Fine Line — Μικρό" data-en="Fine Line — Small">Fine Line — Μικρό</span><span class="card-date">2025</span></div>
+          </div>
+        </div>
+        <div class="card-dots" id="dots-sakis"></div>
+        <div class="card-nav-hint" data-el="Πάτησε για επόμενο" data-en="Tap for next">Πάτησε για επόμενο</div>
+      </div>
+      <!-- MARIA GALLERY -->
+      <div class="artist-gallery" id="gallery-maria">
+        <div class="card-stack" id="stack-maria">
+          <div class="card-item active" onclick="cycleStack('maria')">
+            <div class="card-img" style="background-image:url(./Awards/Best Black and Gray Tattoo Contest Big.png);background-position:center 30%"></div>
+            <div class="card-overlay"></div>
+            <div class="card-info"><span class="card-num">01</span><span class="card-cat" data-el="Black &amp; Gray — Διαγωνισμός" data-en="Black &amp; Gray — Contest">Black & Gray — Διαγωνισμός</span><span class="card-date">2026</span></div>
+          </div>
+          <div class="card-item" onclick="cycleStack('maria')">
+            <div class="card-img" style="background-image:url(./Awards/Black and Gray Big.png);background-position:center 30%"></div>
+            <div class="card-overlay"></div>
+            <div class="card-info"><span class="card-num">02</span><span class="card-cat" data-el="Japanese — Dragon Sleeve" data-en="Japanese — Dragon Sleeve">Japanese — Dragon Sleeve</span><span class="card-date">2025</span></div>
+          </div>
+          <div class="card-item" onclick="cycleStack('maria')">
+            <div class="card-img" style="background-image:url(./Awards/Best Realistic Small.png);background-position:center 30%"></div>
+            <div class="card-overlay"></div>
+            <div class="card-info"><span class="card-num">03</span><span class="card-cat" data-el="Νeo-Traditional — Mandala" data-en="Neo-Traditional — Mandala">Neo-Traditional — Mandala</span><span class="card-date">2025</span></div>
+          </div>
+        </div>
+        <div class="card-dots" id="dots-maria"></div>
+        <div class="card-nav-hint" data-el="Πάτησε για επόμενο" data-en="Tap for next">Πάτησε για επόμενο</div>
+      </div>
+      <!-- STUDIO GALLERY -->
+      <div class="artist-gallery" id="gallery-studio">
+        <div class="card-stack" id="stack-studio">
+          <div class="card-item active" onclick="cycleStack('studio')">
+            <div class="card-img" style="background-image:url(./Awards/Best Realistic Small.png);background-position:center 30%"></div>
+            <div class="card-overlay"></div>
+            <div class="card-info"><span class="card-num">01</span><span class="card-cat" data-el="Realism — Μικρό" data-en="Realism — Small">Realism — Μικρό</span><span class="card-date">2026</span></div>
+          </div>
+          <div class="card-item" onclick="cycleStack('studio')">
+            <div class="card-img" style="background-image:url(./Awards/Best Black and Gray Big (2).png);background-position:center 30%"></div>
+            <div class="card-overlay"></div>
+            <div class="card-info"><span class="card-num">02</span><span class="card-cat" data-el="Custom Lettering" data-en="Custom Lettering">Custom Lettering</span><span class="card-date">2025</span></div>
+          </div>
+          <div class="card-item" onclick="cycleStack('studio')">
+            <div class="card-img" style="background-image:url(./Awards/Realistic Small.png);background-position:center 30%"></div>
+            <div class="card-overlay"></div>
+            <div class="card-info"><span class="card-num">03</span><span class="card-cat" data-el="Realism — Πορτρέτο" data-en="Realism — Portrait">Realism — Πορτρέτο</span><span class="card-date">2025</span></div>
+          </div>
+          <div class="card-item" onclick="cycleStack('studio')">
+            <div class="card-img" style="background-image:url(./Awards/Realistic Big.png);background-position:center 30%"></div>
+            <div class="card-overlay"></div>
+            <div class="card-info"><span class="card-num">04</span><span class="card-cat" data-el="Realism — Big" data-en="Realism — Big">Realism — Big</span><span class="card-date">2025</span></div>
+          </div>
+        </div>
+        <div class="card-dots" id="dots-studio"></div>
+        <div class="card-nav-hint" data-el="Πάτησε για επόμενο" data-en="Tap for next">Πάτησε για επόμενο</div>
+      </div>
     </div>
   </div>
-</section><!-- TRUST -->
+</section>
+
+<style>
+/* ── ARTIST TABS ── */
+.artist-tabs{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.artist-tab{background:transparent;border:1px solid var(--border);color:var(--dim);font-family:var(--font-mono);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;padding:.5rem 1.2rem;cursor:pointer;transition:all .3s;border-radius:0}
+.artist-tab:hover{color:var(--white);border-color:rgba(255,255,255,.15)}
+.artist-tab.active{background:var(--white);color:var(--bg);border-color:var(--white)}
+.artist-gallery{display:none}
+.artist-gallery.active{display:block}
+
+/* ── CARD STACK ── */
+.card-stack{position:relative;width:100%;max-width:600px;margin:0 auto;height:420px}
+.card-item{position:absolute;top:0;left:0;right:0;height:360px;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .5s cubic-bezier(.22,1,.36,1);border:1px solid var(--border);background:var(--bg)}
+.card-item .card-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s}
+.card-item:hover .card-img{transform:scale(1.04)}
+.card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.8) 0%,transparent 40%,transparent 70%,rgba(10,10,10,.4) 100%);pointer-events:none}
+.card-info{position:absolute;bottom:0;left:0;right:0;padding:1rem 1.2rem;display:flex;align-items:baseline;gap:.6rem;z-index:2}
+.card-num{font-family:var(--font-mono);font-size:.5rem;color:var(--red);letter-spacing:.1em;opacity:.7}
+.card-cat{font-family:var(--font-sans);font-size:.75rem;font-weight:500;color:var(--white);letter-spacing:.02em}
+.card-date{font-family:var(--font-mono);font-size:.45rem;color:var(--dim);margin-left:auto;letter-spacing:.1em}
+
+/* Stack positions: active in front, others blurred behind */
+.card-item.active{z-index:10;transform:translateY(0) scale(1);filter:none;opacity:1;box-shadow:0 8px 32px rgba(0,0,0,.5)}
+.card-item:nth-child(2):not(.active){z-index:9;transform:translateY(12px) scale(.97);filter:blur(3px) brightness(.45);opacity:.6;pointer-events:none}
+.card-item:nth-child(3):not(.active){z-index:8;transform:translateY(24px) scale(.94);filter:blur(5px) brightness(.35);opacity:.4;pointer-events:none}
+.card-item:nth-child(4):not(.active){z-index:7;transform:translateY(36px) scale(.91);filter:blur(7px) brightness(.25);opacity:.3;pointer-events:none}
+.card-item:nth-child(5):not(.active){z-index:6;transform:translateY(48px) scale(.88);filter:blur(9px) brightness(.15);opacity:.2;pointer-events:none}
+.card-item:nth-child(n+6):not(.active){z-index:5;transform:translateY(60px) scale(.85);filter:blur(12px) brightness(.1);opacity:.1;pointer-events:none}
+
+/* ── DOTS ── */
+.card-dots{display:flex;justify-content:center;gap:.4rem;margin-top:.6rem}
+.card-dot{width:6px;height:6px;border-radius:50%;background:var(--border);border:none;cursor:pointer;transition:all .3s;padding:0}
+.card-dot.active{background:var(--white);width:18px;border-radius:3px}
+
+/* ── HINT ── */
+.card-nav-hint{text-align:center;margin-top:.4rem;font-family:var(--font-mono);font-size:.4rem;letter-spacing:.2em;color:var(--faint);text-transform:uppercase}
+
+/* ── RESPONSIVE (mobile) ── */
+@media(max-width:900px){
+  .card-stack{height:340px}
+  .card-item{height:300px;border-radius:10px}
+  .card-cat{font-size:.7rem}
+  .card-info{padding:.8rem 1rem}
+  .artist-tab{font-size:.45rem;padding:.4rem 1rem;letter-spacing:.15em}
+  .artist-tabs{gap:.4rem;margin-bottom:1.5rem}
+  .card-item:nth-child(2):not(.active){transform:translateY(8px) scale(.97);filter:blur(3px) brightness(.45)}
+  .card-item:nth-child(3):not(.active){transform:translateY(16px) scale(.94);filter:blur(4px) brightness(.35)}
+  .card-item:nth-child(4):not(.active){transform:translateY(24px) scale(.91);filter:blur(6px) brightness(.25)}
+  .card-item:nth-child(5):not(.active){transform:translateY(32px) scale(.88);filter:blur(7px) brightness(.15)}
+  .card-item:nth-child(n+6):not(.active){transform:translateY(40px) scale(.85);filter:blur(9px) brightness(.1)}
+}
+@media(max-width:600px){
+  .card-stack{height:300px}
+  .card-item{height:260px}
+  .card-cat{font-size:.65rem}
+  .card-num{font-size:.45rem}
+  .card-date{font-size:.4rem}
+}
+</style>
+
+<script>
+/* ── CARD STACK NAV ── */
+function cycleStack(id){
+  var stack=document.getElementById('stack-'+id);
+  if(!stack)return;
+  var items=stack.querySelectorAll('.card-item');
+  if(items.length<2)return;
+  var active=stack.querySelector('.card-item.active');
+  var next=active.nextElementSibling||items[0];
+  active.classList.remove('active');
+  next.classList.add('active');
+  // Update dots
+  var dots=document.getElementById('dots-'+id);
+  if(dots){
+    var idx=Array.from(items).indexOf(next);
+    dots.querySelectorAll('.card-dot').forEach(function(d,i){d.classList.toggle('active',i===idx)});
+  }
+}
+/* ── ARTIST SWITCH ── */
+function switchArtist(btn,id){
+  var parent=btn.closest('.work-artists');
+  if(!parent)return;
+  parent.querySelectorAll('.artist-tab').forEach(function(t){t.classList.remove('active')});
+  btn.classList.add('active');
+  parent.querySelectorAll('.artist-gallery').forEach(function(g){g.classList.remove('active')});
+  var gal=document.getElementById('gallery-'+id);
+  if(gal)gal.classList.add('active');
+  // Init dots if not yet
+  initDots(id);
+}
+/* ── INIT DOTS ── */
+function initDots(id){
+  var dots=document.getElementById('dots-'+id);
+  var stack=document.getElementById('stack-'+id);
+  if(!dots||!stack)return;
+  if(dots.children.length>0)return;
+  var items=stack.querySelectorAll('.card-item');
+  items.forEach(function(item,i){
+    var dot=document.createElement('button');
+    dot.className='card-dot'+(i===0?' active':'');
+    dot.onclick=function(){goToCard(id,i)};
+    dots.appendChild(dot);
+  });
+}
+function goToCard(id,idx){
+  var stack=document.getElementById('stack-'+id);
+  if(!stack)return;
+  var items=stack.querySelectorAll('.card-item');
+  items.forEach(function(item,i){
+    item.classList.toggle('active',i===idx);
+  });
+  var dots=document.getElementById('dots-'+id);
+  if(dots) dots.querySelectorAll('.card-dot').forEach(function(d,i){d.classList.toggle('active',i===idx)});
+}
+/* ── INIT ON LOAD ── */
+document.addEventListener('DOMContentLoaded',function(){
+  setTimeout(function(){
+    initDots('sakis');initDots('maria');initDots('studio');
+  },500);
+});
+</script>
+
+<!-- TRUST -->
 <section id="reviews">
   <div class="section-inner">
     <div class="section-hdr">
