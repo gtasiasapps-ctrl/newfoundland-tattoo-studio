@@ -906,6 +906,41 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 
+
+
+<section id="studio">
+  <div class="section-inner">
+    <div class="section-hdr">
+      <div>
+        <div class="reveal"><div class="section-label">● Studio</div></div>
+        <div class="reveal d1"><h2 class="section-title" data-el="To Studio" data-en="The Studio">To Studio</h2></div>
+      </div>
+      <div class="reveal d2"><div class="section-divider"></div></div>
+    </div>
+    <div class="reveal d1">
+      <p class="studio-desc" data-el="Στο Newfoundland Tattoo Studio στη Λάρισα, η τέχνη συναντά την απόλυτη καθαριότητα. Ένας σύγχρονος χώρος σχεδιασμένος για την άνεση και ασφάλεια κάθε πελάτη, με ιατρική αποστείρωση αυτόκλειστου (autoclave), βελόνες μίας χρήσης και νοσοκομειακό επίπεδο υγιεινής. Οι καλλιτέχνες μας διαθέτουν πολυετή εμπειρία σε realism, blackwork, Japanese, cover up και custom τατουάζ. Στο στούντιό μας, κάθε γραμμή έχει σημασία — από την πρώτη συμβουλή μέχρι την τελική πινελιά. Επισκεφθείτε μας στην Πατρόκλου 8, Λάρισα, για μια μοναδική εμπειρία τατουάζ." data-en="At Newfoundland Tattoo Studio in Larissa, art meets absolute cleanliness. A modern space designed for client comfort and safety, with medical-grade autoclave sterilization, single-use needles and hospital-level hygiene. Our artists have years of experience in realism, blackwork, Japanese, cover up and custom tattoos. In our studio, every line matters — from the first consultation to the final touch. Visit us at Patroklou 8, Larissa, for a unique tattoo experience.">Στο Newfoundland Tattoo Studio στη Λάρισα, η τέχνη συναντά την απόλυτη καθαριότητα. Ιατρική αποστείρωση, βελόνες μίας χρήσης και καλλιτέχνες με πολυετή εμπειρία. Κάθε γραμμή έχει σημασία.</p>
+    </div>
+    <!-- Studio photos gallery duo -->
+    <div style="display:none">
+      <div class="gal-item" id="gi-studio-0" style="background-image:url(./artists/studio/studio-2.jpg);background-position:center" data-cat="Newfoundland — χώρος υποδοχής" data-num="01"></div>
+      <div class="gal-item" id="gi-studio-1" style="background-image:url(./artists/studio/studio-3.jpg);background-position:center" data-cat="Newfoundland — station εργασίας" data-num="02"></div>
+      <div class="gal-item" id="gi-studio-2" style="background-image:url(./artists/studio/studio-4.jpg);background-position:center" data-cat="Newfoundland — studio interior" data-num="03"></div>
+    </div>
+    <div class="gallery-duo">
+      <div class="gallery-main" id="main-studio" onclick="slideGallery('studio',1)" style="background-image:url(./artists/studio/studio-2.jpg);background-position:center">
+        <div class="gallery-overlay"></div>
+        <div class="gallery-info"><span class="gal-num">01</span><span class="gal-cat">Newfoundland — χώρος υποδοχής</span></div>
+      </div>
+      <div class="gallery-next" id="next-studio" onclick="slideGallery('studio',1)" style="background-image:url(./artists/studio/studio-3.jpg);background-position:center">
+        <div class="gallery-blur"></div>
+      </div>
+    </div>
+    <div class="gal-dots" id="dots-studio"></div>
+  </div>
+</section>
+
+
+
 <!-- TRUST -->
 <section id="reviews">
   <div class="section-inner">
@@ -950,37 +985,6 @@ document.addEventListener('DOMContentLoaded',function(){
       <div class="reveal d3 service-card"><div class="service-num">05</div><div><h3 data-el="Lettering &amp; Calligraphy" data-en="Lettering &amp; Calligraphy">Lettering & Calligraphy</h3><p data-el="Εξατομικευμένα lettering, script και gothic γραμματοσειρές." data-en="Custom lettering, script and gothic typefaces.">Εξατομικευμένα lettering, script, gothic.</p></div></div>
       <div class="reveal d4 service-card"><div class="service-num">06</div><div><h3 data-el="Realism &amp; Πορτρέτα" data-en="Realism &amp; Portraits">Realism & Πορτρέτα</h3><p data-el="Υπερρεαλιστικά πορτρέτα και photorealistic θέματα. Black & grey ή full color." data-en="Hyper-realistic portraits and photorealistic subjects. Black & grey or full color.">Υπερρεαλιστικά πορτρέτα — black & grey ή full color.</p></div></div>
     </div>
-  </div>
-</section>
-
-<section id="studio">
-  <div class="section-inner">
-    <div class="section-hdr">
-      <div>
-        <div class="reveal"><div class="section-label">● Studio</div></div>
-        <div class="reveal d1"><h2 class="section-title" data-el="To Studio" data-en="The Studio">To Studio</h2></div>
-      </div>
-      <div class="reveal d2"><div class="section-divider"></div></div>
-    </div>
-    <div class="reveal d1">
-      <p class="studio-desc" data-el="Στο Newfoundland Tattoo Studio στη Λάρισα, η τέχνη συναντά την απόλυτη καθαριότητα. Ένας σύγχρονος χώρος σχεδιασμένος για την άνεση και ασφάλεια κάθε πελάτη, με ιατρική αποστείρωση αυτόκλειστου (autoclave), βελόνες μίας χρήσης και νοσοκομειακό επίπεδο υγιεινής. Οι καλλιτέχνες μας διαθέτουν πολυετή εμπειρία σε realism, blackwork, Japanese, cover up και custom τατουάζ. Στο στούντιό μας, κάθε γραμμή έχει σημασία — από την πρώτη συμβουλή μέχρι την τελική πινελιά. Επισκεφθείτε μας στην Πατρόκλου 8, Λάρισα, για μια μοναδική εμπειρία τατουάζ." data-en="At Newfoundland Tattoo Studio in Larissa, art meets absolute cleanliness. A modern space designed for client comfort and safety, with medical-grade autoclave sterilization, single-use needles and hospital-level hygiene. Our artists have years of experience in realism, blackwork, Japanese, cover up and custom tattoos. In our studio, every line matters — from the first consultation to the final touch. Visit us at Patroklou 8, Larissa, for a unique tattoo experience.">Στο Newfoundland Tattoo Studio στη Λάρισα, η τέχνη συναντά την απόλυτη καθαριότητα. Ιατρική αποστείρωση, βελόνες μίας χρήσης και καλλιτέχνες με πολυετή εμπειρία. Κάθε γραμμή έχει σημασία.</p>
-    </div>
-    <!-- Studio photos gallery duo -->
-    <div style="display:none">
-      <div class="gal-item" id="gi-studio-0" style="background-image:url(./artists/studio/studio-2.jpg);background-position:center" data-cat="Newfoundland — χώρος υποδοχής" data-num="01"></div>
-      <div class="gal-item" id="gi-studio-1" style="background-image:url(./artists/studio/studio-3.jpg);background-position:center" data-cat="Newfoundland — station εργασίας" data-num="02"></div>
-      <div class="gal-item" id="gi-studio-2" style="background-image:url(./artists/studio/studio-4.jpg);background-position:center" data-cat="Newfoundland — studio interior" data-num="03"></div>
-    </div>
-    <div class="gallery-duo">
-      <div class="gallery-main" id="main-studio" onclick="slideGallery('studio',1)" style="background-image:url(./artists/studio/studio-2.jpg);background-position:center">
-        <div class="gallery-overlay"></div>
-        <div class="gallery-info"><span class="gal-num">01</span><span class="gal-cat">Newfoundland — χώρος υποδοχής</span></div>
-      </div>
-      <div class="gallery-next" id="next-studio" onclick="slideGallery('studio',1)" style="background-image:url(./artists/studio/studio-3.jpg);background-position:center">
-        <div class="gallery-blur"></div>
-      </div>
-    </div>
-    <div class="gal-dots" id="dots-studio"></div>
   </div>
 </section>
 
