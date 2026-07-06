@@ -100,7 +100,6 @@ window.scrollTo(0,0);document.addEventListener('DOMContentLoaded', function(){
   ]
 }
 </script>
-<script src="https://cdn.tailwindcss.com" defer></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -218,7 +217,7 @@ nav>*{pointer-events:auto}
 @keyframes scPulse{0%,100%{opacity:.3;transform:scaleX(1)}50%{opacity:1;transform:scaleX(1.6)}}
 
 /* ── SECTIONS ── */
-section{padding:8rem 3rem}
+section{padding:8rem 3rem;content-visibility:auto;contain-intrinsic-size:600px}
 .section-inner{max-width:1200px;margin:0 auto}
 .section-label{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.4em;text-transform:uppercase;color:var(--red);margin-bottom:.6rem;opacity:.7}
 .section-title{font-family:var(--font-sans);font-size:clamp(1.5rem,3vw,2.8rem);font-weight:600;letter-spacing:-.02em;line-height:1.08;margin-bottom:.5rem}
@@ -738,7 +737,7 @@ pointer-events:none}
 <!-- VIDEO SHOWCASE -->
 <section class="video-section">
   <div class="video-wrap">
-    <video autoplay muted loop playsinline preload="auto" id="bgVideo">
+    <video autoplay muted loop playsinline preload="none" id="bgVideo" poster="./logo.png" width="1280" height="720">
       <source src="./video-1080p.mp4" type="video/mp4" />
     </video>
     <div class="video-overlay"></div>
@@ -1161,7 +1160,7 @@ document.addEventListener('DOMContentLoaded',function(){
         <div class="reveal d3 contact-line"><a href="tel:+302411103838">241 110 3838</a></div>
         <div class="reveal d4 contact-line">newfoundlandtattoo@gmail.com</div>
         <div class="reveal d4 contact-line" data-el="Δευτ–Σάβ: 10:00–20:00" data-en="Mon–Sat: 10:00–20:00">Δευτ–Σάβ: 10:00–20:00</div>
-        <div class="reveal d5 map-frame"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.314223544472!2d22.421616476896703!3d39.63886167156263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a8c37b4a5a3c9f%3A0x123456789abcdef!2sPatroklou%208%2C%20Larissa%20412%2022%2C%20Greece!5e0!3m2!1sen!2s!4v1" title="Newfoundland Tattoo Studio Location" loading="lazy"></iframe></div>
+        <div class="reveal d5 map-frame"><iframe loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.314223544472!2d22.421616476896703!3d39.63886167156263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a8c37b4a5a3c9f%3A0x123456789abcdef!2sPatroklou%208%2C%20Larissa%20412%2022%2C%20Greece!5e0!3m2!1sen!2s!4v1" title="Newfoundland Tattoo Studio Location" loading="lazy"></iframe></div>
       </div>
 
     </div>
