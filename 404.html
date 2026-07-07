@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Newfoundland Tattoo Studio Larissa — #1 Tattoo &amp; Piercing Since 2012</title>
+<meta name="robots" content="noindex" />
+<script>
+// SPA routing: redirect old/unknown paths
+(function(){
+  var p = window.location.pathname.replace(/\/+$/,'').toLowerCase();
+  var pages = {
+    '/studio': '/studio.html',
+    '/contact': '/contact.html',
+    '/awards': '/awards.html',
+    '/services': '/#services',
+    '/work': '/#work',
+    '/faq': '/#faq',
+    '/reviews': '/#reviews'
+  };
+  if (pages[p] && p !== window.location.pathname) {
+    window.location.replace(pages[p]);
+    return;
+  }
+  if (p !== '' && p !== '/' && !pages[p] && !p.match(/\.(html|jpg|png|ico|mp4|xml)$/)) {
+    window.location.replace('/');
+  }
+})();
+</script>
+<noscript><meta http-equiv="refresh" content="0;url=/" /></noscript>
+</head>
+<body style="background:#0a0a0a;color:rgba(255,255,255,0.65);font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;flex-direction:column;gap:1rem;text-align:center;padding:2rem">
+  <h1 style="font-size:1.2rem;font-weight:400;letter-spacing:-0.02em;color:#fff">Newfoundland Tattoo Studio</h1>
+  <p style="font-size:0.8rem;max-width:320px;line-height:1.7">Η σελίδα δεν βρέθηκε. Μεταφέρεστε στην αρχική...</p>
+  <a href="/" style="color:#B30000;font-size:0.75rem;text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:0.6rem 1.5rem">Επιστροφή στην Αρχική</a>
+</body>
+</html>

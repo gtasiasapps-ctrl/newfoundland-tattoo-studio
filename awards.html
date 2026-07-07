@@ -2,7 +2,8 @@
 <html lang="el">
 <head><script>
 if("scrollRestoration"in history)history.scrollRestoration="manual";
-// Remove hash on refresh so page always starts at hero
+// Auto-scroll to awards section on load
+(function(){var h=function(){var s=document.getElementById('awards');if(s){s.scrollIntoView({behavior:'smooth',block:'start'});window.removeEventListener('load',h);}};window.addEventListener('load',h);setTimeout(h,1500);})();
 if(location.hash)history.replaceState(null,'',location.pathname+location.search);
 (function(){
 var BASE = window.location.origin;
@@ -30,8 +31,8 @@ window.scrollTo(0,0);document.addEventListener('DOMContentLoaded', function(){
 <link rel="icon" type="image/x-icon" href="./favicon.ico" />
 <link rel="icon" type="image/png" sizes="32x32" href="./round-favicon.png" />
 <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
-<title>Newfoundland Tattoo Studio Larissa — #1 Tattoo &amp; Piercing Since 2012</title>
-<meta name="description" content="Το καλύτερο tattoo studio στη Λάρισα με 5.0 αστέρια. ★★★★★ Custom τατουάζ, piercing, cover up &amp; realism από βραβευμένους καλλιτέχνες. Πατρόκλου 8. 241 110 3838. Κλείσε τώρα!" />
+<title>Newfoundland Tattoo Studio Larissa — Βραβεία &amp; Διακρίσεις | Τατουάζ Λάρισα</title>
+<meta name="description" content="Πολυβραβευμένο tattoo studio στη Λάρισα. Best Realistic Big, Best Black &amp; Gray, Best Small Realistic — σε διεθνείς διαγωνισμούς. Πατρόκλου 8." />
 <meta name="language" content="el" />
 <meta name="geo.position" content="39.6389;22.4216" />
 <meta name="ICBM" content="39.6389, 22.4216" />
@@ -40,15 +41,15 @@ window.scrollTo(0,0);document.addEventListener('DOMContentLoaded', function(){
 <meta name="author" content="Newfoundland Tattoo Studio" />
 <meta name="geo.region" content="GR" />
 <meta name="geo.placename" content="Larissa" />
-<link rel="canonical" href="https://newfoundlandtattoo.com/" />
+<link rel="canonical" href="https://newfoundlandtattoo.com/awards.html" />
 
 <!-- Google Merchant Center / Site Verification -->
 <meta name="google-site-verification" content="" />
 
 <!-- Open Graph -->
-<meta property="og:title" content="Newfoundland Tattoo Studio Larissa — #1 Tattoo &amp; Piercing Since 2012" />
-<meta property="og:description" content="Το καλύτερο tattoo studio στη Λάρισα. ★★★★★ Custom τατουάζ, piercing, cover up, realism. Πατρόκλου 8. 241 110 3838." />
-<meta property="og:url" content="https://newfoundlandtattoo.com/" />
+<meta property="og:title" content="Newfoundland Tattoo Studio — Βραβεία &amp; Διακρίσεις | Λάρισα" />
+<meta property="og:description" content="Πολυβραβευμένο tattoo studio Λάρισα. Best Realistic Big, Best Black &amp; Gray, Best Small Realistic." />
+<meta property="og:url" content="https://newfoundlandtattoo.com/awards.html" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://newfoundlandtattoo.com/artists/studio/studio-4.jpg" />
 <meta property="og:image:width" content="1200" />
@@ -63,8 +64,8 @@ window.scrollTo(0,0);document.addEventListener('DOMContentLoaded', function(){
 <link rel="alternate" hreflang="x-default" href="https://newfoundlandtattoo.com/" />
 <link rel="sitemap" type="application/xml" title="Sitemap" href="https://newfoundlandtattoo.com/sitemap.xml" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Newfoundland Tattoo Studio Larissa — #1 Tattoo &amp; Piercing ★★★★★" />
-<meta name="twitter:description" content="Το καλύτερο tattoo studio στη Λάρισα. ★★★★★ Custom τατουάζ, piercing, cover up. Πατρόκλου 8." />
+<meta name="twitter:title" content="Newfoundland Tattoo — Βραβεία | Best Realistic, Black &amp; Gray" />
+<meta name="twitter:description" content="Πολυβραβευμένο tattoo studio στη Λάρισα. Best Realistic Big, Best Black &amp; Gray και άλλα" />
 <!-- JSON-LD LocalBusiness Schema -->
 <script type="application/ld+json">
 {
