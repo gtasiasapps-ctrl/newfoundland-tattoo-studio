@@ -397,8 +397,8 @@ pointer-events:none}
   .hero-meta{font-size:.4rem;margin-bottom:.8rem}
   .hero-title{font-size:clamp(1.8rem,7vw,2.5rem)}
   .hero-sub{max-width:none;text-align:center;font-size:.82rem;margin-bottom:1.5rem;line-height:1.6}
-  .hero-actions{justify-content:center;flex-direction:column;gap:.5rem;max-width:300px;margin:0 auto}
-  .hero-actions .btn{width:100%;justify-content:center;padding:.8rem 1.5rem;font-size:.6rem;border-radius:10px}
+  .hero-actions{justify-content:center;flex-direction:column;gap:.5rem;width:100%;max-width:350px;margin:0 auto}
+  .hero-actions .btn{width:100%;justify-content:center;padding:.8rem 1.5rem;font-size:.6rem;border-radius:10px;text-align:center}
   .hero-actions .btn:active{transform:scale(.97)}
   .btn-white{background:var(--white);color:var(--bg);font-weight:600}
   .btn-ghost{border:1px solid rgba(255,255,255,.15)}
@@ -1390,13 +1390,13 @@ function frame(){
   cx.clearRect(0,0,W,H);
   var t=Date.now()*0.0003;
   // Blend mouse/touch with gyro (gyro adds extra drift)
-  var px=mouseX+(gyroActive?gyroX*0.6:0);
-  var py=mouseY+(gyroActive?gyroY*0.6:0);
+  var px=mouseX+(gyroActive?gyroX*1.5:0);
+  var py=mouseY+(gyroActive?gyroY*1.5:0);
   // Clamp
   px=Math.max(-1,Math.min(1,px));
   py=Math.max(-1,Math.min(1,py));
-  var driftX=px*30;
-  var driftY=py*25;
+  var driftX=px*50;
+  var driftY=py*45;
 
   // Nebula with parallax
   for(var i=0;i<nebula.length;i++){
