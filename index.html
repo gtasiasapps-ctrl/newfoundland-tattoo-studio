@@ -294,7 +294,7 @@ footer{border-top:1px solid var(--border);padding:4rem 3rem 2.5rem}
 /* video */
 .video-section{padding:0;margin:0;overflow:hidden;position:relative;z-index:1}
 .video-wrap{position:relative;width:100%;height:80vh;overflow:hidden;background:#0a0a0a;}
-.video-wrap iframe,.video-wrap video{width:100%;height:100%;object-fit:cover;opacity:.5;position:absolute;top:0;left:0;pointer-events:none;background:#0a0a0a}
+.video-wrap iframe,.video-wrap video{width:100%;height:100%;object-fit:cover;opacity:.65;position:absolute;top:0;left:0;pointer-events:none;background:#0a0a0a}
 .video-overlay{position:absolute;inset:0;background:
   radial-gradient(ellipse 70% 50% at 50% 50%, transparent 25%, rgba(10,10,10,.95) 100%),
   linear-gradient(to top,rgba(10,10,10,.95) 0%,transparent 20%,transparent 80%,rgba(10,10,10,.95) 100%);
@@ -1446,6 +1446,15 @@ addEventListener("resize",function(){W=innerWidth;H=innerHeight;dpr=window.devic
   if(!video||!btn)return;
   // Video starts muted (autoplay policy)
   video.muted = true;
+  // Force play — autoplay attribute sometimes gets blocked
+  (function forcePlay(v){
+    var p = v.play();
+    if(p && p.catch) p.catch(function(){
+      // Autoplay blocked — try once more after user gesture
+      document.addEventListener('touchstart',function fn(){v.play();document.removeEventListener('touchstart',fn);},{once:true});
+      document.addEventListener('click',function fn(){v.play();document.removeEventListener('click',fn);},{once:true});
+    });
+  })(video);
   btn.addEventListener('click',function(){
     video.muted = !video.muted;
     btn.classList.toggle('playing');
