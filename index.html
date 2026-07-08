@@ -1173,38 +1173,23 @@ document.addEventListener('DOMContentLoaded',function(){
     });
 });
 
-// Continuous infinite scroll (no keyframe reset)
-function startInfiniteScroll() {
+// Continuous infinite scroll (setInterval - no keyframe reset)
+(function(){
   var tracks = document.querySelectorAll('.hac-track, .gs-track');
-  tracks.forEach(function(track) {
-    var pos = 0;
-    var speed = 0.3; // px per frame (60fps ≈ 18px/s)
-    var lastTime = performance.now();
-    
-    function scroll(timestamp) {
-      var dt = timestamp - lastTime;
-      lastTime = timestamp;
-      pos += speed * (dt / 16.67); // normalize to 60fps
-      
-      // Calculate 50% of total scrollable width (one complete set)
-      var halfW = track.scrollWidth / 2;
-      if (pos >= halfW) pos -= halfW; // seamless reset (zero visual jump)
-      
-      track.style.transform = 'translateX(' + (-pos) + 'px)';
-      requestAnimationFrame(scroll);
-    }
-    
-    requestAnimationFrame(scroll);
-  });
-}
-// Start after DOM ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', startInfiniteScroll);
-} else {
-  startInfiniteScroll();
-}
-
-</script>
+  for(var t=0;t<tracks.length;t++){
+    (function(track){
+      var pos = 0;
+      var speed = 0.5;
+      setInterval(function(){
+        if(track.offsetWidth === 0) return;
+        var halfW = track.scrollWidth / 2;
+        pos += speed;
+        if(pos >= halfW) pos -= halfW;
+        track.style.transform = 'translateX(' + (-pos) + 'px)';
+      }, 16);
+    })(tracks[t]);
+  }
+})();</script>
 
 
 
