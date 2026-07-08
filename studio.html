@@ -202,6 +202,7 @@ nav>*{pointer-events:auto}
 .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;max-width:1400px;margin:0 auto;width:100%}
 .hero-left{opacity:0;animation:heroFade .8s 1.8s forwards}
 .hero-right{opacity:0;animation:heroFade .8s 2.2s forwards;text-align:right}
+.hero-artist-carousel{display:none}
 .hero-meta{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.35em;color:var(--red);margin-bottom:1.5rem;display:block;opacity:.6}
 .hero-title{font-family:var(--font-sans);font-weight:600;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:1.5rem;color:var(--white)}
 .hero-title .accent{color:var(--muted)}
@@ -394,8 +395,8 @@ pointer-events:none}
   /* ── HERO (mobile) ── */
   .hero{min-height:auto;height:auto;padding:2rem 1.5rem 3rem;display:flex;flex-direction:column;justify-content:flex-start;position:relative}
   .hero-inner{grid-template-columns:1fr;gap:1rem}
-  .hero-left{text-align:center}
-  .hero-meta{font-size:.45rem;margin-bottom:.6rem;letter-spacing:.25em;text-transform:uppercase}
+  .hero-left{text-align:left}
+  .hero-meta{font-size:.45rem;margin-bottom:.6rem;letter-spacing:.25em;text-transform:uppercase;text-align:left}
   .hero-title{font-size:clamp(2rem,8vw,2.8rem);text-transform:uppercase;letter-spacing:-.01em}
   .hero-sub{max-width:none;text-align:center;font-size:.85rem;margin-bottom:1.2rem;line-height:1.6;font-weight:500}
   .hero-actions{justify-content:center;flex-direction:column;gap:.5rem;max-width:320px;margin:0 auto}
@@ -404,13 +405,21 @@ pointer-events:none}
   .btn-white{background:var(--white);color:var(--bg);font-weight:600}
   .btn-ghost{border:1px solid rgba(255,255,255,.15)}
   /* Hero right side — compact stat block */
-  .hero-right{display:flex;flex-direction:row;justify-content:center;align-items:center;gap:1.5rem;padding:.6rem 1rem;margin-top:.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:12px}
+  .hero-right{display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:1rem;padding:.6rem 1rem;margin-top:.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:12px}
   .hero-right .hero-meta{font-size:.35rem;margin-bottom:0;letter-spacing:.25em}
   .hero-right .hero-stat{font-size:1.3rem;font-weight:600}
   .hero-right .hero-stat-label{font-size:.45rem}
   .hero-right .hero-stat-divider{display:none}
   .hero-right > div:first-child{text-align:center}
   .hero-right > div:last-child{text-align:center}
+  /* HERO ARTIST CAROUSEL */
+  .hero-artist-carousel{display:grid;grid-template-columns:1fr;grid-template-rows:1fr;width:120px;height:160px;border-radius:10px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;position:relative}
+  .hero-artist-carousel .hac-slide{grid-area:1/1;background-size:cover;background-position:center;opacity:0;animation:hacFade 12s ease-in-out infinite}
+  .hero-artist-carousel .hac-slide:nth-child(1){animation-delay:0s}
+  .hero-artist-carousel .hac-slide:nth-child(2){animation-delay:3s}
+  .hero-artist-carousel .hac-slide:nth-child(3){animation-delay:6s}
+  .hero-artist-carousel .hac-slide:nth-child(4){animation-delay:9s}
+  @keyframes hacFade{0%,100%{opacity:0}5%{opacity:1}25%{opacity:1}30%{opacity:0}}
   .scroll-ind{left:1.5rem;bottom:1rem}
   .scroll-ind span{font-size:.4rem}
   nav{padding:.6rem 1.2rem}
@@ -495,6 +504,7 @@ pointer-events:none}
   .hero-right .hero-stat{font-size:1.1rem}
   .hero-actions .btn{padding:.7rem 1.2rem;font-size:.55rem}
   .hero-meta{font-size:.4rem;text-transform:uppercase}
+  .hero-artist-carousel{width:90px;height:120px}
   .counter-grid{grid-template-columns:1fr;gap:.8rem}
   .counter-num{font-size:1.6rem}
   .section-title{font-size:clamp(1rem,5.5vw,1.3rem)!important}
@@ -742,6 +752,12 @@ pointer-events:none}
       <div class="hero-stat-divider"></div>
       <div class="hero-meta">ΠΑΤΡΟΚΛΟΥ 8</div>
       <div class="hero-stat-label">LARISSA, 412 22</div>
+    </div>
+    <div class="hero-artist-carousel">
+      <div class="hac-slide" style="background-image:url(./artists/sakis/IMG_0010.webp)"></div>
+      <div class="hac-slide" style="background-image:url(./artists/george/IMG_0009.webp)"></div>
+      <div class="hac-slide" style="background-image:url(./artists/leonidas/IMG_0012.webp)"></div>
+      <div class="hac-slide" style="background-image:url(./artists/ortentsa/IMG_6599.webp)"></div>
     </div>
   </div>
   <div class="scroll-ind"><span>SCROLL</span><div class="scroll-line"></div></div>
