@@ -202,7 +202,7 @@ nav>*{pointer-events:auto}
 .hero-left{opacity:0;animation:heroFade .8s 1.8s forwards;text-align:left}
 .hero-right{opacity:0;animation:heroFade .8s 2.2s forwards;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:.4rem}
 .hero-artist-carousel{display:block;width:270px;height:480px;border-radius:8px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;position:relative;margin-top:.5rem}
-.hero-right .hero-artist-carousel .hac-track{display:flex;flex-direction:row;animation:hacScroll 4s linear infinite}
+.hero-right .hero-artist-carousel .hac-track{display:flex;flex-direction:row;animation:hacScroll 4s linear infinite;will-change:transform;animation-delay:0.3s}
 @keyframes hacScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .hero-right .hero-artist-carousel .hac-slide{width:270px;height:480px;flex-shrink:0;background-size:cover;background-position:center 30%;background-repeat:no-repeat}
 .hero-meta{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.35em;color:var(--red);margin-bottom:1.5rem;display:block;opacity:.6;text-transform:uppercase}
@@ -416,7 +416,7 @@ pointer-events:none}
   .hero-right{display:flex;align-items:center;justify-content:center;flex-shrink:0}
   /* ── ARTIST CAROUSEL (mobile, HORIZONTAL) ── */
   .hero-artist-carousel{display:block;width:152px;height:270px;border-radius:8px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;position:relative}
-  .hero-artist-carousel .hac-track{display:flex;flex-direction:row;animation:hacScroll 4s linear infinite}
+  .hero-artist-carousel .hac-track{display:flex;flex-direction:row;animation:hacScroll 4s linear infinite;will-change:transform;animation-delay:0.3s}
   .hero-artist-carousel .hac-slide{width:152px;height:270px;flex-shrink:0;background-size:cover;background-position:center 30%;background-repeat:no-repeat}
   .scroll-ind{left:1.5rem;bottom:1rem}
   .scroll-ind span{font-size:.4rem}
