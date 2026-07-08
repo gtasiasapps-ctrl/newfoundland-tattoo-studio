@@ -1172,7 +1172,15 @@ document.addEventListener('DOMContentLoaded',function(){
       });
     });
 });
+
+    // Auto-scroll to studio section
+    setTimeout(function(){
+      var el=document.getElementById("studio");
+      if(el) el.scrollIntoView({behavior:"smooth",block:"start"});
+    },200);
+})
 </script>
+
 
 
 

@@ -1172,7 +1172,15 @@ document.addEventListener('DOMContentLoaded',function(){
       });
     });
 });
+
+    // Auto-scroll to awards section
+    setTimeout(function(){
+      var el=document.getElementById("awards");
+      if(el) el.scrollIntoView({behavior:"smooth",block:"start"});
+    },200);
+})
 </script>
+
 
 
 

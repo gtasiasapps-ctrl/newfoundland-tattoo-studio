@@ -1172,7 +1172,15 @@ document.addEventListener('DOMContentLoaded',function(){
       });
     });
 });
+
+    // Auto-scroll to contact section
+    setTimeout(function(){
+      var el=document.getElementById("contact");
+      if(el) el.scrollIntoView({behavior:"smooth",block:"start"});
+    },200);
+})
 </script>
+
 
 
 
