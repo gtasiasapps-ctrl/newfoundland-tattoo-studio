@@ -938,7 +938,11 @@ pointer-events:none}
 
 
 /* awards fullscreen */
-#awards .gallery-strip{width:100vw;margin-left:calc(-50vw + 50%);border-radius:0}
+#awards .gallery-strip{width:100vw;height:100vh;margin-left:calc(-50vw + 50%);border-radius:0}
+#awards .gallery-strip .gs-slide{width:100vw;height:100vh;flex-shrink:0;background-size:cover;background-position:center;background-repeat:no-repeat;cursor:pointer;transition:none;aspect-ratio:auto}
+#awards .gallery-strip .gs-slide:hover{transform:none}
+#awards .gallery-strip .gallery-btn{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:10}
+@media(max-width:900px){#awards .gallery-strip,#awards .gallery-strip .gs-slide{height:100dvh}}
 .gallery-btn{display:inline-block;margin-top:.5rem;margin-bottom:.5rem;padding:.5rem 1rem;background:var(--red);color:var(--white);border-radius:8px;font-size:.65rem;font-family:var(--font-sans);text-decoration:none;letter-spacing:.05em;transition:opacity .3s}
 .gallery-btn:hover{opacity:.8}
 .gallery-main .gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.7) 0%,transparent 40%);pointer-events:none}
