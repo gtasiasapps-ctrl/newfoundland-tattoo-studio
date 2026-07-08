@@ -9,11 +9,9 @@ node_modules/
 dist/
 
 # Media
-video.mp4
 
 # Unused source files
 logo.psd
 og-image.png
 video-compressed.mp4
-video.mp4
 push.bat
