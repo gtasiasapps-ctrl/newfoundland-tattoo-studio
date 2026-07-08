@@ -904,18 +904,18 @@ pointer-events:none}
 .artist-name{display:flex;align-items:baseline;gap:.6rem;margin-bottom:1rem}
 .artist-label{font-family:var(--font-sans);font-size:1.1rem;font-weight:500;color:var(--white);letter-spacing:-.02em}
 .artist-role{font-family:var(--font-mono);font-size:.45rem;color:var(--dim);letter-spacing:.2em;text-transform:uppercase}
-.artist-block .gallery-duo{margin-top:0}
+.artist-block .gallery-duo{display:none;margin-top:0}
 
 /* ── GALLERY DUO (main clear + next blurred) ── */
-.gallery-duo{display:flex;gap:1.5rem;align-items:stretch;max-width:850px;margin:0 auto}
+.gallery-duo{display:none;display:flex;gap:1.5rem;align-items:stretch;max-width:850px;margin:0 auto}
 .gallery-main{flex:1;position:relative;border-radius:10px;overflow:hidden;cursor:pointer;border:1px solid var(--border);background:var(--bg);aspect-ratio:4/3;transition:opacity .3s}
 .gallery-main:active{opacity:.9}
 .gallery-main{flex:1;position:relative;border-radius:10px;overflow:hidden;cursor:pointer;border:1px solid var(--border);background:var(--bg);aspect-ratio:4/3;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .3s}
 .gallery-main:active{transform:scale(.98)}
 /* ── GALLERY STRIP (horizontal train) ── */
 .gallery-strip{width:100%;overflow:hidden;border-radius:12px;border:1px solid var(--border);margin-bottom:1rem}
-.gallery-strip .gs-track{display:flex;flex-direction:row;animation:galleryScroll 40s linear infinite}
-.gallery-strip .gs-slide{width:200px;aspect-ratio:9/16;flex-shrink:0;background-size:cover;background-position:center;cursor:pointer;border-right:2px solid var(--bg);transition:transform .3s}
+.gallery-strip .gs-track{display:flex;flex-direction:row;animation:galleryScroll 15s linear infinite}
+.gallery-strip .gs-slide{width:200px;aspect-ratio:9/16;flex-shrink:0;background-size:cover;background-position:center;cursor:pointer;border-right:2px solid var(--bg);margin-right:4px;transition:transform .3s}
 .gallery-strip .gs-slide:hover{transform:scale(1.04);z-index:2}
 @media(max-width:900px){.gallery-strip .gs-slide{width:160px}}
 @media(max-width:600px){.gallery-strip .gs-slide{width:130px}}
@@ -953,13 +953,13 @@ pointer-events:none}
 }
 
 /* ── DOTS ── */
-.gal-dots{display:flex;justify-content:center;gap:.4rem;margin-top:1rem}
+.gal-dots{display:none;display:flex;justify-content:center;gap:.4rem;margin-top:1rem}
 .gal-dot{width:6px;height:6px;border-radius:50%;background:var(--border);border:none;cursor:pointer;transition:all .3s;padding:0}
 .gal-dot.active{background:var(--white);width:18px;border-radius:3px}
 
 /* ── RESPONSIVE (mobile) ── */
 @media(max-width:900px){
-  .gallery-duo{gap:.8rem;max-width:none}
+  .gallery-duo{display:none;gap:.8rem;max-width:none}
   .gallery-next{width:100px}
   .gallery-main .gal-cat{font-size:.7rem}
   .gallery-main .gallery-info{padding:.6rem .8rem}
@@ -970,7 +970,7 @@ pointer-events:none}
   .artist-name{margin-bottom:.8rem}
 }
 @media(max-width:600px){
-  .gallery-duo{gap:.4rem}
+  .gallery-duo{display:none;gap:.4rem}
   .gallery-next{width:70px}
   .gallery-main .gal-cat{font-size:.6rem}
   .gallery-main .gallery-info{padding:.4rem .6rem}
