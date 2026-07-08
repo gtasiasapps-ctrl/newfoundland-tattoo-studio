@@ -202,9 +202,9 @@ nav>*{pointer-events:auto}
 .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;max-width:1400px;margin:0 auto;width:100%}
 .hero-left{opacity:0;animation:heroFade .8s 1.8s forwards}
 .hero-right{opacity:0;animation:heroFade .8s 2.2s forwards;text-align:right}
-.hero-artist-carousel{display:flex;flex-direction:row;gap:.5rem;flex-wrap:wrap;flex-shrink:0;position:relative;margin-top:.5rem;justify-content:flex-end;max-width:300px}
-.hero-right .hero-artist-carousel .hac-slide{width:70px;height:70px;border-radius:50%;flex-shrink:0;background-size:cover;background-position:center;border:2px solid var(--border);transition:transform .3s}
-.hero-right .hero-artist-carousel .hac-slide:hover{transform:scale(1.15);border-color:var(--red)}
+.hero-artist-carousel{display:flex;flex-direction:row;gap:.4rem;flex-wrap:wrap;flex-shrink:0;position:relative;margin-top:.5rem;justify-content:flex-end;max-width:450px}
+.hero-right .hero-artist-carousel .hac-slide{width:100px;height:140px;flex-shrink:0;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:var(--bg);border:1px solid var(--border);border-radius:6px;transition:transform .3s}
+.hero-right .hero-artist-carousel .hac-slide:hover{transform:scale(1.05);border-color:var(--red)}
 @keyframes hacScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .hero-meta{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.35em;color:var(--red);margin-bottom:1.5rem;display:block;opacity:.6}
 .hero-title{font-family:var(--font-sans);font-weight:600;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:1.5rem;color:var(--white)}
@@ -217,7 +217,7 @@ nav>*{pointer-events:auto}
 .hero-stat-divider{width:32px;height:1px;background:var(--border);margin:1.5rem auto 1.5rem 0}
 .hero-right .hero-stat-divider{margin:1.5rem 0 1.5rem auto}
 @keyframes heroFade{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
-.btn{position:relative;padding:.7rem 1.8rem;border:none;font-family:var(--font-sans);font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+.btn{position:relative;padding:.7rem 1.8rem;border:none;font-family:var(--font-sans);font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem}
 .btn-white{background:var(--white);color:var(--bg)}
 .btn-white:hover{opacity:.85}
 .btn-ghost{background:transparent;color:var(--white);border:1px solid var(--border)}
@@ -407,7 +407,7 @@ pointer-events:none}
   .hero-stats-row .hero-stat-label{font-size:.38rem;white-space:nowrap}
   .hero-stats-row .hero-stat-divider{display:none}
   .hero-sub{max-width:none;text-align:left;font-size:.72rem;margin-bottom:.6rem;line-height:1.4;font-weight:500}
-  .hero-actions{justify-content:center;flex-direction:column;gap:.5rem;max-width:320px;margin:0 auto}
+  .hero-actions{justify-content:center;flex-direction:column;gap:.4rem;max-width:320px;margin:0 auto}
   .hero-actions .btn{width:100%;justify-content:center;padding:.8rem 1.5rem;font-size:.6rem;border-radius:10px}
   .hero-actions .btn:active{transform:scale(.97)}
   .btn-white{background:var(--white);color:var(--bg);font-weight:600}
@@ -457,10 +457,10 @@ pointer-events:none}
   .studio-grid{grid-template-columns:1fr;gap:1.5rem}
   .studio-text{font-size:.75rem;line-height:1.7}
   .studio-desc{font-size:.78rem;margin-bottom:1.8rem}
-  .studio-photos{grid-template-columns:1fr 1fr;gap:.5rem}
+  .studio-photos{grid-template-columns:1fr 1fr;gap:.4rem}
   .studio-photo{border-radius:10px}
   /* ── PORTFOLIO GRID (mobile) ── */
-  .port-grid{grid-template-columns:1fr 1fr;grid-auto-rows:130px;gap:.5rem}
+  .port-grid{grid-template-columns:1fr 1fr;grid-auto-rows:130px;gap:.4rem}
   .port-item.tall{grid-row:span 1}
   .port-item.wide{grid-column:span 1}
   .port-item{border-radius:0}
@@ -961,7 +961,7 @@ pointer-events:none}
   .artist-name{margin-bottom:.8rem}
 }
 @media(max-width:600px){
-  .gallery-duo{gap:.5rem}
+  .gallery-duo{gap:.4rem}
   .gallery-next{width:70px}
   .gallery-main .gal-cat{font-size:.6rem}
   .gallery-main .gallery-info{padding:.4rem .6rem}
