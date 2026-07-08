@@ -1059,7 +1059,23 @@ document.addEventListener('DOMContentLoaded',function(){
       },{passive:false});
     });
   },500);
-});
+    // Auto-advance galleries like Instagram Stories
+    galIds.forEach(function(id){
+      (function(gid){
+        var adv=setInterval(function(){
+          var st=galState[gid];
+          if(st&&st.items.length>1)slideGallery(gid,1);
+        },4000);
+        window['autoAdv_'+gid]=adv;
+        var el=document.getElementById('main-'+gid);
+        if(el){
+          var ct=el.closest('.gallery-duo')||el.parentElement;
+          ct.addEventListener('mouseenter',function(){clearInterval(window['autoAdv_'+gid])});
+          ct.addEventListener('mouseleave',function(){window['autoAdv_'+gid]=setInterval(function(){slideGallery(gid,1)},4000)});
+        }
+      })(id);
+    });
+  });
 </script>
 
 
