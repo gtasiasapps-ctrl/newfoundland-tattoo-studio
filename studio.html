@@ -200,20 +200,14 @@ nav>*{pointer-events:auto}
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 3rem;position:relative}
 .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;max-width:1400px;margin:0 auto;width:100%}
 .hero-left{opacity:0;animation:heroFade .8s 1.8s forwards;text-align:left}
-.hero-right{opacity:0;animation:heroFade .8s 2.2s forwards;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:.4rem}
-.hero-artist-carousel{display:block;width:270px;height:360px;border-radius:8px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;position:relative;margin-top:.5rem}
-.hero-right .hero-artist-carousel .hac-track{display:flex;flex-direction:row;will-change:transform}
-.hero-right .hero-artist-carousel .hac-slide{width:270px;height:360px;flex-shrink:0;background-size:100% auto;background-position:center top;background-repeat:no-repeat}
 .hero-meta{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.35em;color:var(--red);margin-bottom:1.5rem;display:block;opacity:.6;text-transform:uppercase}
 .hero-title{font-family:var(--font-sans);font-weight:600;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:1.5rem;color:var(--white);text-transform:uppercase}
 .hero-title .accent{color:var(--muted)}
 .hero-sub{font-size:clamp(.75rem,.95vw,.95rem);color:var(--dim);line-height:1.7;max-width:420px;margin-bottom:2.5rem;font-weight:500}
 .hero-actions{display:flex;gap:.8rem;flex-wrap:wrap}
-.hero-right .hero-meta{margin-bottom:1rem}
 .hero-stat{font-family:var(--font-mono);font-size:clamp(2rem,4vw,3.5rem);font-weight:500;color:var(--white);line-height:1;margin-bottom:.3rem}
 .hero-stat-label{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.2em;color:var(--dim)}
 .hero-stat-divider{width:32px;height:1px;background:var(--border);margin:1.5rem auto 1.5rem 0}
-.hero-right .hero-stat-divider{margin:1.5rem 0 1.5rem auto}
 @keyframes heroFade{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
 .btn{position:relative;padding:.7rem 1.8rem;border:none;font-family:var(--font-sans);font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem}
 .btn-white{background:var(--white);color:var(--bg)}
@@ -412,11 +406,7 @@ pointer-events:none}
   .btn-white{background:var(--white);color:var(--bg);font-weight:600}
   .btn-ghost{border:1px solid rgba(255,255,255,.15)}
   /* Hero right side — only carousel now */
-  .hero-right{display:flex;align-items:center;justify-content:center;flex-shrink:0}
   /* ── ARTIST CAROUSEL (mobile, HORIZONTAL) ── */
-  .hero-artist-carousel{display:block;width:152px;height:203px;border-radius:8px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;position:relative}
-  .hero-artist-carousel .hac-track{display:flex;flex-direction:row;will-change:transform}
-  .hero-artist-carousel .hac-slide{width:152px;height:203px;flex-shrink:0;background-size:100% auto;background-position:center top;background-repeat:no-repeat}
   .scroll-ind{left:1.5rem;bottom:1rem}
   .scroll-ind span{font-size:.4rem}
   nav{padding:.6rem 1.2rem}
@@ -498,9 +488,7 @@ pointer-events:none}
   .hero{min-height:auto;height:auto;padding:1rem .8rem 1.5rem}
   .hero-title{font-size:clamp(1.3rem,6vw,1.8rem);text-transform:uppercase}
   .hero-sub{font-size:.7rem;margin-bottom:.6rem}
-  .hero-right{padding:0;background:none;border:none}
-  .hero-artist-carousel{width:101px;height:135px}
-  .hero-artist-carousel .hac-slide{width:101px;height:135px;flex-shrink:0;background-size:100% auto;background-position:center top;background-repeat:no-repeat}
+
   .hero-actions .btn{padding:.6rem 1rem;font-size:.5rem;max-width:200px}
   .hero-meta{font-size:.38rem;text-transform:uppercase}
 
@@ -703,18 +691,6 @@ pointer-events:none}
       <div class="hero-actions">
         <a href="#contact" class="btn btn-white magnetic" data-el="Κλείσε Ραντεβού" data-en="Book Appointment">Κλείσε Ραντεβού</a>
         <a href="#services" class="btn btn-ghost magnetic" data-el="Υπηρεσίες" data-en="Services">Υπηρεσίες</a>
-      </div>
-    </div>
-    <div class="hero-right"><div class="hero-artist-carousel">
-      <div class="hac-track">
-        <div class="hac-slide" style="background-image:url(./artists/sakis/IMG_0010.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/george/IMG_0009.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/leonidas/IMG_0012.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/ortentsa/IMG_6599.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/sakis/IMG_0010.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/george/IMG_0009.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/leonidas/IMG_0012.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/ortentsa/IMG_6599.webp)"></div>
       </div>
     </div>
   </div>
@@ -960,6 +936,9 @@ pointer-events:none}
 @keyframes galleryScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 
+
+/* awards fullscreen */
+#awards .gallery-strip{width:100vw;margin-left:calc(-50vw + 50%);border-radius:0}
 .gallery-btn{display:inline-block;margin-top:.5rem;margin-bottom:.5rem;padding:.5rem 1rem;background:var(--red);color:var(--white);border-radius:8px;font-size:.65rem;font-family:var(--font-sans);text-decoration:none;letter-spacing:.05em;transition:opacity .3s}
 .gallery-btn:hover{opacity:.8}
 .gallery-main .gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.7) 0%,transparent 40%);pointer-events:none}
@@ -1661,7 +1640,7 @@ addEventListener("resize",function(){W=innerWidth;H=innerHeight;dpr=window.devic
 
 <script>
 (function(){
-  var q = document.querySelectorAll('.hero-artist-carousel .hac-track, .gallery-strip .gs-track');
+  var q = document.querySelectorAll('.gallery-strip .gs-track');
   for(var i=0;i<q.length;i++){
     (function(t,rev){
       var p=0,s=0.6,first=true,last;
