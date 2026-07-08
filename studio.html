@@ -231,7 +231,7 @@ section{padding:8rem 3rem;content-visibility:auto;contain-intrinsic-size:600px}
 .section-label{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.4em;text-transform:uppercase;color:var(--red);margin-bottom:.6rem;opacity:.7}
 .section-title{font-family:var(--font-sans);font-size:clamp(1.5rem,3vw,2.8rem);font-weight:600;letter-spacing:-.02em;line-height:1.08;margin-bottom:.5rem}
 .section-divider{width:28px;height:2px;background:var(--red);margin:1rem 0 2rem}
-.section-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem}
+.section-hdr{display:flex;justify-content:flex-start;align-items:flex-end;margin-bottom:3rem}
 .section-hdr .section-label{margin-bottom:0}
 
 /* ── COUNTERS ── */
@@ -266,7 +266,7 @@ section{padding:8rem 3rem;content-visibility:auto;contain-intrinsic-size:600px}
 /* ── FAQ ── */
 .faq-list{max-width:700px}
 .faq-item{border-top:1px solid var(--border);padding:1.2rem 0;cursor:pointer}
-.faq-q{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;font-weight:500;color:var(--white);gap:1rem}
+.faq-q{display:flex;justify-content:flex-start;align-items:center;font-size:.82rem;font-weight:500;color:var(--white);gap:1rem}
 .faq-q .icon{font-family:var(--font-mono);font-size:.7rem;color:var(--dim);transition:transform .3s;flex-shrink:0}
 .faq-item.open .faq-q .icon{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s,opacity .3s;opacity:0;font-size:.75rem;color:var(--dim);line-height:1.7}
@@ -287,7 +287,7 @@ footer{border-top:1px solid var(--border);padding:4rem 3rem 2.5rem}
 .footer-logo{font-family:var(--font-sans);font-size:.9rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.3rem}
 .footer-tag{font-family:var(--font-mono);font-size:.5rem;color:var(--dim);letter-spacing:.12em;text-transform:uppercase}
 .footer-nap{font-family:var(--font-mono);font-size:.6rem;color:var(--muted);line-height:1.8}
-.footer-bot{max-width:1200px;margin:2.5rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.footer-bot{max-width:1200px;margin:2.5rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;justify-content:flex-start;align-items:center}
 .footer-copy{font-family:var(--font-mono);font-size:.45rem;color:rgba(255,255,255,.3);letter-spacing:.1em}
 .footer-socials{display:flex;gap:1rem}
 .footer-socials a{color:var(--dim);text-decoration:none;font-family:var(--font-mono);font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;transition:color .3s}
@@ -398,14 +398,14 @@ pointer-events:none}
   .hero-left{text-align:left}
   .hero-meta{font-size:.45rem;margin-bottom:.6rem;letter-spacing:.25em;text-transform:uppercase;text-align:left}
   .hero-title{font-size:clamp(2rem,8vw,2.8rem);text-transform:uppercase;letter-spacing:-.01em}
-  .hero-sub{max-width:none;text-align:center;font-size:.85rem;margin-bottom:1.2rem;line-height:1.6;font-weight:500}
+  .hero-sub{max-width:none;text-align:left;font-size:.85rem;margin-bottom:1.2rem;line-height:1.6;font-weight:500}
   .hero-actions{justify-content:center;flex-direction:column;gap:.5rem;max-width:320px;margin:0 auto}
   .hero-actions .btn{width:100%;justify-content:center;padding:.8rem 1.5rem;font-size:.6rem;border-radius:10px}
   .hero-actions .btn:active{transform:scale(.97)}
   .btn-white{background:var(--white);color:var(--bg);font-weight:600}
   .btn-ghost{border:1px solid rgba(255,255,255,.15)}
   /* Hero right side — compact stat block */
-  .hero-right{display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:1rem;padding:.6rem 1rem;margin-top:.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:12px}
+  .hero-right{display:flex;flex-direction:row;justify-content:flex-start;align-items:center;gap:1rem;padding:.6rem 1rem;margin-top:.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:12px}
   .hero-right .hero-meta{font-size:.35rem;margin-bottom:0;letter-spacing:.25em}
   .hero-right .hero-stat{font-size:1.3rem;font-weight:600}
   .hero-right .hero-stat-label{font-size:.45rem}
@@ -413,13 +413,10 @@ pointer-events:none}
   .hero-right > div:first-child{text-align:center}
   .hero-right > div:last-child{text-align:center}
   /* HERO ARTIST CAROUSEL */
-  .hero-artist-carousel{display:grid;grid-template-columns:1fr;grid-template-rows:1fr;width:120px;height:160px;border-radius:10px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;position:relative}
-  .hero-artist-carousel .hac-slide{grid-area:1/1;background-size:cover;background-position:center;opacity:0;animation:hacFade 12s ease-in-out infinite}
-  .hero-artist-carousel .hac-slide:nth-child(1){animation-delay:0s}
-  .hero-artist-carousel .hac-slide:nth-child(2){animation-delay:3s}
-  .hero-artist-carousel .hac-slide:nth-child(3){animation-delay:6s}
-  .hero-artist-carousel .hac-slide:nth-child(4){animation-delay:9s}
-  @keyframes hacFade{0%,100%{opacity:0}5%{opacity:1}25%{opacity:1}30%{opacity:0}}
+  .hero-artist-carousel{width:100px;height:140px;border-radius:10px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;position:relative;mask-image:linear-gradient(to bottom,transparent 0%,#000 10%,#000 90%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 10%,#000 90%,transparent 100%)}
+  .hero-artist-carousel .hac-track{display:flex;flex-direction:column;animation:hacScroll 8s linear infinite}
+  .hero-artist-carousel .hac-slide{width:100px;height:140px;flex-shrink:0;background-size:cover;background-position:center}
+  @keyframes hacScroll{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
   .scroll-ind{left:1.5rem;bottom:1rem}
   .scroll-ind span{font-size:.4rem}
   nav{padding:.6rem 1.2rem}
@@ -752,12 +749,17 @@ pointer-events:none}
       <div class="hero-stat-divider"></div>
       <div class="hero-meta">ΠΑΤΡΟΚΛΟΥ 8</div>
       <div class="hero-stat-label">LARISSA, 412 22</div>
-    </div>
-    <div class="hero-artist-carousel">
-      <div class="hac-slide" style="background-image:url(./artists/sakis/IMG_0010.webp)"></div>
-      <div class="hac-slide" style="background-image:url(./artists/george/IMG_0009.webp)"></div>
-      <div class="hac-slide" style="background-image:url(./artists/leonidas/IMG_0012.webp)"></div>
-      <div class="hac-slide" style="background-image:url(./artists/ortentsa/IMG_6599.webp)"></div>
+          <div class="hero-artist-carousel">
+      <div class="hac-track">
+        <div class="hac-slide" style="background-image:url(./artists/sakis/IMG_0010.webp)"></div>
+        <div class="hac-slide" style="background-image:url(./artists/george/IMG_0009.webp)"></div>
+        <div class="hac-slide" style="background-image:url(./artists/leonidas/IMG_0012.webp)"></div>
+        <div class="hac-slide" style="background-image:url(./artists/ortentsa/IMG_6599.webp)"></div>
+        <div class="hac-slide" style="background-image:url(./artists/sakis/IMG_0010.webp)"></div>
+        <div class="hac-slide" style="background-image:url(./artists/george/IMG_0009.webp)"></div>
+        <div class="hac-slide" style="background-image:url(./artists/leonidas/IMG_0012.webp)"></div>
+        <div class="hac-slide" style="background-image:url(./artists/ortentsa/IMG_6599.webp)"></div>
+      </div>
     </div>
   </div>
   <div class="scroll-ind"><span>SCROLL</span><div class="scroll-line"></div></div>
