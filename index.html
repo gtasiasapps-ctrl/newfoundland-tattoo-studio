@@ -1665,19 +1665,23 @@ addEventListener("resize",function(){W=innerWidth;H=innerHeight;dpr=window.devic
   var q = document.querySelectorAll('.hero-artist-carousel .hac-track, .gallery-strip .gs-track');
   for(var i=0;i<q.length;i++){
     (function(t,rev){
-      var p=0,s=0.6,first=true;
-      setInterval(function(){
+      var p=0,s=0.6,first=true,last;
+      function step(now){
         if(!t||!t.parentElement)return;
         var h=t.scrollWidth/2;
-        if(!h)return;
-        if(first){first=false;if(rev)p=h;}
+        if(!h){requestAnimationFrame(step);return;}
+        if(first){first=false;last=now;if(rev)p=h;}
+        var dt=now-last;last=now;
+        var sp=s*(dt/16);
         if(rev){
-          p-=s;if(p<=0)p+=h;
+          p-=sp;if(p<=0)p+=h;
         }else{
-          p+=s;if(p>=h)p-=h;
+          p+=sp;if(p>=h)p-=h;
         }
         t.style.transform='translateX('+(-p)+'px)';
-      },16);
+        requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
     })(q[i],i%2===1);
   }
 })();
