@@ -1673,17 +1673,17 @@ addEventListener("resize",function(){W=innerWidth;H=innerHeight;dpr=window.devic
 (function(){
   var q = document.querySelectorAll('.hero-artist-carousel .hac-track, .gallery-strip .gs-track');
   for(var i=0;i<q.length;i++){
-    (function(t){
-      var p=0,s=0.4;
+    (function(t,dir){
+      var p=0,s=0.6;
       setInterval(function(){
         if(!t||!t.parentElement)return;
         var h=t.scrollWidth/2;
         if(!h)return;
         p+=s;
         if(p>=h)p-=h;
-        t.style.transform='translateX('+(-p)+'px)';
+        t.style.transform='translateX('+(dir*p)+'px)';
       },16);
-    })(q[i]);
+    })(q[i],i%2===0?-1:1);
   }
 })();
 </script>
