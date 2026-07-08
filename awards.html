@@ -203,8 +203,8 @@ nav>*{pointer-events:auto}
 .hero-right{opacity:0;animation:heroFade .8s 2.2s forwards;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:.4rem}
 .hero-artist-carousel{display:block;width:270px;height:480px;border-radius:8px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;position:relative;margin-top:.5rem}
 .hero-right .hero-artist-carousel .hac-track{display:flex;flex-direction:row}
-@keyframes hacScroll{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
-.hero-right .hero-artist-carousel .hac-slide{width:270px;height:480px;flex-shrink:0;background-size:cover;background-position:center}
+@keyframes hacScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.hero-right .hero-artist-carousel .hac-slide{width:270px;height:480px;flex-shrink:0;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:var(--bg)}
 .hero-meta{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.35em;color:var(--red);margin-bottom:1.5rem;display:block;opacity:.6;text-transform:uppercase}
 .hero-title{font-family:var(--font-sans);font-weight:600;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:1.5rem;color:var(--white);text-transform:uppercase}
 .hero-title .accent{color:var(--muted)}
@@ -417,7 +417,7 @@ pointer-events:none}
   /* ── ARTIST CAROUSEL (mobile, HORIZONTAL) ── */
   .hero-artist-carousel{display:block;width:152px;height:270px;border-radius:8px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;position:relative}
   .hero-artist-carousel .hac-track{display:flex;flex-direction:row}
-  .hero-artist-carousel .hac-slide{width:152px;height:270px;flex-shrink:0;background-size:cover;background-position:center}
+  .hero-artist-carousel .hac-slide{width:152px;height:270px;flex-shrink:0;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:var(--bg)}
   .scroll-ind{left:1.5rem;bottom:1rem}
   .scroll-ind span{font-size:.4rem}
   nav{padding:.6rem 1.2rem}
@@ -501,7 +501,7 @@ pointer-events:none}
   .hero-sub{font-size:.7rem;margin-bottom:.6rem}
   .hero-right{padding:0;background:none;border:none}
   .hero-artist-carousel{width:101px;height:180px}
-  .hero-artist-carousel .hac-slide{width:101px;height:180px;flex-shrink:0;background-size:contain;background-position:center}
+  .hero-artist-carousel .hac-slide{width:101px;height:180px;flex-shrink:0;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:var(--bg)}
   .hero-actions .btn{padding:.6rem 1rem;font-size:.5rem;max-width:200px}
   .hero-meta{font-size:.38rem;text-transform:uppercase}
 
@@ -708,8 +708,7 @@ pointer-events:none}
     </div>
     <div class="hero-right"><div class="hero-artist-carousel">
       <div class="hac-track">
-        
-      </div></div>
+        <div class="hac-slide" style="background-image:url(./artists/sakis/IMG_0010.webp)"></div>
         <div class="hac-slide" style="background-image:url(./artists/george/IMG_0009.webp)"></div>
         <div class="hac-slide" style="background-image:url(./artists/leonidas/IMG_0012.webp)"></div>
         <div class="hac-slide" style="background-image:url(./artists/ortentsa/IMG_6599.webp)"></div>
@@ -875,7 +874,7 @@ pointer-events:none}
         <div class="gal-item" id="gi-ortentsa-1" style="background-image:url(./artists/ortentsa/IMG_6601.webp);background-position:center 30%" data-num="02"></div>
         <div class="gal-item" id="gi-ortentsa-2" style="background-image:url(./artists/ortentsa/IMG_6603.webp);background-position:center 30%" data-num="03"></div>
       </div>
-      <div class="gallery-strip" onclick="openLightbox('george')"><div class="gs-track"><div class="gs-slide" style="background-image:url(./artists/george/IMG_0009.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/IMG_0011.webp)"></div></div></div></div></div>
+      <div class="gallery-strip" onclick="openLightbox('george')"><div class="gs-track"><div class="gs-slide" style="background-image:url(./artists/george/IMG_0009.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/IMG_0011.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/DSC00639.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/IMG_0748.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/IMG_0980.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/IMG_4795.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/IMG_0009.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/IMG_0011.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/DSC00639.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/IMG_0748.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/IMG_0980.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/IMG_4795.webp)"></div></div></div>
       <a href="gallery.html?set=george" class="gallery-btn">→ View George's Work</a>
       <!-- GEORGE (first) -->
       <div class="artist-block">
@@ -893,7 +892,7 @@ pointer-events:none}
         </div>
         <div class="gal-dots" id="dots-george"></div>
       </div>
-      <div class="gallery-strip" onclick="openLightbox('sakis')"><div class="gs-track"><div class="gs-slide" style="background-image:url(./artists/sakis/IMG_0010.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/sakis-01.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/DSC00444.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/DSC00655.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/LKS04388.webp)"></div></div></div></div></div>
+      <div class="gallery-strip" onclick="openLightbox('sakis')"><div class="gs-track"><div class="gs-slide" style="background-image:url(./artists/sakis/IMG_0010.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/sakis-01.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/DSC00444.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/DSC00655.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/LKS04388.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/LKS04744.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/LKS04778.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/Untitled_Artwork.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/0029AEC7-6568-428C-BFEA-DFEF06CDE269.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/343F6D14-4EB0-410A-89AE-FFF8853E4D35.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/DC426D09-4158-4BEE-8D90-922D60B9048E.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/sakis-scr.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/IMG_0010.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/sakis-01.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/DSC00444.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/DSC00655.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/LKS04388.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/LKS04744.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/LKS04778.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/Untitled_Artwork.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/0029AEC7-6568-428C-BFEA-DFEF06CDE269.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/343F6D14-4EB0-410A-89AE-FFF8853E4D35.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/DC426D09-4158-4BEE-8D90-922D60B9048E.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/sakis-scr.webp)"></div></div></div>
       <a href="gallery.html?set=sakis" class="gallery-btn">→ View Sakis' Work</a>
       <!-- SAKIS -->
       <div class="artist-block">
@@ -911,7 +910,7 @@ pointer-events:none}
         </div>
         <div class="gal-dots" id="dots-sakis"></div>
       </div>
-      <div class="gallery-strip" onclick="openLightbox('leonidas')"><div class="gs-track"><div class="gs-slide" style="background-image:url(./artists/leonidas/IMG_0012.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/IMG_6698.webp)"></div></div></div></div></div>
+      <div class="gallery-strip" onclick="openLightbox('leonidas')"><div class="gs-track"><div class="gs-slide" style="background-image:url(./artists/leonidas/IMG_0012.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/IMG_6698.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/IMG_7093.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/IMG_8143.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/leonidas-fsr.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/leonidas-scr.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/IMG_0012.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/IMG_6698.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/IMG_7093.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/IMG_8143.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/leonidas-fsr.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/leonidas-scr.webp)"></div></div></div>
       <a href="gallery.html?set=leonidas" class="gallery-btn">→ View Leonidas' Work</a>
       <!-- LEONIDAS -->
       <div class="artist-block">
@@ -929,7 +928,7 @@ pointer-events:none}
         </div>
         <div class="gal-dots" id="dots-leonidas"></div>
       </div>
-      <div class="gallery-strip" onclick="openLightbox('ortentsa')"><div class="gs-track"><div class="gs-slide" style="background-image:url(./artists/ortentsa/IMG_6599.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/IMG_6601.webp)"></div></div></div></div></div>
+      <div class="gallery-strip" onclick="openLightbox('ortentsa')"><div class="gs-track"><div class="gs-slide" style="background-image:url(./artists/ortentsa/IMG_6599.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/IMG_6601.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/IMG_6603.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/IMG_0988.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/LKS04196.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/LKS04197.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/LKS04215.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/IMG_6599.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/IMG_6601.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/IMG_6603.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/IMG_0988.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/LKS04196.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/LKS04197.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/LKS04215.webp)"></div></div></div>
       <a href="gallery.html?set=ortentsa" class="gallery-btn">→ View Ortentsa' Work</a>
       <!-- ORTENTSA -->
       <div class="artist-block">
@@ -977,7 +976,7 @@ pointer-events:none}
 .gallery-strip .gs-slide:hover{transform:scale(1.04);z-index:2}
 @media(max-width:900px){.gallery-strip .gs-slide{width:160px}}
 @media(max-width:600px){.gallery-strip .gs-slide{width:130px}}
-@keyframes galleryScroll{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+@keyframes galleryScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 
 .gallery-btn{display:inline-block;margin-top:.5rem;margin-bottom:.5rem;padding:.5rem 1rem;background:var(--red);color:var(--white);border-radius:8px;font-size:.65rem;font-family:var(--font-sans);text-decoration:none;letter-spacing:.05em;transition:opacity .3s}
@@ -1208,7 +1207,7 @@ document.addEventListener('DOMContentLoaded',function(){
       <div class="gal-item" id="gi-studio-5" style="background-image:url(./artists/studio/IMG_1016.webp);background-position:center" data-cat="Newfoundland Studio" data-num="06"></div>
       <div class="gal-item" id="gi-studio-6" style="background-image:url(./artists/studio/IMG_1017.webp);background-position:center" data-cat="Newfoundland Studio" data-num="07"></div>
     </div>
-    <div class="gallery-strip" onclick="openLightbox('studio')"><div class="gs-track"><div class="gs-slide" style="background-image:url(./artists/studio/studio-2.webp)"></div><div class="gs-slide" style="background-image:url(./artists/studio/studio-3.webp)"></div></div></div></div></div>
+    <div class="gallery-strip" onclick="openLightbox('studio')"><div class="gs-track"><div class="gs-slide" style="background-image:url(./artists/studio/studio-2.webp)"></div><div class="gs-slide" style="background-image:url(./artists/studio/studio-3.webp)"></div><div class="gs-slide" style="background-image:url(./artists/studio/studio-4.webp)"></div><div class="gs-slide" style="background-image:url(./artists/studio/IMG_0987.webp)"></div><div class="gs-slide" style="background-image:url(./artists/studio/IMG_1014.webp)"></div><div class="gs-slide" style="background-image:url(./artists/studio/IMG_1016.webp)"></div><div class="gs-slide" style="background-image:url(./artists/studio/IMG_1017.webp)"></div><div class="gs-slide" style="background-image:url(./artists/studio/studio-2.webp)"></div><div class="gs-slide" style="background-image:url(./artists/studio/studio-3.webp)"></div><div class="gs-slide" style="background-image:url(./artists/studio/studio-4.webp)"></div><div class="gs-slide" style="background-image:url(./artists/studio/IMG_0987.webp)"></div><div class="gs-slide" style="background-image:url(./artists/studio/IMG_1014.webp)"></div><div class="gs-slide" style="background-image:url(./artists/studio/IMG_1016.webp)"></div><div class="gs-slide" style="background-image:url(./artists/studio/IMG_1017.webp)"></div></div></div>
     <a href="gallery.html?set=studio" class="gallery-btn">→ View Studio Photos</a>
     <div class="gallery-duo">
       <div class="gallery-main" id="main-studio" onclick="openLightbox('studio')">
