@@ -1674,13 +1674,14 @@ addEventListener("resize",function(){W=innerWidth;H=innerHeight;dpr=window.devic
   var q = document.querySelectorAll('.hero-artist-carousel .hac-track, .gallery-strip .gs-track');
   for(var i=0;i<q.length;i++){
     (function(t,rev){
-      var p=rev?1000000:0,s=0.6;
+      var p=0,s=0.6,first=true;
       setInterval(function(){
         if(!t||!t.parentElement)return;
         var h=t.scrollWidth/2;
         if(!h)return;
+        if(first){first=false;if(rev)p=h;}
         if(rev){
-          p-=s;if(p<=0||p>h*2)p+=h;
+          p-=s;if(p<=0)p+=h;
         }else{
           p+=s;if(p>=h)p-=h;
         }
