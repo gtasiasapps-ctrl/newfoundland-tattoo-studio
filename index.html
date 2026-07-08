@@ -202,7 +202,7 @@ nav>*{pointer-events:auto}
 .hero-left{opacity:0;animation:heroFade .8s 1.8s forwards}
 .hero-right{opacity:0;animation:heroFade .8s 2.2s forwards;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:.4rem}
 .hero-artist-carousel{display:block;width:360px;height:200px;border-radius:8px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;position:relative;margin-top:.5rem}
-.hero-right .hero-artist-carousel .hac-track{display:flex;flex-direction:row}
+.hero-right .hero-artist-carousel .hac-track{display:flex;flex-direction:row;animation:hacScroll 4s linear infinite}
 @keyframes hacScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .hero-right .hero-artist-carousel .hac-slide{width:176px;height:200px;flex-shrink:0;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:var(--bg);border-right:4px solid var(--bg)}
 .hero-meta{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.35em;color:var(--red);margin-bottom:1.5rem;display:block;opacity:.6}
@@ -416,7 +416,7 @@ pointer-events:none}
   .hero-right{display:flex;align-items:center;justify-content:center;flex-shrink:0}
   /* ── ARTIST CAROUSEL (mobile, HORIZONTAL) ── */
   .hero-artist-carousel{display:block;width:140px;height:190px;border-radius:8px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;position:relative}
-  .hero-artist-carousel .hac-track{display:flex;flex-direction:row}
+  .hero-artist-carousel .hac-track{display:flex;flex-direction:row;animation:hacScroll 4s linear infinite}
   .hero-artist-carousel .hac-slide{width:136px;height:190px;flex-shrink:0;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:var(--bg);border-right:4px solid var(--bg)}
   .scroll-ind{left:1.5rem;bottom:1rem}
   .scroll-ind span{font-size:.4rem}
@@ -966,7 +966,7 @@ pointer-events:none}
 
 /* ── GALLERY STRIP (horizontal train) ── */
 .gallery-strip{width:100%;overflow:hidden;border-radius:12px;border:1px solid var(--border);margin-bottom:1rem}
-.gallery-strip .gs-track{display:flex;flex-direction:row}
+.gallery-strip .gs-track{display:flex;flex-direction:row;animation:galleryScroll 20s linear infinite}
 .gallery-strip .gs-slide{width:194px;aspect-ratio:9/16;flex-shrink:0;background-size:cover;background-position:center;cursor:pointer;border-right:6px solid var(--bg);transition:transform .3s}
 .gallery-strip .gs-slide:hover{transform:scale(1.04);z-index:2}
 @media(max-width:900px){.gallery-strip .gs-slide{width:154px}}
@@ -1173,23 +1173,7 @@ document.addEventListener('DOMContentLoaded',function(){
     });
 });
 
-// Continuous infinite scroll (setInterval - no keyframe reset)
-(function(){
-  var tracks = document.querySelectorAll('.hac-track, .gs-track');
-  for(var t=0;t<tracks.length;t++){
-    (function(track){
-      var pos = 0;
-      var speed = 0.5;
-      setInterval(function(){
-        if(track.offsetWidth === 0) return;
-        var halfW = track.scrollWidth / 2;
-        pos += speed;
-        if(pos >= halfW) pos -= halfW;
-        track.style.transform = 'translateX(' + (-pos) + 'px)';
-      }, 16);
-    })(tracks[t]);
-  }
-})();</script>
+</script>
 
 
 
