@@ -202,9 +202,9 @@ nav>*{pointer-events:auto}
 .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;max-width:1400px;margin:0 auto;width:100%}
 .hero-left{opacity:0;animation:heroFade .8s 1.8s forwards}
 .hero-right{opacity:0;animation:heroFade .8s 2.2s forwards;text-align:right}
-.hero-artist-carousel{display:flex;flex-direction:row;gap:.4rem;flex-wrap:wrap;flex-shrink:0;position:relative;margin-top:.5rem;justify-content:flex-end;max-width:450px}
-.hero-right .hero-artist-carousel .hac-slide{width:100px;height:140px;flex-shrink:0;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:var(--bg);border:1px solid var(--border);border-radius:6px;transition:transform .3s}
-.hero-right .hero-artist-carousel .hac-slide:hover{transform:scale(1.05);border-color:var(--red)}
+.hero-artist-carousel{display:block;width:280px;height:160px;border-radius:8px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;position:relative;margin-top:.5rem}
+.hero-right .hero-artist-carousel .hac-track{display:flex;flex-direction:row;animation:hacScroll 4s linear infinite}
+.hero-right .hero-artist-carousel .hac-slide{width:140px;height:160px;flex-shrink:0;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:var(--bg)}
 @keyframes hacScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .hero-meta{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.35em;color:var(--red);margin-bottom:1.5rem;display:block;opacity:.6}
 .hero-title{font-family:var(--font-sans);font-weight:600;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:1.5rem;color:var(--white)}
