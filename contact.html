@@ -1668,5 +1668,24 @@ addEventListener("resize",function(){W=innerWidth;H=innerHeight;dpr=window.devic
 })();
 </script>
 
+
+<script>
+(function(){
+  var q = document.querySelectorAll('.hero-artist-carousel .hac-track, .gallery-strip .gs-track');
+  for(var i=0;i<q.length;i++){
+    (function(t){
+      var p=0,s=0.4;
+      setInterval(function(){
+        if(!t||!t.parentElement)return;
+        var h=t.scrollWidth/2;
+        if(!h)return;
+        p+=s;
+        if(p>=h)p-=h;
+        t.style.transform='translateX('+(-p)+'px)';
+      },16);
+    })(q[i]);
+  }
+})();
+</script>
 </body>
 </html>
