@@ -2,8 +2,7 @@
 <html lang="el">
 <head><script>
 if("scrollRestoration"in history)history.scrollRestoration="manual";
-// Auto-scroll to studio section on load
-(function(){var h=function(){var s=document.getElementById('studio');if(s){s.scrollIntoView({behavior:'smooth',block:'start'});window.removeEventListener('load',h);}};window.addEventListener('load',h);setTimeout(h,1500);})();
+// Remove hash on refresh so page always starts at hero
 if(location.hash)history.replaceState(null,'',location.pathname+location.search);
 (function(){
 var BASE = window.location.origin;
@@ -31,8 +30,8 @@ window.scrollTo(0,0);document.addEventListener('DOMContentLoaded', function(){
 <link rel="icon" type="image/x-icon" href="./favicon.ico" />
 <link rel="icon" type="image/png" sizes="32x32" href="./round-favicon.png" />
 <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
-<title>Newfoundland Tattoo Studio — Studio &amp; Εγκαταστάσεις | Τατουάζ Λάρισα</title>
-<meta name="description" content="Δείτε το studio μας στη Λάρισα. Σύγχρονος χώρος, ιατρική αποστείρωση autoclave, 4 βραβευμένοι καλλιτέχνες. Πατρόκλου 8. Κλείσε ραντεβού!" />
+<title>Newfoundland Tattoo Studio | #1 Tattoo &amp; Piercing στη Λάρισα</title>
+<meta name="description" content="Το καλύτερο tattoo studio στη Λάρισα με 5.0 αστέρια. ★★★★★ Custom τατουάζ, piercing, cover up &amp; realism από βραβευμένους καλλιτέχνες. Πατρόκλου 8. 241 110 3838. Κλείσε τώρα!" />
 <meta name="language" content="el" />
 <meta name="geo.position" content="39.6389;22.4216" />
 <meta name="ICBM" content="39.6389, 22.4216" />
@@ -41,15 +40,15 @@ window.scrollTo(0,0);document.addEventListener('DOMContentLoaded', function(){
 <meta name="author" content="Newfoundland Tattoo Studio" />
 <meta name="geo.region" content="GR" />
 <meta name="geo.placename" content="Larissa" />
-<link rel="canonical" href="https://newfoundlandtattoo.com/studio.html" />
+<link rel="canonical" href="https://newfoundlandtattoo.com/" />
 
 <!-- Google Merchant Center / Site Verification -->
 <meta name="google-site-verification" content="" />
 
 <!-- Open Graph -->
-<meta property="og:title" content="Newfoundland Tattoo Studio — Studio &amp; Εγκαταστάσεις | Λάρισα" />
-<meta property="og:description" content="Επισκεφθείτε το studio μας στη Λάρισα. Σύγχρονος χώρος, autoclave, 4 βραβευμένοι tattoo artists. Πατρόκλου 8." />
-<meta property="og:url" content="https://newfoundlandtattoo.com/studio.html" />
+<meta property="og:title" content="Newfoundland Tattoo Studio | #1 Tattoo &amp; Piercing στη Λάρισα" />
+<meta property="og:description" content="Το καλύτερο tattoo studio στη Λάρισα. ★★★★★ Custom τατουάζ, piercing, cover up, realism. Πατρόκλου 8. 241 110 3838." />
+<meta property="og:url" content="https://newfoundlandtattoo.com/" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://newfoundlandtattoo.com/artists/studio/studio-4.jpg" />
 <meta property="og:image:width" content="1200" />
@@ -64,8 +63,8 @@ window.scrollTo(0,0);document.addEventListener('DOMContentLoaded', function(){
 <link rel="alternate" hreflang="x-default" href="https://newfoundlandtattoo.com/" />
 <link rel="sitemap" type="application/xml" title="Sitemap" href="https://newfoundlandtattoo.com/sitemap.xml" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Newfoundland Tattoo Studio — Studio &amp; Εγκαταστάσεις Λάρισα" />
-<meta name="twitter:description" content="Σύγχρονο tattoo studio Λάρισα. Autoclave, 4 artists, Πατρόκλου 8. Κλείσε ραντεβού!" />
+<meta name="twitter:title" content="Newfoundland Tattoo Studio | #1 Tattoo &amp; Piercing στη Λάρισα" />
+<meta name="twitter:description" content="Το καλύτερο tattoo studio στη Λάρισα. ★★★★★ Custom τατουάζ, piercing, cover up. Πατρόκλου 8." />
 <!-- JSON-LD LocalBusiness Schema -->
 <script type="application/ld+json">
 {
@@ -201,11 +200,11 @@ nav>*{pointer-events:auto}
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 3rem;position:relative}
 .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;max-width:1400px;margin:0 auto;width:100%}
 .hero-left{opacity:0;animation:heroFade .8s 1.8s forwards}
-.hero-right{opacity:0;animation:heroFade .8s 2.2s forwards;text-align:right}
+.hero-right{opacity:0;animation:heroFade .8s 2.2s forwards;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:.4rem}
 .hero-artist-carousel{display:block;width:280px;height:160px;border-radius:8px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;position:relative;margin-top:.5rem}
 .hero-right .hero-artist-carousel .hac-track{display:flex;flex-direction:row;animation:hacScroll 4s linear infinite}
-.hero-right .hero-artist-carousel .hac-slide{width:140px;height:160px;flex-shrink:0;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:var(--bg)}
 @keyframes hacScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.hero-right .hero-artist-carousel .hac-slide{width:140px;height:160px;flex-shrink:0;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:var(--bg)}
 .hero-meta{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.35em;color:var(--red);margin-bottom:1.5rem;display:block;opacity:.6}
 .hero-title{font-family:var(--font-sans);font-weight:600;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:1.5rem;color:var(--white)}
 .hero-title .accent{color:var(--muted)}
@@ -234,7 +233,7 @@ section{padding:8rem 3rem;content-visibility:auto;contain-intrinsic-size:600px}
 .section-label{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.4em;text-transform:uppercase;color:var(--red);margin-bottom:.6rem;opacity:.7}
 .section-title{font-family:var(--font-sans);font-size:clamp(1.5rem,3vw,2.8rem);font-weight:600;letter-spacing:-.02em;line-height:1.08;margin-bottom:.5rem}
 .section-divider{width:28px;height:2px;background:var(--red);margin:1rem 0 2rem}
-.section-hdr{display:flex;justify-content:flex-start;align-items:flex-end;margin-bottom:3rem}
+.section-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem}
 .section-hdr .section-label{margin-bottom:0}
 
 /* ── COUNTERS ── */
@@ -269,7 +268,7 @@ section{padding:8rem 3rem;content-visibility:auto;contain-intrinsic-size:600px}
 /* ── FAQ ── */
 .faq-list{max-width:700px}
 .faq-item{border-top:1px solid var(--border);padding:1.2rem 0;cursor:pointer}
-.faq-q{display:flex;justify-content:flex-start;align-items:center;font-size:.82rem;font-weight:500;color:var(--white);gap:1rem}
+.faq-q{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;font-weight:500;color:var(--white);gap:1rem}
 .faq-q .icon{font-family:var(--font-mono);font-size:.7rem;color:var(--dim);transition:transform .3s;flex-shrink:0}
 .faq-item.open .faq-q .icon{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s,opacity .3s;opacity:0;font-size:.75rem;color:var(--dim);line-height:1.7}
@@ -290,19 +289,20 @@ footer{border-top:1px solid var(--border);padding:4rem 3rem 2.5rem}
 .footer-logo{font-family:var(--font-sans);font-size:.9rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.3rem}
 .footer-tag{font-family:var(--font-mono);font-size:.5rem;color:var(--dim);letter-spacing:.12em;text-transform:uppercase}
 .footer-nap{font-family:var(--font-mono);font-size:.6rem;color:var(--muted);line-height:1.8}
-.footer-bot{max-width:1200px;margin:2.5rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;justify-content:flex-start;align-items:center}
+.footer-bot{max-width:1200px;margin:2.5rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
 .footer-copy{font-family:var(--font-mono);font-size:.45rem;color:rgba(255,255,255,.3);letter-spacing:.1em}
 .footer-socials{display:flex;gap:1rem}
 .footer-socials a{color:var(--dim);text-decoration:none;font-family:var(--font-mono);font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;transition:color .3s}
 .footer-socials a:hover{color:var(--white)}
 
 /* video */
-.video-section{padding:0;margin:0;overflow:hidden;position:relative;z-index:1}.video-section.fullscreen-mobile{height:auto;min-height:0}@media(max-width:900px){.video-section.fullscreen-mobile{position:relative;z-index:1}.video-section.fullscreen-mobile .video-wrap{height:100dvh;}}
+.video-section{padding:0;margin:0;overflow:hidden;position:relative;z-index:1}
+.video-section.fullscreen-mobile{height:auto;min-height:0}@media(max-width:900px){.video-section.fullscreen-mobile{position:relative;z-index:1}.video-section.fullscreen-mobile .video-wrap{height:100dvh;}}
 .video-wrap{position:relative;width:100%;height:80vh;overflow:hidden;background:#0a0a0a;}
 .video-wrap iframe,.video-wrap video{width:100%;height:100%;object-fit:cover;opacity:.75;position:absolute;top:0;left:0;pointer-events:none;background:#0a0a0a}
 .video-overlay{position:absolute;inset:0;background:
-  radial-gradient(ellipse 70% 50% at 50% 50%, transparent 25%, rgba(10,10,10,.95) 100%),
-  linear-gradient(to top,rgba(10,10,10,.95) 0%,transparent 20%,transparent 80%,rgba(10,10,10,.95) 100%);
+  radial-gradient(ellipse 70% 50% at 50% 50%, transparent 30%, rgba(10,10,10,.92) 100%),
+  linear-gradient(to top,rgba(10,10,10,.92) 0%,transparent 20%,transparent 80%,rgba(10,10,10,.92) 100%);
 pointer-events:none}
 
 /* ── MUTE BUTTON ── */
@@ -397,8 +397,8 @@ pointer-events:none}
   .mobile-fab:active{transform:scale(.88);box-shadow:0 2px 10px rgba(179,0,0,.3)}
   /* ── HERO (mobile) ── */
   .hero{min-height:auto;height:auto;padding:1rem 1.2rem 1.5rem;display:flex;flex-direction:column;justify-content:flex-start;position:relative}
-  .hero-inner{grid-template-columns:1fr;gap:1rem}
-  .hero-left{text-align:left}
+  .hero-inner{display:flex;flex-direction:row;gap:.6rem;align-items:flex-start}
+  .hero-left{flex:1;text-align:left;min-width:0}
   .hero-meta{font-size:.4rem;margin-bottom:.3rem;letter-spacing:.2em;text-transform:uppercase;text-align:left}
   .hero-title{font-size:clamp(1.6rem,6vw,2.2rem);text-transform:uppercase;letter-spacing:-.01em;margin-bottom:.3rem}
   .hero-stats-row{display:flex;flex-direction:row;align-items:center;gap:.3rem;margin-bottom:.4rem;flex-wrap:wrap}
@@ -407,20 +407,14 @@ pointer-events:none}
   .hero-stats-row .hero-stat-label{font-size:.38rem;white-space:nowrap}
   .hero-stats-row .hero-stat-divider{display:none}
   .hero-sub{max-width:none;text-align:left;font-size:.72rem;margin-bottom:.6rem;line-height:1.4;font-weight:500}
-  .hero-actions{justify-content:center;flex-direction:column;gap:.4rem;max-width:320px;margin:0 auto}
-  .hero-actions .btn{width:100%;justify-content:center;padding:.8rem 1.5rem;font-size:.6rem;border-radius:10px}
+  .hero-actions{display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;gap:.4rem;width:100%}
+  .hero-actions .btn{flex:1;min-width:120px;justify-content:center;padding:.8rem 1.2rem;font-size:.6rem;border-radius:10px;text-align:center}
   .hero-actions .btn:active{transform:scale(.97)}
   .btn-white{background:var(--white);color:var(--bg);font-weight:600}
   .btn-ghost{border:1px solid rgba(255,255,255,.15)}
-  /* Hero right side — compact stat block */
-  .hero-right{display:flex;flex-direction:row;justify-content:flex-start;align-items:center;gap:1rem;padding:.6rem 1rem;margin-top:.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:12px}
-  .hero-right .hero-meta{font-size:.35rem;margin-bottom:0;letter-spacing:.2em;white-space:nowrap}
-  .hero-right .hero-stat{font-size:1rem;font-weight:600;white-space:nowrap}
-  .hero-right .hero-stat-label{font-size:.4rem;white-space:nowrap}
-  .hero-right .hero-stat-divider{display:none}
-  .hero-right > div:first-child{text-align:center}
-  .hero-right > div:last-child{text-align:center}
-  /* HERO ARTIST CAROUSEL */
+  /* Hero right side — only carousel now */
+  .hero-right{display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  /* ── ARTIST CAROUSEL (mobile, HORIZONTAL) ── */
   .hero-artist-carousel{display:block;width:140px;height:190px;border-radius:8px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;position:relative}
   .hero-artist-carousel .hac-track{display:flex;flex-direction:row;animation:hacScroll 4s linear infinite}
   .hero-artist-carousel .hac-slide{width:140px;height:190px;flex-shrink:0;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:var(--bg)}
@@ -480,6 +474,7 @@ pointer-events:none}
   .map-frame{height:180px;border-radius:8px}
   .map-frame iframe{border-radius:8px}
   /* ── VIDEO (mobile) ── */
+
   /* ── FOOTER (mobile) ── */
   .footer-grid{grid-template-columns:1fr;gap:1.5rem;text-align:center}
   .footer-grid > div{display:flex;flex-direction:column;align-items:center}
@@ -504,12 +499,11 @@ pointer-events:none}
   .hero{min-height:auto;height:auto;padding:1rem .8rem 1.5rem}
   .hero-title{font-size:clamp(1.3rem,6vw,1.8rem);text-transform:uppercase}
   .hero-sub{font-size:.7rem;margin-bottom:.6rem}
-  .hero-right{gap:1rem;padding:.5rem .8rem}
-  .hero-right .hero-stat{font-size:.9rem}
-  .hero-actions .btn{padding:.7rem 1.2rem;font-size:.55rem}
-  .hero-meta{font-size:.38rem;text-transform:uppercase}
+  .hero-right{padding:0;background:none;border:none}
   .hero-artist-carousel{width:110px;height:150px}
   .hero-artist-carousel .hac-slide{width:110px;height:150px;flex-shrink:0;background-size:cover;background-position:center}
+  .hero-actions .btn{padding:.6rem 1rem;font-size:.5rem;max-width:200px}
+  .hero-meta{font-size:.38rem;text-transform:uppercase}
 
   .counter-grid{grid-template-columns:1fr;gap:.8rem}
   .counter-num{font-size:1.6rem}
@@ -519,6 +513,7 @@ pointer-events:none}
   .port-grid{grid-template-columns:1fr;grid-auto-rows:160px;gap:.35rem}
   .award-gallery{grid-template-columns:1fr 1fr;gap:.35rem}
   .floating-logo{width:90vw;opacity:.40!important}
+
   .map-frame{height:160px}
   .mobile-menu a{font-size:.95rem}
   .mobile-fab{width:46px;height:46px;font-size:18px;bottom:68px;bottom:calc(64px + env(safe-area-inset-bottom,0px))}
@@ -680,7 +675,8 @@ pointer-events:none}
 </div>
 
 <!-- HERO -->
-<div class="hero-video-wrap"><section class="video-section fullscreen-mobile">
+<div class="hero-video-wrap">
+<section class="video-section fullscreen-mobile">
   <div class="video-wrap">
     <video autoplay muted loop playsinline preload="none" id="bgVideo">
       <source src="./video-1080p.mp4" type="video/mp4" />
@@ -688,6 +684,44 @@ pointer-events:none}
     <div class="video-overlay"></div>
   </div>
 </section>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <span class="hero-meta">EST. 2011 — LARISSA, GREECE</span>
+      <h1 class="hero-title">
+        Newfoundland<br />
+        <span class="accent">Tattoo Studio</span>
+      </h1>
+      <div class="hero-stats-row">
+      <div class="hero-meta">GOOGLE RATED</div>
+      <div class="hero-stat">5.0</div>
+      <div class="hero-stat-label">★★★★★</div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-meta">ΠΑΤΡΟΚΛΟΥ 8</div>
+      <div class="hero-stat-label">LARISSA, 412 22</div>
+      </div>
+      <p class="hero-sub" data-el="Το κορυφαίο tattoo studio στη Λάρισα για custom σχέδια, piercing και καλύψεις. ★★★★★ — Κάθε γραμμή έχει σημασία." data-en="The premier tattoo studio in Larissa for custom designs, piercing and cover-ups. ★★★★★ — Every line counts.">Το κορυφαίο tattoo studio στη Λάρισα για custom σχέδια, piercing και καλύψεις. ★★★★★ — Κάθε γραμμή έχει σημασία.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-white magnetic" data-el="Κλείσε Ραντεβού" data-en="Book Appointment">Κλείσε Ραντεβού</a>
+        <a href="#services" class="btn btn-ghost magnetic" data-el="Υπηρεσίες" data-en="Services">Υπηρεσίες</a>
+      </div>
+    </div>
+    <div class="hero-right"><div class="hero-artist-carousel">
+      <div class="hac-track">
+        <div class="hac-slide" style="background-image:url(./artists/sakis/IMG_0010.webp)"></div>
+        <div class="hac-slide" style="background-image:url(./artists/george/IMG_0009.webp)"></div>
+        <div class="hac-slide" style="background-image:url(./artists/leonidas/IMG_0012.webp)"></div>
+        <div class="hac-slide" style="background-image:url(./artists/ortentsa/IMG_6599.webp)"></div>
+        <div class="hac-slide" style="background-image:url(./artists/sakis/IMG_0010.webp)"></div>
+        <div class="hac-slide" style="background-image:url(./artists/george/IMG_0009.webp)"></div>
+        <div class="hac-slide" style="background-image:url(./artists/leonidas/IMG_0012.webp)"></div>
+        <div class="hac-slide" style="background-image:url(./artists/ortentsa/IMG_6599.webp)"></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-ind"><span>SCROLL</span><div class="scroll-line"></div></div>
+</section>
+</div>
 
 
 <!-- AWARDS -->
@@ -725,7 +759,54 @@ pointer-events:none}
       <div class="gal-item" id="gi-awards-20" style="background-image:url(./Awards/award-13.webp);background-position:center" data-cat="award" data-num="21"></div>
       <div class="gal-item" id="gi-awards-21" style="background-image:url(./Awards/award-14.webp);background-position:center" data-cat="award" data-num="22"></div>
     </div>
-    <div class="gallery-strip" onclick="openLightbox('awards')"><div class="gs-track"><div class="gs-slide" style="background-image:url(./Awards/IMG_0771.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/IMG_1002.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/IMG_1004.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/IMG_1005.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/IMG_1006.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/IMG_1007.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/IMG_1009.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/IMG_1010.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-01.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-02.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-03.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-04.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-05.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-06.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-07.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-08.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-09.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-10.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-11.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-12.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-13.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-14.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/IMG_0771.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/IMG_1002.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/IMG_1004.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/IMG_1005.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/IMG_1006.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/IMG_1007.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/IMG_1009.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/IMG_1010.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-01.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-02.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-03.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-04.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-05.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-06.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-07.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-08.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-09.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-10.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-11.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-12.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-13.webp)"></div><div class="gs-slide" style="background-image:url(./Awards/award-14.webp)"></div></div></div>
+    <div class="gallery-strip" onclick="openLightbox('awards')">
+      <div class="gs-track">
+        <div class="gs-slide" style="background-image:url(./Awards/IMG_0771.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/IMG_1002.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/IMG_1004.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/IMG_1005.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/IMG_1006.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/IMG_1007.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/IMG_1009.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/IMG_1010.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-01.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-02.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-03.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-04.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-05.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-06.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-07.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-08.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-09.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-10.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-11.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-12.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-13.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-14.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/IMG_0771.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/IMG_1002.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/IMG_1004.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/IMG_1005.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/IMG_1006.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/IMG_1007.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/IMG_1009.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/IMG_1010.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-01.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-02.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-03.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-04.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-05.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-06.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-07.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-08.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-09.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-10.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-11.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-12.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-13.webp)"></div>
+        <div class="gs-slide" style="background-image:url(./Awards/award-14.webp)"></div>
+      </div>
+    </div>
     <div class="gallery-duo">
       <div class="gallery-main" id="main-awards" onclick="openLightbox('awards')">
         <img src="./Awards/IMG_0771.webp" alt="Newfoundland Award" class="gal-img" loading="lazy" />
@@ -738,93 +819,7 @@ pointer-events:none}
       </div>
     </div>
     <div class="gal-dots" id="dots-awards"></div>
-  </div></section>
-
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-left">
-      <span class="hero-meta">EST. 2011 — LARISSA, GREECE</span>
-      <h1 class="hero-title">
-        Newfoundland<br />
-        <span class="accent">Tattoo Studio</span>
-      </h1>
-      <div class="hero-stats-row">
-      <div class="hero-meta">GOOGLE RATED</div>
-      <div class="hero-stat">5.0</div>
-      <div class="hero-stat-label">★★★★★</div>
-      <div class="hero-stat-divider"></div>
-      <div class="hero-meta">ΠΑΤΡΟΚΛΟΥ 8</div>
-      <div class="hero-stat-label">LARISSA, 412 22</div>
-      </div>
-      <p class="hero-sub" data-el="Το κορυφαίο tattoo studio στη Λάρισα για custom σχέδια, piercing και καλύψεις." data-en="The premier tattoo studio in Larissa for custom designs, piercing and cover-ups.">Το κορυφαίο tattoo studio στη Λάρισα για custom σχέδια, piercing και καλύψεις.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn btn-white magnetic" data-el="Κλείσε Ραντεβού" data-en="Book Appointment">Κλείσε Ραντεβού</a>
-        <a href="#services" class="btn btn-ghost magnetic" data-el="Υπηρεσίες" data-en="Services">Υπηρεσίες</a>
-      </div>
-    </div>
-    <div class="hero-right"><div class="hero-artist-carousel">
-      <div class="hac-track">
-        <div class="hac-slide" style="background-image:url(./artists/sakis/IMG_0010.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/george/IMG_0009.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/leonidas/IMG_0012.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/ortentsa/IMG_6599.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/sakis/IMG_0010.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/george/IMG_0009.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/leonidas/IMG_0012.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/ortentsa/IMG_6599.webp)"></div>
-      </div>
-    </div>
-  </div>
-  <div class="scroll-ind"><span>SCROLL</span><div class="scroll-line"></div></div>
-</section>
-</div>
-  <div class="hero-inner">
-    <div class="hero-left">
-      <span class="hero-meta">EST. 2011 — LARISSA, GREECE</span>
-      <h1 class="hero-title">
-        Newfoundland<br />
-        <span class="accent">Tattoo Studio</span>
-      </h1>
-      <div class="hero-stats-row">
-      <div class="hero-meta">GOOGLE RATED</div>
-      <div class="hero-stat">5.0</div>
-      <div class="hero-stat-label">★★★★★</div>
-      <div class="hero-stat-divider"></div>
-      <div class="hero-meta">ΠΑΤΡΟΚΛΟΥ 8</div>
-      <div class="hero-stat-label">LARISSA, 412 22</div>
-      </div>
-      <p class="hero-sub" data-el="Το κορυφαίο tattoo studio στη Λάρισα για custom σχέδια, piercing και καλύψεις. ★★★★★ — Κάθε γραμμή έχει σημασία." data-en="The premier tattoo studio in Larissa for custom designs, piercing and cover-ups. ★★★★★ — Every line counts.">Το κορυφαίο tattoo studio στη Λάρισα για custom σχέδια, piercing και καλύψεις. ★★★★★ — Κάθε γραμμή έχει σημασία.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn btn-white magnetic" data-el="Κλείσε Ραντεβού" data-en="Book Appointment">Κλείσε Ραντεβού</a>
-        <a href="#services" class="btn btn-ghost magnetic" data-el="Υπηρεσίες" data-en="Services">Υπηρεσίες</a>
-      </div>
-    </div>
-    <div class="hero-right"><div class="hero-artist-carousel">
-      <div class="hac-track">
-        <div class="hac-slide" style="background-image:url(./artists/sakis/IMG_0010.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/george/IMG_0009.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/leonidas/IMG_0012.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/ortentsa/IMG_6599.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/sakis/IMG_0010.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/george/IMG_0009.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/leonidas/IMG_0012.webp)"></div>
-        <div class="hac-slide" style="background-image:url(./artists/ortentsa/IMG_6599.webp)"></div>
-      </div>
-    </div>
-  </div>
-  <div class="scroll-ind"><span>SCROLL</span><div class="scroll-line"></div></div>
-</section>
-
-<!-- VIDEO SHOWCASE -->
-<section class="video-section fullscreen-mobile">
-  <div class="video-wrap">
-    <video autoplay muted loop playsinline preload="none" id="bgVideo">
-      <source src="./video-1080p.mp4" type="video/mp4" />
-    </video>
-    <div class="video-overlay"></div>
-  </div>
-</section>
-</div>!-- STUDIO -
+  </div></section><!-- STUDIO -
 <!-- WORK -->
 <section id="work">
   <div class="section-inner">
@@ -878,6 +873,7 @@ pointer-events:none}
         <div class="gal-item" id="gi-ortentsa-1" style="background-image:url(./artists/ortentsa/IMG_6601.webp);background-position:center 30%" data-num="02"></div>
         <div class="gal-item" id="gi-ortentsa-2" style="background-image:url(./artists/ortentsa/IMG_6603.webp);background-position:center 30%" data-num="03"></div>
       </div>
+      <div class="gallery-strip" onclick="openLightbox('george')"><div class="gs-track"><div class="gs-slide" style="background-image:url(./artists/george/IMG_0009.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/IMG_0011.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/DSC00639.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/IMG_0748.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/IMG_0980.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/IMG_4795.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/IMG_0009.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/IMG_0011.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/DSC00639.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/IMG_0748.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/IMG_0980.webp)"></div><div class="gs-slide" style="background-image:url(./artists/george/IMG_4795.webp)"></div></div></div>
       <!-- GEORGE (first) -->
       <div class="artist-block">
         <div class="artist-name"><span class="artist-label" data-el="george_agnantis" data-en="george_agnantis">george_agnantis</span><span class="artist-role" data-el="Tattoo Artist" data-en="Tattoo Artist">Tattoo Artist</span></div>
@@ -894,6 +890,7 @@ pointer-events:none}
         </div>
         <div class="gal-dots" id="dots-george"></div>
       </div>
+      <div class="gallery-strip" onclick="openLightbox('sakis')"><div class="gs-track"><div class="gs-slide" style="background-image:url(./artists/sakis/IMG_0010.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/sakis-01.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/DSC00444.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/DSC00655.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/LKS04388.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/LKS04744.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/LKS04778.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/Untitled_Artwork.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/0029AEC7-6568-428C-BFEA-DFEF06CDE269.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/343F6D14-4EB0-410A-89AE-FFF8853E4D35.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/DC426D09-4158-4BEE-8D90-922D60B9048E.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/sakis-scr.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/IMG_0010.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/sakis-01.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/DSC00444.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/DSC00655.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/LKS04388.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/LKS04744.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/LKS04778.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/Untitled_Artwork.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/0029AEC7-6568-428C-BFEA-DFEF06CDE269.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/343F6D14-4EB0-410A-89AE-FFF8853E4D35.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/DC426D09-4158-4BEE-8D90-922D60B9048E.webp)"></div><div class="gs-slide" style="background-image:url(./artists/sakis/sakis-scr.webp)"></div></div></div>
       <!-- SAKIS -->
       <div class="artist-block">
         <div class="artist-name"><span class="artist-label" data-el="sakis.tattoo33" data-en="sakis.tattoo33">sakis.tattoo33</span><span class="artist-role" data-el="Tattoo Artist" data-en="Tattoo Artist">Tattoo Artist</span></div>
@@ -910,6 +907,7 @@ pointer-events:none}
         </div>
         <div class="gal-dots" id="dots-sakis"></div>
       </div>
+      <div class="gallery-strip" onclick="openLightbox('leonidas')"><div class="gs-track"><div class="gs-slide" style="background-image:url(./artists/leonidas/IMG_0012.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/IMG_6698.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/IMG_7093.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/IMG_8143.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/leonidas-fsr.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/leonidas-scr.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/IMG_0012.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/IMG_6698.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/IMG_7093.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/IMG_8143.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/leonidas-fsr.webp)"></div><div class="gs-slide" style="background-image:url(./artists/leonidas/leonidas-scr.webp)"></div></div></div>
       <!-- LEONIDAS -->
       <div class="artist-block">
         <div class="artist-name"><span class="artist-label" data-el="leonidas_kotoumpas" data-en="leonidas_kotoumpas">leonidas_kotoumpas</span><span class="artist-role" data-el="Tattoo Artist" data-en="Tattoo Artist">Tattoo Artist</span></div>
@@ -926,6 +924,7 @@ pointer-events:none}
         </div>
         <div class="gal-dots" id="dots-leonidas"></div>
       </div>
+      <div class="gallery-strip" onclick="openLightbox('ortentsa')"><div class="gs-track"><div class="gs-slide" style="background-image:url(./artists/ortentsa/IMG_6599.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/IMG_6601.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/IMG_6603.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/IMG_0988.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/LKS04196.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/LKS04197.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/LKS04215.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/IMG_6599.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/IMG_6601.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/IMG_6603.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/IMG_0988.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/LKS04196.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/LKS04197.webp)"></div><div class="gs-slide" style="background-image:url(./artists/ortentsa/LKS04215.webp)"></div></div></div>
       <!-- ORTENTSA -->
       <div class="artist-block">
         <div class="artist-name"><span class="artist-label" data-el="ortentsa__" data-en="ortentsa__">ortentsa__</span><span class="artist-role" data-el="Piercer" data-en="Piercer">Piercer</span></div>
@@ -940,9 +939,7 @@ pointer-events:none}
             <div class="gallery-blur"></div>
           </div>
         </div>
-        <div class="gal-dots" id="dots-ortentsa">
-        <img src="./artists/studio/studio-3.webp" alt="Newfoundland Tattoo Studio workspace Larissa Greece" class="gal-img" loading="lazy" />
-        <img src="./artists/studio/studio-2.webp" alt="Newfoundland Tattoo Studio interior reception Larissa" class="gal-img" loading="lazy" /></div>
+        <div class="gal-dots" id="dots-ortentsa"></div>
       </div>
     </div>
   </div>
@@ -955,22 +952,27 @@ pointer-events:none}
 .artist-name{display:flex;align-items:baseline;gap:.6rem;margin-bottom:1rem}
 .artist-label{font-family:var(--font-sans);font-size:1.1rem;font-weight:500;color:var(--white);letter-spacing:-.02em}
 .artist-role{font-family:var(--font-mono);font-size:.45rem;color:var(--dim);letter-spacing:.2em;text-transform:uppercase}
-.artist-block .gallery-duo{margin-top:0}
+.gallery-duo{display:none}
+.gal-dots{display:none}
+.gallery-next{display:none}
+.artist-block .gallery-duo{display:none;margin-top:0}
 
 /* ── GALLERY DUO (main clear + next blurred) ── */
-.gallery-duo{display:flex;gap:1.5rem;align-items:stretch;max-width:850px;margin:0 auto}
+.gallery-duo{display:none}
 .gallery-main{flex:1;position:relative;border-radius:10px;overflow:hidden;cursor:pointer;border:1px solid var(--border);background:var(--bg);aspect-ratio:4/3;transition:opacity .3s}
 .gallery-main:active{opacity:.9}
 .gallery-main{flex:1;position:relative;border-radius:10px;overflow:hidden;cursor:pointer;border:1px solid var(--border);background:var(--bg);aspect-ratio:4/3;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .3s}
 .gallery-main:active{transform:scale(.98)}
+
 /* ── GALLERY STRIP (horizontal train) ── */
 .gallery-strip{width:100%;overflow:hidden;border-radius:12px;border:1px solid var(--border);margin-bottom:1rem}
-.gallery-strip .gs-track{display:flex;flex-direction:row;animation:galleryScroll 40s linear infinite}
-.gallery-strip .gs-slide{width:200px;aspect-ratio:9/16;flex-shrink:0;background-size:cover;background-position:center;cursor:pointer;border-right:2px solid var(--bg);transition:transform .3s}
+.gallery-strip .gs-track{display:flex;flex-direction:row;animation:galleryScroll 15s linear infinite}
+.gallery-strip .gs-slide{width:200px;aspect-ratio:9/16;flex-shrink:0;background-size:cover;background-position:center;cursor:pointer;border-right:2px solid var(--bg);margin-right:4px;transition:transform .3s}
 .gallery-strip .gs-slide:hover{transform:scale(1.04);z-index:2}
 @media(max-width:900px){.gallery-strip .gs-slide{width:160px}}
 @media(max-width:600px){.gallery-strip .gs-slide{width:130px}}
 @keyframes galleryScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
 .gallery-main .gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.7) 0%,transparent 40%);pointer-events:none}
 .gallery-main .gallery-info{position:absolute;bottom:0;left:0;right:0;padding:.8rem 1rem;z-index:2;display:flex;flex-direction:column;gap:.2rem}
 .gal-num{font-family:var(--font-mono);font-size:.45rem;color:var(--red);letter-spacing:.1em;opacity:.7}
@@ -1004,7 +1006,7 @@ pointer-events:none}
 }
 
 /* ── DOTS ── */
-.gal-dots{display:flex;justify-content:center;gap:.4rem;margin-top:1rem}
+.gal-dots{display:none;justify-content:center;gap:.4rem;margin-top:1rem}
 .gal-dot{width:6px;height:6px;border-radius:50%;background:var(--border);border:none;cursor:pointer;transition:all .3s;padding:0}
 .gal-dot.active{background:var(--white);width:18px;border-radius:3px}
 
@@ -1143,7 +1145,9 @@ document.addEventListener('DOMContentLoaded',function(){
     galIds.forEach(function(id){
       var main=document.getElementById('main-'+id);
       if(!main)return;
+      // Remove old onclick lightbox
       main.onclick=null;
+      // Touch swipe support
       var sx=0;
       main.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
       main.addEventListener('touchend',function(e){
@@ -1153,6 +1157,7 @@ document.addEventListener('DOMContentLoaded',function(){
           slideGallery(id,dx>0?1:-1);
         }
       },{passive:true});
+      // Click left/right to navigate, center for lightbox
       main.addEventListener('click',function(e){
         var rect=main.getBoundingClientRect();
         var x=e.clientX-rect.left;
@@ -1411,7 +1416,6 @@ function toggleMobileMenu(){document.getElementById('mobileMenu').classList.togg
 <!-- PARTICLES (UNIVERSE) -- interactive parallax with mouse & gyroscope -->
 <style>
 #universe-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;width:100%;height:100%;display:block}
-
 .hero-video-wrap {
   position: relative;
 }
@@ -1427,7 +1431,6 @@ function toggleMobileMenu(){document.getElementById('mobileMenu').classList.togg
     order: 2;
   }
 }
-
 .floating-logo {
   position: fixed;
   z-index: 0;
@@ -1533,13 +1536,13 @@ function frame(){
   cx.clearRect(0,0,W,H);
   var t=Date.now()*0.0003;
   // Blend mouse/touch with gyro (gyro adds extra drift)
-  var px=mouseX+(gyroActive?gyroX*0.6:0);
-  var py=mouseY+(gyroActive?gyroY*0.6:0);
+  var px=mouseX+(gyroActive?gyroX*1.5:0);
+  var py=mouseY+(gyroActive?gyroY*1.5:0);
   // Clamp
   px=Math.max(-1,Math.min(1,px));
   py=Math.max(-1,Math.min(1,py));
-  var driftX=px*30;
-  var driftY=py*25;
+  var driftX=px*50;
+  var driftY=py*45;
 
   // Nebula with parallax
   for(var i=0;i<nebula.length;i++){
@@ -1666,8 +1669,3 @@ addEventListener("resize",function(){W=innerWidth;H=innerHeight;dpr=window.devic
 
 </body>
 </html>
-
-
-
-
-
