@@ -1038,7 +1038,27 @@ function goToIdx(id,idx){
   updateDuo(id,idx,nextIdx);
 }
 document.addEventListener('DOMContentLoaded',function(){
-  setTimeout(function(){initGallery('sakis');initGallery('george');initGallery('leonidas');initGallery('ortentsa');initGallery('awards');initGallery('studio')},500);
+  var galIds=['sakis','george','leonidas','ortentsa','awards','studio'];
+  setTimeout(function(){
+    galIds.forEach(function(id){initGallery(id)});
+    // Add scroll-to-slide on gallery duos
+    galIds.forEach(function(id){
+      var duo=document.getElementById('main-'+id);
+      if(!duo)return;
+      var container=duo.closest('.gallery-duo')||duo.parentElement;
+      var lastWheel=0;
+      container.addEventListener('wheel',function(e){
+        if(e.target.closest('.gallery-main, .gallery-next, .gal-dots')){
+          e.preventDefault();
+          var now=Date.now();
+          if(now-lastWheel<800)return;
+          lastWheel=now;
+          var dir=e.deltaY>0?1:-1;
+          slideGallery(id,dir);
+        }
+      },{passive:false});
+    });
+  },500);
 });
 </script>
 
