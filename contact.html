@@ -676,9 +676,15 @@ pointer-events:none}
     <div class="hero-left">
       <span class="hero-meta">EST. 2011 — LARISSA, GREECE</span>
       <h1 class="hero-title">
-        <span class="hero-scroll-track">
-          <span class="hero-scroll-text">NEWFOUNDLAND TATTOO STUDIO</span>
-          <span class="hero-scroll-text">NEWFOUNDLAND TATTOO STUDIO</span>
+        <span class="hero-scroll-wrap">
+          <span class="hero-scroll-track left">
+            <span class="hero-scroll-text">NEWFOUNDLAND</span>
+            <span class="hero-scroll-text">NEWFOUNDLAND</span>
+          </span>
+          <span class="hero-scroll-track right">
+            <span class="hero-scroll-text">TATTOO STUDIO</span>
+            <span class="hero-scroll-text">TATTOO STUDIO</span>
+          </span>
         </span>
       </h1>
       <div class="hero-stats-row">
@@ -934,10 +940,16 @@ pointer-events:none}
 @media(max-width:600px){.gallery-strip .gs-slide{width:130px}}
 @keyframes galleryScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 /* HERO SCROLLING TITLE */
-@keyframes heroScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.hero-title{overflow:hidden;white-space:nowrap;width:100%;max-width:100%;position:relative;display:block;height:auto;margin-bottom:12px}
-.hero-scroll-track{display:inline-flex;animation:heroScroll 20s linear infinite;gap:0;min-width:200%}
-.hero-scroll-text{display:inline-block;font-family: Playfair Display,serif;font-size:clamp(36px,8vw,88px);font-weight:900;letter-spacing:6px;padding-right:10vw;color:transparent;-webkit-text-fill-color:transparent;-webkit-text-stroke:2px var(--gold);text-stroke:2px var(--gold);opacity:.85;text-transform:uppercase;line-height:1.2}
+/* ── HERO SCROLLING TITLE ── */
+@keyframes heroScrollLeft{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes heroScrollRight{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+.hero-title{overflow:hidden;white-space:nowrap;width:100%;max-width:100%;position:relative;display:block;height:auto;margin-bottom:6px}
+.hero-scroll-wrap{display:block;width:100%}
+.hero-scroll-track{display:inline-flex;gap:0;min-width:200%;height:auto}
+.hero-scroll-track.left{animation:heroScrollLeft 25s linear infinite}
+.hero-scroll-track.right{animation:heroScrollRight 25s linear infinite}
+.hero-scroll-text{display:inline-block;font-family:'Playfair Display',serif;font-size:clamp(32px,7vw,80px);font-weight:900;letter-spacing:6px;padding-right:10vw;color:transparent;-webkit-text-fill-color:transparent;-webkit-text-stroke:2px var(--gold);text-stroke:2px var(--gold);opacity:.85;text-transform:uppercase;line-height:1.15}
+.hero-scroll-track.right .hero-scroll-text{-webkit-text-stroke:1.5px var(--red);text-stroke:1.5px var(--red);opacity:.6;font-size:clamp(24px,5vw,56px)}
 
 
 
