@@ -638,27 +638,27 @@ pointer-events:none}
 
 <!-- BOTTOM TAB NAV (mobile only) -->
 <div class="mobile-bottom-nav" id="bottomNav">
-  <a href="#" data-section="hero" class="active">
-    <span class="bn-icon">⌂</span>
+  <a href="#hero" data-section="hero" class="active">
+    <span class="bn-icon">⏎</span>
     <span class="bn-label">Αρχική</span>
   </a>
   <a href="#services" data-section="services">
-    <span class="bn-icon">⊘</span>
+    <span class="bn-icon">⦿</span>
     <span class="bn-label">Υπηρεσίες</span>
   </a>
   <a href="#work" data-section="work">
-    <span class="bn-icon">◉</span>
+    <span class="bn-icon">⬡</span>
     <span class="bn-label">Δουλειά</span>
   </a>
   <a href="#reviews" data-section="reviews">
-    <span class="bn-icon">★</span>
+    <span class="bn-icon">✦</span>
     <span class="bn-label">Κριτικές</span>
   </a>
   <a href="#faq" data-section="faq">
-    <span class="bn-icon">?</span>
+    <span class="bn-icon">◈</span>
     <span class="bn-label">FAQ</span>
   </a>
-  <a href="#" onclick="toggleLangMobile()" style="cursor:pointer">
+  <a href="#" onclick="toggleLangMobile();return false" style="cursor:pointer">
     <span class="bn-icon" style="font-size:13px;font-family:var(--font-sans);letter-spacing:.04em;font-weight:500">EL/EN</span>
     <span class="bn-label" id="langLabelMobile" style="display:none"></span>
   </a>
@@ -792,7 +792,7 @@ pointer-events:none}
     <a href="gallery.html?set=awards" class="gallery-btn">→ View All Awards</a>
     </div>
   </section>
-        <div class="reveal d1"><h2 class="section-title" data-el="Η δουλειά μας" data-en="Our work">Η δουλειά μας</h2></div>
+        <div class="reveal d1" id="work"><h2 class="section-title" data-el="Η δουλειά μας" data-en="Our work">Η δουλειά μας</h2></div>
       </div>
       <div class="reveal d2"><div class="section-divider"></div></div>
     </div>
