@@ -374,18 +374,21 @@ pointer-events:none}
   .nav-right{display:none!important}
   .nav-hamburger{display:none}
   .nav-center{display:none}
-  /* ── BOTTOM TAB NAV (app-like, glassmorphism) ── */
-  .mobile-bottom-nav{display:flex!important;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(10,10,10,.72);backdrop-filter:blur(30px) saturate(1.2);-webkit-backdrop-filter:blur(30px) saturate(1.2);border:0;border-top:1px solid rgba(255,255,255,.08);padding:6px 0;padding-bottom:calc(6px + env(safe-area-inset-bottom,0px));justify-content:space-around;align-items:center}
-  .mobile-bottom-nav::before{content:'';position:absolute;top:-1px;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);pointer-events:none}
-  .mobile-bottom-nav a{display:flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;color:var(--muted);font-family:var(--font-mono);font-size:.4rem;letter-spacing:.08em;text-transform:uppercase;transition:color .25s,transform .2s;padding:4px 8px;border-radius:10px;-webkit-tap-highlight-color:transparent;position:relative}
-  .mobile-bottom-nav a .bn-icon{width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:15px;transition:transform .2s}
-  .mobile-bottom-nav a .bn-label{font-size:.38rem;letter-spacing:.1em;opacity:.5;transition:opacity .25s}
-  .mobile-bottom-nav a:active{transform:scale(.92)}
-  .mobile-bottom-nav a:active .bn-icon{transform:scale(.85)}
-  .mobile-bottom-nav a.active{color:var(--white)}
-  .mobile-bottom-nav a.active .bn-label{opacity:1}
-  .mobile-bottom-nav a.active .bn-icon{text-shadow:0 0 10px rgba(255,255,255,.15)}
-  /* ── FAB (floating book button) ── */
+    /* ── SCI-FI SPACE DOCK ── */
+  @keyframes dockGlow{0%,100%{box-shadow:0 -1px 12px rgba(184,50,39,.15)}50%{box-shadow:0 -1px 20px rgba(184,50,39,.35)}}
+  @keyframes scanline{0%{left:-100%}100%{left:200%}}
+  @keyframes btnPulse{0%,100%{box-shadow:0 0 4px rgba(184,50,39,0)}50%{box-shadow:0 0 12px rgba(184,50,39,.4)}}
+  .mobile-bottom-nav{display:flex!important;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(8,6,8,.85);backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);border:0;border-top:2px solid rgba(184,50,39,.25);padding:8px 0;padding-bottom:calc(8px + env(safe-area-inset-bottom,0px));justify-content:space-around;align-items:center;animation:dockGlow 4s ease-in-out infinite}
+  .mobile-bottom-nav::before{content:'';position:absolute;top:0;left:-100%;width:50%;height:1px;background:linear-gradient(90deg,transparent,rgba(184,50,39,.7),transparent);pointer-events:none;animation:scanline 6s ease-in-out infinite}
+  .mobile-bottom-nav a{display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;color:var(--muted);font-family:var(--font-mono);font-size:.38rem;letter-spacing:.1em;text-transform:uppercase;transition:all .3s;padding:6px 10px;border-radius:12px;-webkit-tap-highlight-color:transparent;position:relative;border:1px solid transparent}
+  .mobile-bottom-nav a .bn-icon{width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:16px;transition:transform .3s,text-shadow .3s;color:var(--dim);font-weight:600}
+  .mobile-bottom-nav a .bn-label{font-size:.35rem;letter-spacing:.12em;opacity:.4;transition:opacity .3s}
+  .mobile-bottom-nav a:active{transform:scale(.9)}
+  .mobile-bottom-nav a:active .bn-icon{transform:scale(.8)}
+  .mobile-bottom-nav a.active{color:var(--white);border-color:rgba(184,50,39,.3);background:rgba(184,50,39,.08);animation:btnPulse 3s ease-in-out infinite}
+  .mobile-bottom-nav a.active .bn-label{opacity:1;color:var(--red)}
+  .mobile-bottom-nav a.active .bn-icon{color:var(--red);text-shadow:0 0 12px rgba(184,50,39,.6),0 0 25px rgba(184,50,39,.2);transform:scale(1.05)}
+  .mobile-bottom-nav a:not(.active):hover .bn-icon{color:rgba(184,50,39,.5);text-shadow:0 0 6px rgba(184,50,39,.15)}/* ── FAB (floating book button) ── */
   .mobile-fab{display:flex!important;position:fixed;bottom:80px;bottom:calc(76px + env(safe-area-inset-bottom,0px));right:16px;z-index:9998;width:52px;height:52px;border-radius:50%;background:var(--red);border:none;color:white;font-size:22px;cursor:pointer;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(179,0,0,.4);transition:all .4s cubic-bezier(.16,1,.3,1);-webkit-tap-highlight-color:transparent}
   .mobile-fab:active{transform:scale(.88);box-shadow:0 2px 10px rgba(179,0,0,.3)}
   /* ── HERO (mobile) ── */
