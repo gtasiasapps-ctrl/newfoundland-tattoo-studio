@@ -402,7 +402,8 @@ pointer-events:none}
 /* ── ARTIST BLOCKS (no tabs, all visible) ── */
 .artist-block{margin-bottom:2.5rem}
 .artist-block:last-child{margin-bottom:0}
-.artist-name{display:flex;align-items:baseline;gap:.6rem;margin-bottom:1rem}
+.artist-name{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
+.artist-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--border);background:var(--bg)}
 .artist-label{font-family:var(--font-sans);font-size:1.1rem;font-weight:500;color:var(--white);letter-spacing:-.02em}
 .artist-role{font-family:var(--font-mono);font-size:.45rem;color:var(--dim);letter-spacing:.2em;text-transform:uppercase}
 .gallery-duo{display:none}
@@ -512,6 +513,7 @@ pointer-events:none}
   .artist-label{font-size:.85rem}
   .artist-role{font-size:.38rem}
   .artist-name{margin-bottom:.6rem;gap:.4rem}
+  .artist-avatar{width:36px;height:36px}
 }
 
 
