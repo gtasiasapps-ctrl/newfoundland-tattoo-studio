@@ -471,6 +471,10 @@ pointer-events:none}
 .lightbox{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .3s cubic-bezier(.16,1,.3,1);cursor:zoom-out}
 .lightbox.open{opacity:1;pointer-events:auto}
 .lightbox-img{max-width:min(90vw,1200px);max-height:90vh;width:auto;height:auto;object-fit:scale-down;border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,.6);cursor:default;transition:transform .4s cubic-bezier(.22,1,.36,1);display:block}
+.lightbox-video{max-width:min(90vw,1200px);max-height:90vh;width:auto;height:auto;border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,.6);background:#000;display:block;cursor:default}
+.gs-slide.gs-video{position:relative}
+.gs-slide.gs-video::after{content:"\25B6";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:rgba(255,255,255,.92);background:rgba(0,0,0,.34);text-shadow:0 2px 14px rgba(0,0,0,.7)}
+.gs-slide.gs-video:hover::after{background:rgba(0,0,0,.22);font-size:2.5rem}
 .lightbox-close{position:fixed;top:1.5rem;right:1.5rem;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.7);font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:100000;transition:all .3s;font-family:var(--font-sans);line-height:1}
 .lightbox-close:hover{background:rgba(255,255,255,.15);color:#fff;transform:scale(1.08)}
 .lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);z-index:100000;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .3s;font-family:var(--font-sans);-webkit-tap-highlight-color:transparent}
@@ -484,6 +488,7 @@ pointer-events:none}
   .lightbox-nav.prev{left:.5rem}
   .lightbox-nav.next{right:.5rem}
   .lightbox-img{max-width:95vw;max-height:85vh}
+  .lightbox-video{max-width:95vw;max-height:85vh}
 }
 
 /* ── DOTS ── */

@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<div id="viewer"><img id="photo" src="" alt="" /></div>
+<div id="viewer"><img id="photo" src="" alt="" /><video id="photoVideo" playsinline controls loop preload="none" poster="./artists/george/george-tattoo-poster.webp"></video></div>
 
 <div class="nav-area left" id="navPrev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></div>
 <div class="nav-area right" id="navNext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
@@ -52,6 +52,7 @@ var photoSets = {
     "award-10.webp"
   ].map(function(f){return "./Awards/"+f}),
   george: [
+    "george-tattoo.mp4",
     "profil.png",
     "IMG_0009.webp",
     "IMG_0011.webp",
@@ -75,11 +76,14 @@ var photoSets = {
   ].map(function(f){return "./artists/george/"+f}),
   leonidas: [
     "profil.webp",
+    "IMG_2699.webp","IMG_8439.webp",
     "IMG_0012.webp","IMG_6698.webp","IMG_7093.webp",
     "IMG_8143.webp","leonidas-fsr.webp","leonidas-scr.webp"
   ].map(function(f){return "./artists/leonidas/"+f}),
   ortentsa: [
     "profil.webp",
+    "IMG_1712.webp","IMG_1727.webp","IMG_1745.webp","IMG_2146.webp",
+    "IMG_2602.webp","IMG_2726.webp","IMG_3471.webp",
     "IMG_6599.webp","IMG_6601.webp","IMG_6603.webp","IMG_0988.webp",
     "LKS04196.webp","LKS04197.webp","LKS04215.webp"
   ].map(function(f){return "./artists/ortentsa/"+f}),
@@ -101,11 +105,22 @@ var img = document.getElementById("photo");
 var counter = document.getElementById("counter");
 var title = document.getElementById("title");
 
+var vid=document.getElementById("photoVideo");
 function show(i){
   if(i<0)i=photos.length-1;
   if(i>=photos.length)i=0;
   idx=i;
-  img.src=photos[idx];
+  var src=photos[idx];
+  if(/\.(mp4|webm|mov)(\?|$)/i.test(src)){
+    img.style.display="none";
+    vid.style.display="block";
+    if(vid.getAttribute("src")!==src)vid.src=src;
+    var pr=vid.play();if(pr&&pr.catch)pr.catch(function(){});
+  }else{
+    vid.pause();vid.style.display="none";
+    img.style.display="";
+    img.src=src;
+  }
   counter.textContent=(idx+1)+" / "+photos.length;
   title.textContent=setNames[setId]||setId;
 }
